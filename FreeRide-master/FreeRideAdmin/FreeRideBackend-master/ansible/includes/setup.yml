@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  gather_facts: false
+  remote_user: "{{ first_root_user }}"
+  pre_tasks:
+    - name: Install Python 2
+      ansible.builtin.raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      become: true
+      changed_when: false

@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure('2') do |config|
+  config.vm.box = 'generic/ubuntu1804'
+
+  config.vm.provision :ansible do |ansible|
+    ansible.playbook = 'nginx_provision_playbook.yml'
+    ansible.verbose = true
+
+    ansible.groups = {
+      'nginx' => 'default',
+      'vagrant:children' => 'nginx',
+      'all:vars' => {
+        'ansible_python_interpreter' => '/usr/bin/python2.7',
+        'first_root_user' => 'vagrant',
+        'stage' => 'production'
+      }
+    }
+  end
+end

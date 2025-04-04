@@ -1,0 +1,9 @@
+---
+
+- name: Installing packages
+  npm:
+    global: yes
+    name: "{{ item.name if item.name is defined else item }}"
+    version: "{{ item.version | default(omit) }}"
+    state: present
+  with_items: nodejs_packages

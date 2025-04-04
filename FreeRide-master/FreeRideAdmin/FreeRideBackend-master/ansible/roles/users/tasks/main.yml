@@ -1,0 +1,54 @@
+---
+- name: Ensure group "admin" exists
+  ansible.builtin.group:
+    name: admin
+    state: present
+
+- name: Ensure group "web" exists
+  ansible.builtin.group:
+    name: web
+    state: present
+
+- name: Add application user
+  ansible.builtin.user:
+    name: "{{ item.value.name }}"
+    comment: "{{ item.value.comment }}"
+    shell: "{{ item.value.shell }}"
+    groups: "{{ item.value.groups }}"
+    state: present
+    append: true
+  with_dict: "{{ users }}"
+  when: users|length > 0
+
+- name: Assure authorized_keys are set
+  ansible.posix.authorized_key:
+    user: "{{ item[0].name }}"
+    key: "{{ lookup('file', item[1]) }}"
+  with_subelements:
+    - "{{ users }}"
+    - authorized_keys
+  when: users|length > 0
+
+- name: Assure authorized_keys are set for ubuntu user
+  ansible.posix.authorized_key:
+    user: ubuntu
+    key: "{{ lookup('file', item) }}"
+  loop: "{{ service_keys }}"
+
+- name: Assure users can use systemctl
+  ansible.builtin.template:
+    src: "templates/sudoers_file.j2"
+    dest: "/etc/sudoers.d/{{ item.value.name }}"
+    owner: "root"
+    ansible.builtin.group: "root"
+    mode: "0440"
+  with_dict: "{{ users }}"
+  when: users|length > 0
+
+- name: Assure nopwd user
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%admin'
+    line: '%admin ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'

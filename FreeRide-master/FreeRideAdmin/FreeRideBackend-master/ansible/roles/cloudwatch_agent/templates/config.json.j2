@@ -1,0 +1,180 @@
+{
+  "agent": {
+    "region": "us-east-1"
+  },
+  "metrics": {
+    "append_dimensions": {
+      "InstanceId":"${aws:InstanceId}"
+    },
+    "metrics_collected": {
+      "cpu": {
+        "totalcpu": true,
+        "measurement": [
+          "cpu_usage_active",
+          "cpu_usage_system",
+          "cpu_usage_user"
+        ],
+        "append_dimensions": {
+          "Environment": "{{ stage }}"
+        }
+      },
+      "disk": {
+        "resources": [
+          "/"
+        ],
+        "measurement": [
+          "used_percent"
+        ],
+        "append_dimensions": {
+          "Environment": "{{ stage }}"
+        }
+      },
+      "mem": {
+        "measurement": [
+          "mem_available",
+          "mem_free",
+          "mem_total",
+          "mem_used"
+        ],
+        "append_dimensions": {
+          "Environment": "{{ stage }}"
+        }
+      },
+      "net": {
+        "measurement": [
+          "net_bytes_sent",
+          "net_bytes_recv",
+          "net_drop_in",
+          "net_drop_out",
+          "net_err_in",
+          "net_err_out"
+        ],
+        "append_dimensions": {
+          "Environment": "{{ stage }}"
+        }
+      },
+      "processes": {
+        "measurement": [
+          "processes_running",
+          "processes_total",
+          "processes_total_threads"
+        ],
+        "append_dimensions": {
+          "Environment": "{{ stage }}"
+        }
+      },
+      "procstat": [
+        {% if 'web' in group_names or 'cron' in group_names or 'admin' in group_names %}
+        {
+          "exe": "node",
+          "measurement": [
+            "cpu_usage",
+            "memory_rss"
+          ],
+          "append_dimensions": {
+            "Environment": "{{ stage }}"
+          }
+        }
+          {% if 'nginx' in group_names or 'driver_finder' in group_names %}
+          ,
+          {% endif %}
+        {% endif %}
+        {% if 'driver_finder' in group_names %}
+        {
+          "exe": "uwsgi",
+          "measurement": [
+            "cpu_usage",
+            "memory_rss"
+          ],
+          "append_dimensions": {
+            "Environment": "{{ stage }}"
+          }
+        }
+          {% if 'nginx' in group_names %}
+          ,
+          {% endif %}
+        {% endif %}
+        {% if 'nginx' in group_names %}
+        {
+          "exe": "nginx",
+          "measurement": [
+            "cpu_usage",
+            "memory_rss"
+          ],
+          "append_dimensions": {
+            "Environment": "{{ stage }}"
+          }
+        }
+        {% endif %}
+      ]
+    }
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {% if 'cron' in group_names %}
+          {
+            "file_path": "/home/provisioner/.pm2/logs/The-Free-Ride-Cronjob-{{ stage }}-error*.log",
+            "log_group_name": "{{ stage }}_cron_error",
+            "log_stream_name": "{hostname}_cron_error",
+            "retention_in_days": 365
+          },
+          {
+            "file_path": "/home/provisioner/.pm2/logs/The-Free-Ride-Cronjob-{{ stage }}-out*.log",
+            "log_group_name": "{{ stage }}_cron_out",
+            "log_stream_name": "{hostname}_cron_out",
+            "retention_in_days": 365
+          }
+            {% if 'web' in group_names or 'nginx' in group_names or 'admin' in group_names or 'driver_finder' in group_names %}
+            ,
+            {% endif %}
+          {% endif %}
+          {% if 'web' in group_names or 'admin' in group_names %}
+          {
+            "file_path": "/home/provisioner/.pm2/logs/The-Free-Ride-{{ stage }}-error*.log",
+            "log_group_name": "{{ stage }}_web_error",
+            "log_stream_name": "{hostname}_web_error",
+            "retention_in_days": 365
+          },
+          {
+            "file_path": "/home/provisioner/.pm2/logs/The-Free-Ride-{{ stage }}-out*.log",
+            "log_group_name": "{{ stage }}_web_out",
+            "log_stream_name": "{hostname}_web_out",
+            "retention_in_days": 365
+          }
+            {% if 'nginx' in group_names or 'driver_finder' in group_names %}
+            ,
+            {% endif %}
+          {% endif %}
+          {% if 'driver_finder' in group_names %}
+          {
+            "file_path": "/var/log/uwsgi/log.txt",
+            "log_group_name": "{{ stage }}_lambda_out",
+            "log_stream_name": "{hostname}_lambda_out",
+            "retention_in_days": 365
+          }
+            {% if 'nginx' in group_names %}
+            ,
+            {% endif %}
+          {% endif %}
+          {% if 'nginx' in group_names %}
+          {
+            "file_path": "/var/log/nginx/*error.log",
+            "log_group_name": "{{ stage }}_nginx_error",
+            "log_stream_name": "{hostname}_nginx_error",
+            "retention_in_days": 365
+          },
+          {
+            "file_path": "/var/log/nginx/*access.log",
+            "log_group_name": "{{ stage }}_nginx_access",
+            "log_stream_name": "{hostname}_nginx_access",
+            "retention_in_days": 365
+          }
+          {% endif %}
+        ]
+      }
+    },
+    "log_stream_name": "{hostname}"
+  }
+}

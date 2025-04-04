@@ -1,0 +1,59 @@
+---
+- name: Ensure package "nginx" is installed
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+  become: true
+
+- name: Ensure "nginx" service is stopped
+  ansible.builtin.service:
+    name: nginx
+    state: stopped
+  become: true
+
+- name: Ensure needed directories exist
+  ansible.builtin.file:
+    name: /etc/nginx/{{ item }}
+    state: directory
+    mode: "0755"
+    owner: root
+    group: root
+  loop:
+    - sites-available
+    - sites-enabled
+  become: true
+
+- name: Ensure default config file is not present
+  ansible.builtin.file:
+    path: /etc/nginx/{{ item }}/default
+    state: absent
+  loop:
+    - sites-available
+    - sites-enabled
+  become: true
+
+- name: Ensure available site configs are present
+  ansible.builtin.copy:
+    src: sites-available/driver_finder.conf
+    dest: /etc/nginx/sites-available/driver_finder.conf
+    mode: "0644"
+    owner: root
+    group: root
+  become: true
+
+- name: Ensure symbolic links exist for config files
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/driver_finder.conf
+    dest: /etc/nginx/sites-enabled/driver_finder.conf
+    owner: root
+    group: root
+    state: link
+  become: true
+
+- name: Ensure "nginx" service is running and enabled
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true
+  become: true

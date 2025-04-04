@@ -1,0 +1,14 @@
+---
+driver_finder_env_vars:
+  DEV_AUTH_SRC: admin
+  DEV_DB: ""
+  DEV_DB_CLUSTER_HOST: ""
+  DEV_DB_PWD: ""
+  DEV_DB_USER: ""
+  DEV_REPLICA_SET: ""
+  GH_API_KEY: ""
+  GH_VEHICLE_PROFILE: scooter
+  GH_VEHICLE_PROFILE_FALLBACK: car
+  LOG_LEVEL: debug
+  SENTRY_DSN: ""
+driver_finder_install_nginx: false

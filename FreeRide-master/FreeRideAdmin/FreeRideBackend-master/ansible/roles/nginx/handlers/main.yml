@@ -1,0 +1,6 @@
+---
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted
+    daemon_reload: true

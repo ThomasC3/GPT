@@ -1,0 +1,10 @@
+server {
+    listen 443;
+    server_name _;
+
+    include /etc/nginx/includes/ssl.conf;
+
+    location / {
+        return 204;
+    }
+}

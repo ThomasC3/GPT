@@ -1,0 +1,52 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# misc
+.DS_Store
+*.rdb
+
+npm*
+yarn-error.log
+
+.venv/
+
+# dependencies
+/node_modules
+/build
+package-lock.json
+.venv
+
+# Code editors
+.vscode
+
+# logs
+/log
+
+# ansible
+ansible/vault.key
+ansible/*.retry
+
+# New Relic
+newrelic.js
+newrelic_agent.log
+
+# vagrant
+.vagrant
+
+# Code Coverage
+.nyc_output
+/coverage
+
+/dump
+
+/output
+
+/config_keys/*.key
+/config_files/*_config.json
+/dump
+
+/config_files/*_config.js
+okr.js
+
+old_full_schema.er
+erd_schema.png
+schema_diff.html

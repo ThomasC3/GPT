@@ -1,0 +1,808 @@
+${jsonencode({
+  start          = "-P1D"
+  periodOverride = "inherit"
+  widgets = concat([
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 0
+      x = 0
+      properties = {
+        title = "CPU usage"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.machines : ["CWAgent", "cpu_usage_system", "InstanceId", "${instance.id}", "cpu", "cpu-total", "Environment", "${data.stage}", { label = "${instance.label}System processes" }]],
+          [for instance in data.machines : ["CWAgent", "cpu_usage_user", "InstanceId", "${instance.id}", "cpu", "cpu-total", "Environment", "${data.stage}", { label = "${instance.label}User processes" }]],
+          [for instance in data.machines : ["CWAgent", "cpu_usage_active", "InstanceId", "${instance.id}", "cpu", "cpu-total", "Environment", "${data.stage}", { label = "${instance.label}Active usage" }]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 0
+      x = 12
+      properties = {
+        title = "RAM usage"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.machines : ["CWAgent", "mem_used", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Used" }]],
+          [for instance in data.machines : ["CWAgent", "mem_free", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Free" }]],
+          [for instance in data.machines : ["CWAgent", "mem_available", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Available" }]],
+          [for instance in data.machines : ["CWAgent", "mem_total", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Total" }]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 6
+      x = 0
+      properties = {
+        title = "Network usage"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.machines : ["CWAgent", "net_bytes_recv", "InstanceId", "${instance.id}", "Environment", "${data.stage}", "interface", "eth0", { label = "${instance.label}Network In" }]],
+          [for instance in data.machines : ["CWAgent", "net_bytes_sent", "InstanceId", "${instance.id}", "Environment", "${data.stage}", "interface", "eth0", { label = "${instance.label}Network Out" }]]
+        )
+        region = "us-east-1"
+        stat = "Sum"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 6
+      x = 12
+      properties = {
+        title = "Requests"
+        view = "timeSeries"
+        metrics = [
+          ["Nginx (${title(data.stage)})", "Total Requests"],
+          ["Nginx (${title(data.stage)})", "Success"],
+          ["Nginx (${title(data.stage)})", "Client Errors"],
+          ["Nginx (${title(data.stage)})", "Server Errors"]
+        ]
+        region = "us-east-1"
+        stat = "Sum"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 12
+      x = 0
+      properties = {
+        title = "ELB Latency"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for region, elb in data.elbs: ["AWS/ApplicationELB", "TargetResponseTime", "LoadBalancer", elb.arn_suffix, { label = "${title(region)} p50", stat = "p50", region = "us-${region}-1" }]],
+          [for region, elb in data.elbs: ["AWS/ApplicationELB", "TargetResponseTime", "LoadBalancer", elb.arn_suffix, { label = "${title(region)} p95", stat = "p95", region = "us-${region}-1" }]],
+          [for region, elb in data.elbs: ["AWS/ApplicationELB", "TargetResponseTime", "LoadBalancer", elb.arn_suffix, { label = "${title(region)} p99", stat = "p99", region = "us-${region}-1" }]],
+          [for region, elb in data.elbs: ["AWS/ApplicationELB", "TargetResponseTime", "LoadBalancer", elb.arn_suffix, { label = "${title(region)} Trimmed Median (5%:95%)", stat = "TM(5%:95%)", region = "us-${region}-1" }]]
+        )
+        region = "us-east-1"
+        stat   = "Sum"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 12
+      x = 12
+      properties = {
+        title = "WAF Blocked Requests"
+        view = "timeSeries"
+        stacked = false
+        metrics = values(merge([for rule_group in data.waf.rule_groups: {
+            "${rule_group.name}.0.merge" = [{expression = "${lower(rule_group.name)}east + ${lower(rule_group.name)}west", label = "${rule_group.label} (Total)", region = "us-east-1"}],
+            "${rule_group.name}.1.east" = ["AWS/WAFV2", "BlockedRequests", "ManagedRuleGroup", "${rule_group.name}", "WebACL", "${data.waf.name}", "Region", "us-east-1", { label = "${rule_group.label} (East)", id = "${lower(rule_group.name)}east", region = "us-east-1" }],
+            "${rule_group.name}.2.west" = ["AWS/WAFV2", "BlockedRequests", "ManagedRuleGroup", "${rule_group.name}", "WebACL", "${data.waf.name}", "Region", "us-west-1", { label = "${rule_group.label} (West)", id = "${lower(rule_group.name)}west", region = "us-west-1" }]
+          }
+        ]...))
+        region = "us-east-1"
+        stat   = "Sum"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 18
+      x = 0
+      properties = {
+        title = "CPU usage per process"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.machines: ["CWAgent", "procstat_cpu_usage", "exe", "nginx", "process_name", "nginx", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Nginx" }] if contains(instance.types, "nginx")],
+          [for instance in data.machines: ["CWAgent", "procstat_cpu_usage", "exe", "node", "process_name", "node /var/www/free_ride_backend/current/build/server.js", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Node server" }] if contains(instance.types, "backend")],
+          [for instance in data.machines: ["CWAgent", "procstat_cpu_usage", "exe", "node", "process_name", "node /var/www/free_ride_cron/current/build/cronjobs.js", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Node cronjob" }] if contains(instance.types, "cron")],
+          [for instance in data.machines: ["CWAgent", "procstat_cpu_usage", "exe", "uwsgi", "process_name", "uwsgi", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}uWSGI" }] if contains(instance.types, "lambda")]
+        )
+        region = "us-east-1"
+        stat   = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 18
+      x = 12
+      properties = {
+        title = "RAM usage per process"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.machines: ["CWAgent", "procstat_memory_rss", "exe", "nginx", "process_name", "nginx", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Nginx" }] if contains(instance.types, "nginx")],
+          [for instance in data.machines: ["CWAgent", "procstat_memory_rss", "exe", "node", "process_name", "node /var/www/free_ride_backend/current/build/server.js", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Node server" }] if contains(instance.types, "backend")],
+          [for instance in data.machines: ["CWAgent", "procstat_memory_rss", "exe", "node", "process_name", "node /var/www/free_ride_cron/current/build/cronjobs.js", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Node cronjob" }] if contains(instance.types, "cron")],
+          [for instance in data.machines: ["CWAgent", "procstat_memory_rss", "exe", "uwsgi", "process_name", "uwsgi", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}uWSGI" }] if contains(instance.types, "lambda")]
+        )
+        region = "us-east-1"
+        stat   = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 24
+      x = 0
+      properties = {
+        title = "Network errors"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.machines : ["CWAgent", "net_err_in", "InstanceId", "${instance.id}", "Environment", "${data.stage}", "interface", "eth0", { label = "${instance.label}Errors (inbound)" }]],
+          [for instance in data.machines : ["CWAgent", "net_err_out", "InstanceId", "${instance.id}", "Environment", "${data.stage}", "interface", "eth0", { label = "${instance.label}Errors (outbound)" }]],
+          [for instance in data.machines : ["CWAgent", "net_drop_in", "InstanceId", "${instance.id}", "Environment", "${data.stage}", "interface", "eth0", { label = "${instance.label}Dropped packets (inbound)" }]],
+          [for instance in data.machines : ["CWAgent", "net_drop_out", "InstanceId", "${instance.id}", "Environment", "${data.stage}", "interface", "eth0", { label = "${instance.label}Dropped packets (outbound)" }]]
+        )
+        region = "us-east-1"
+        stat = "Sum"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 24
+      x = 6
+      properties = {
+        title = "Graphhopper Credits"
+        view = "timeSeries"
+        stacked = false
+        metrics = [
+          ["${title(data.stage)}Graphhopper", "Credits"],
+          ["GraphHopper (${title(data.stage)})", "Credits"]
+        ]
+        region = "us-east-1"
+        stat = "Sum"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 24
+      x = 12
+      properties = {
+        title = "System load"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.machines : ["CWAgent", "processes_running", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Running processes" }]],
+          [for instance in data.machines : ["CWAgent", "processes_total", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Total processes" }]],
+          [for instance in data.machines : ["CWAgent", "processes_total_threads", "InstanceId", "${instance.id}", "Environment", "${data.stage}", { label = "${instance.label}Total threads" }]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 24
+      x = 18
+      properties = {
+        title = "Disk usage"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.machines : ["CWAgent", "disk_used_percent", "path", "/", "InstanceId", "${instance.id}", "Environment", "${data.stage}", "device", "nvme0n1p1", "fstype", "ext4", { label = "${instance.label}Disk usage" }]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 1
+      width = 24
+      y = 30
+      x = 0
+      properties = {
+        metrics = []
+        region = "us-east-1"
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 31
+      x = 0
+      properties = {
+        title = "Elasticache CPU Utilization"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "CPUUtilization", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 31
+      x = 12
+      properties = {
+        title = "Elasticache Database Memory Usage Percentage"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "DatabaseMemoryUsagePercentage", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 37
+      x = 0
+      properties = {
+        title = "Elasticache Current Items"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "CurrItems", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 37
+      x = 6
+      properties = {
+        title = "Elasticache Memory Fragmentation Ratio"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "MemoryFragmentationRatio", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 37
+      x = 12
+      properties = {
+        title = "Elasticache Replication Lag"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "ReplicationLag", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 37
+      x = 18
+      properties = {
+        title = "Elasticache Cache Hits"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "CacheHits", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 43
+      x = 0
+      properties = {
+        title = "Elasticache Network usage"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "NetworkBytesIn", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]],
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "NetworkBytesOut", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 43
+      x = 12
+      properties = {
+        title = "Elasticache Network Bandwidth Allowance Exceeded"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "NetworkBandwidthInAllowanceExceeded", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]],
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "NetworkBandwidthOutAllowanceExceeded", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 6
+      y = 43
+      x = 18
+      properties = {
+        title = "Elasticache Swap Usage"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.elasticache_nodes : ["AWS/ElastiCache", "SwapUsage", "CacheClusterId", "${instance.id}", "CacheNodeId", "${instance.node_id}"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 1
+      width = 24
+      y = 49
+      x = 0
+      properties = {
+        metrics = []
+        region = "us-east-1"
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 50
+      x = 0
+      properties = {
+        title = "SES - Send, Bounce and Complaint"
+        view = "timeSeries"
+        stacked = false
+        metrics = [
+          ["AWS/SES", "Bounce"],
+          ["AWS/SES", "Complaint"],
+          ["AWS/SES", "Send"]
+        ]
+        region = "us-east-1"
+        stat = "Sum"
+        period = 300
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 50
+      x = 12
+      properties = {
+        title = "SES - Bounce Rate and Complaint Rate"
+        view = "timeSeries"
+        stacked = false
+        annotations = {
+          horizontal = [
+            {
+              label = "Limit 10%"
+              value = 10
+            }
+          ]
+        }
+        metrics = [
+          [ { expression = "100*m1", id = "e1", label = "Bounce Rate", region = "us-east-1" }, ],
+          [ { expression = "100*m2", id = "e2", label = "Complaint Rate", region = "us-east-1" }, ],
+          ["AWS/SES", "Reputation.BounceRate", { id = "m1", label = "Bounce Rate", visible = false }, ],
+          ["AWS/SES", "Reputation.ComplaintRate", { id = "m2", label = "Complaint Rate", visible = false }, ]
+        ]
+        region = "us-east-1"
+        stat = "Average"
+        period = 300
+      }
+    },
+    {
+      type = "metric"
+      height = 1
+      width = 24
+      y = 56
+      x = 0
+      properties = {
+        metrics = []
+        region = "us-east-1"
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 57
+      x = 0
+      properties = {
+        title = "Driver Search Timing"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [for instance in data.working_sets : ["circuit/${data.stage}/requestProcessor/${instance.name}", "driverSearchTimingMetric", "requestProcessorId", "main"]]
+        )
+        region = "us-east-1"
+        stat = "Average"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 57
+      x = 12
+      properties = {
+        title = "Driver ReBroadcast"
+        view = "timeSeries"
+        stacked = false
+        metrics = concat(
+          [[{expression = "SUM(METRICS())", label = "Total", id = "total"}]],
+          [for instance in data.working_sets : ["circuit/${data.stage}/requestProcessor/${instance.name}", "driverReBroadcastMetric", "requestProcessorId", "main", {id = instance.name}]]
+        )
+        region = "us-east-1"
+        stat = "Sum"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 12
+      y = 63
+      x = 0
+      properties = {
+        title = "Driver Finder Request Duration"
+        view = "timeSeries"
+        stacked = false
+        metrics = [
+          ["DriverFinder (${title(data.stage)})", "Request Duration", {label = "Average Request Duration", stat = "Average"}],
+          ["DriverFinder (${title(data.stage)})", "Request Duration", {label = "Maximum Request Duration", stat = "Maximum"}]
+        ]
+        region = "us-east-1"
+        period = 60
+      }
+    },
+    {
+      type = "metric"
+      height = 1
+      width = 24
+      y = 69
+      x = 0
+      properties = {
+        metrics = []
+        region = "us-east-1"
+      }
+    },
+    {
+      type = "metric"
+      height = 6
+      width = 24
+      y = 70
+      x = 0
+      properties = {
+        title = "Websockets messages"
+        view = "timeSeries"
+        stacked = false
+        metrics = [
+          ["Websocket messages (${title(data.stage)})", "Total count"],
+          ["Websocket messages (${title(data.stage)})", "Count - authenticate"],
+          ["Websocket messages (${title(data.stage)})", "Count - ride-driver-moved"],
+          ["Websocket messages (${title(data.stage)})", "Count - ride-request-received"],
+          ["Websocket messages (${title(data.stage)})", "Count - ride-request-received-ack"],
+          ["Websocket messages (${title(data.stage)})", "Count - ride-message"],
+          ["Websocket messages (${title(data.stage)})", "Count - ride-request-call"],
+          ["Websocket messages (${title(data.stage)})", "Count - ride-cancel"],
+          ["Websocket messages (${title(data.stage)})", "Count - request-completed"],
+          ["Websocket messages (${title(data.stage)})", "Count - ride-updates"],
+        ]
+        region = "us-east-1"
+        stat = "Sum"
+        period = 60
+      }
+    },
+    {
+      type       = "log"
+      height     = 6
+      width      = 12
+      y          = 76
+      x          = 0
+      properties = {
+        query   = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          | FILTER @message LIKE /.*buckets_id.*runtime.*/
+          | SORT @timestamp desc
+          | PARSE @message '"runtime": *,' as runtime_
+          | FIELDS abs(runtime_) as runtime
+          | LIMIT 10
+          | PARSE @message '"buckets_id": "*"' as buckets_id
+          | PARSE @message '"bucket_times": [*]' as bucket_times
+          | PARSE @message '"driver_id": "*"' as match
+          | PARSE bucket_times /(?<VC_1>[\d\.]+)(, (?<VC_2>[\d\.]+))?(, (?<VC_3>[\d\.]+))?(, (?<VC_4>[\d\.]+))?(, (?<VC_5>[\d\.]+))?/
+          | DISPLAY @timestamp, buckets_id, runtime, abs(VC_1) as VC1, abs(VC_2) as VC2, abs(VC_3) as VC3, abs(VC_4) as VC4, abs(VC_5) as VC5, match
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Top 10 latest vehicle calls"
+        view    = "table"
+      }
+    },
+    {
+      type       = "log"
+      height     = 6
+      width      = 12
+      y          = 76
+      x          = 12
+      properties = {
+        query   = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          | FILTER @message LIKE /.*thread_pool_id.*runtime.*/
+          | FILTER @message NOT LIKE /.*process_driver_id.*/
+          | SORT @timestamp desc
+          | LIMIT 10
+          | PARSE @message '"runtime": *}' as runtime_
+          | FIELDS abs(runtime_) as runtime
+          | PARSE @message '"thread_pool_id": "*"' as thread_pool_id
+          | PARSE @message '"driver_number": *,' as driver_number
+          | DISPLAY @timestamp, thread_pool_id, runtime, driver_number
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Top 10 latest driver processing thread pools"
+        view    = "table"
+      }
+    },
+    {
+      type       = "log"
+      height     = 6
+      width      = 24
+      y          = 82
+      x          = 0
+      properties = {
+        query   = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          | FILTER @message LIKE /.*buckets_id.*runtime.*/
+          | PARSE @message '"runtime": *,' as runtime_
+          | FIELDS abs(runtime_) as runtime
+          | SORT runtime desc
+          | LIMIT 10
+          | PARSE @message '"buckets_id": "*"' as buckets_id
+          | PARSE @message '"bucket_times": [*]' as bucket_times
+          | PARSE @message '"driver_id": "*"' as match
+          | PARSE bucket_times /(?<VC_1>[\d\.]+)(, (?<VC_2>[\d\.]+))?(, (?<VC_3>[\d\.]+))?(, (?<VC_4>[\d\.]+))?(, (?<VC_5>[\d\.]+))?/
+          | DISPLAY @timestamp, buckets_id, runtime, abs(VC_1) as VC1, abs(VC_2) as VC2, abs(VC_3) as VC3, abs(VC_4) as VC4, abs(VC_5) as VC5, match
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Top 10 longest running vehicle calls"
+        view    = "table"
+      }
+    },
+    {
+      type       = "log"
+      height     = 6
+      width      = 24
+      y          = 88
+      x          = 0
+      properties = {
+        query  = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          | FILTER @message LIKE /.*thread_pool_id.*runtime.*/
+          | FILTER @message NOT LIKE /.*process_driver_id.*/
+          | PARSE @message '"runtime": *}' as runtime_
+          | FIELDS abs(runtime_) as runtime
+          | SORT runtime desc
+          | LIMIT 10
+          | PARSE @message '"thread_pool_id": "*"' as thread_pool_id
+          | PARSE @message '"driver_number": *,' as driver_number
+          | DISPLAY @timestamp, thread_pool_id, runtime, driver_number
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Top 10 longest driver processing thread pools"
+        view    = "table"
+      }
+    },
+    {
+      type       = "log"
+      height     = 6
+      width      = 24
+      y          = 94
+      x          = 0
+      properties = {
+        query  = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          | FILTER @message LIKE /.*tsp_id.*runtime.*/
+          | PARSE @message '"runtime": *}' as runtime_
+          | FIELDS abs(runtime_) as runtime
+          | SORT runtime desc
+          | LIMIT 10
+          | PARSE @message '"tsp_id": "*"' as tsp_id
+          | PARSE @message '"action_count": *,' as action_count
+          | DISPLAY @timestamp, tsp_id, runtime, action_count
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Top 10 longest running tsp"
+        view    = "table"
+      }
+    },
+    {
+      type       = "log"
+      height     = 6
+      width      = 24
+      y          = 100
+      x          = 0
+      properties = {
+        query  = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          | FILTER @message LIKE /.*process_driver_id.*runtime.*/
+          | PARSE @message '"runtime": *}' as runtime_
+          | FIELDS abs(runtime_) as runtime
+          | SORT runtime desc
+          | LIMIT 10
+          | PARSE @message '"process_driver_id": "*"' as process_driver_id
+          | PARSE @message '"thread_pool_id": "*",' as thread_pool_id
+          | DISPLAY @timestamp, process_driver_id, thread_pool_id, runtime
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Top 10 longest driver processing"
+        view    = "table"
+      }
+    },
+    {
+      type       = "log"
+      height     = 6
+      width      = 24
+      y          = 106
+      x          = 0
+      properties = {
+        query   = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          | FILTER @message LIKE /.*matrix_id.*runtime.*/
+          | PARSE @message '"runtime": *,' as runtime_
+          | FIELDS abs(runtime_) as runtime
+          | SORT runtime desc
+          | LIMIT 10
+          | PARSE @message '"matrix_id": "*"' as matrix_id
+          | PARSE @message '"mode": "*"' as mode
+          | PARSE @message '"vehicle_profile": "*"' as vehicle_profile
+          | DISPLAY @timestamp, matrix_id, runtime, mode, vehicle_profile
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Top 10 longest matrix builds"
+        view    = "table"
+      }
+    }
+  ],
+  data.stage == "production" ? [
+    {
+      type       = "log"
+      height     = 6
+      width      = 24
+      y          = 112
+      x          = 0
+      properties = {
+        query   = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          | FILTER @message LIKE /.*error.*location.*/
+          | SORT @timestamp desc
+          | LIMIT 10
+          | PARSE @message '"location": "*",' as location
+          | PARSE @message '"matrix": *}' as matrix
+          | DISPLAY @timestamp, location, matrix
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Top 10 latest GH errors"
+        view    = "table"
+      }
+    },
+    {
+      type       = "log"
+      height     = 6
+      width      = 24
+      y          = 118
+      x          = 0
+      properties = {
+        query   = <<-EOT
+          SOURCE '${data.stage}_lambda_out' | FIELDS @timestamp, @message
+          #| FILTER @message LIKE /.*error.*location.*/
+          | FILTER @message LIKE /.*Cannot find from_points*/
+          | FILTER @message LIKE /.*location*/
+          | PARSE @message '"location": "*",' as location
+          | STATS count(*) as Total by location
+          | sort Total desc
+        EOT
+        region  = "us-east-1"
+        stacked = false
+        title   = "Locations with GH errors"
+        view    = "table"
+      }
+    }
+  ] : [])
+})}

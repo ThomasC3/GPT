@@ -1,0 +1,32 @@
+[web]
+ec2-23-22-162-118.compute-1.amazonaws.com region=east
+ec2-35-175-47-80.compute-1.amazonaws.com region=east
+ec2-98-80-253-192.compute-1.amazonaws.com region=east
+ec2-13-57-212-166.us-west-1.compute.amazonaws.com region=west
+ec2-50-18-86-253.us-west-1.compute.amazonaws.com region=west
+ec2-54-215-214-124.us-west-1.compute.amazonaws.com region=west
+
+[cron]
+ec2-3-92-54-115.compute-1.amazonaws.com
+ec2-3-90-253-192.compute-1.amazonaws.com
+
+[nginx]
+ec2-52-5-51-203.compute-1.amazonaws.com region=east
+ec2-54-176-115-186.us-west-1.compute.amazonaws.com region=west
+
+[admin]
+ec2-3-92-170-99.compute-1.amazonaws.com region=east
+ec2-54-176-113-167.us-west-1.compute.amazonaws.com region=west
+
+[driver_finder]
+ec2-54-226-214-71.compute-1.amazonaws.com
+
+[production:children]
+web
+cron
+nginx
+admin
+driver_finder
+
+[all:vars]
+stage=production

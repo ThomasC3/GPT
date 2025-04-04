@@ -1,0 +1,24 @@
+[web]
+default_web ansible_host=192.168.111.221
+
+[cron]
+default_cron ansible_host=192.168.111.222
+
+[nginx]
+default_nginx ansible_host=192.168.111.223
+
+[admin]
+default_admin ansible_host=192.168.111.224
+
+[driver_finder]
+default_driver_finder ansible_host=192.168.111.225
+
+[vagrant:children]
+web
+cron
+nginx
+admin
+driver_finder
+
+[all:vars]
+stage=vagrant

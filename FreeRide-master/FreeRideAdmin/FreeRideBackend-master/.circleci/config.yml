@@ -1,0 +1,25 @@
+version: 2.1
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/base:2022.03
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Create test_docker.key
+          command: echo "$CONFIG_FILE_TEST_DOCKER_PASSWORD"> ./config_keys/test_docker.key
+      - run:
+          name: Install and build necessary Docker images
+          command: make ci.install
+      - run:
+          name: Start all the containers (background)
+          command: make ci.start-d
+      - run:
+          name: Run tests
+          command: make ci.test
+
+workflows:
+    build-and-test:
+      jobs:
+        - build-and-test

@@ -1,0 +1,10 @@
+---
+nginx_stage: 'development'
+admin_url: '127.0.0.1'
+admin_location: '/dev/null'
+driver_url: '127.0.0.1'
+rider_url: '127.0.0.1'
+
+web_upstream_servers: []
+web_upstream_ip_hash: false
+admin_upstream_servers: []

@@ -1,0 +1,13 @@
+---
+
+- name: Install Python
+  import_playbook: "includes/setup.yml"
+
+- name: Run provisioning roles
+  hosts: driver_finder
+  remote_user: "{{ first_root_user }}"
+  become: true
+  roles:
+    - users
+    - cloudwatch_agent
+    - python

@@ -1,0 +1,18 @@
+---
+# For more information about default variables see:
+# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
+#
+# node_packages:
+#   - less
+#   - { name: recess, version: 1.1.9 }
+
+# define version
+nodejs_version: "0.10"
+# define package (version)
+nodejs_package: nodejs
+# global packages to install
+nodejs_packages: []
+# global packages state (present|latest)
+nodejs_packages_state: present
+# update all global packages
+nodejs_packages_update: no

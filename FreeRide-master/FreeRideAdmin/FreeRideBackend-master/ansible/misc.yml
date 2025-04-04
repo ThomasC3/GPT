@@ -1,0 +1,12 @@
+---
+
+- name: Setup
+  import_playbook: "includes/setup.yml"
+
+- name: Update Cloudwatch Agent
+  hosts:
+    - all
+  remote_user: "{{ provisioner_user }}"
+  become: true
+  roles:
+    - cloudwatch_agent

@@ -1,0 +1,23 @@
+[web]
+ec2-54-84-8-106.compute-1.amazonaws.com region=east
+ec2-54-193-102-33.us-west-1.compute.amazonaws.com region=west
+
+[cron]
+ec2-54-84-8-106.compute-1.amazonaws.com region=east
+ec2-54-193-102-33.us-west-1.compute.amazonaws.com region=west
+
+[nginx]
+ec2-54-84-8-106.compute-1.amazonaws.com region=east
+ec2-54-193-102-33.us-west-1.compute.amazonaws.com region=west
+
+[driver_finder]
+ec2-54-84-8-106.compute-1.amazonaws.com region=east
+
+[development:children]
+web
+cron
+nginx
+driver_finder
+
+[all:vars]
+stage=development

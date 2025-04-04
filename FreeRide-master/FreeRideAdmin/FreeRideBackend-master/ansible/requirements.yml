@@ -1,0 +1,13 @@
+- src: geerlingguy.nodejs
+  version: 6.1.1
+  path: roles
+
+- src: weareinteractive.pm2
+  version: 2.5.1
+  path: roles
+
+- src: jnv.unattended-upgrades
+  path: roles
+
+- src: datadog.datadog
+  path: roles

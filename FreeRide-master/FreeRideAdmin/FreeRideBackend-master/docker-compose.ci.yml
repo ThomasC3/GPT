@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+  api:
+    container_name: circuit.api
+    build: "."
+    image: "thefreerideinc/circuit-backend:latest"
+    command: "npm run docker-start"
+    working_dir: "/usr/src/app"
+    networks:
+      backend:
+        aliases:
+          - admin.thefreeride
+          - driver.thefreeride
+          - rider.thefreeride
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+      - mongo
+      - lambda
+
+  lambda:
+    container_name: circuit.lambda
+    build:
+      context: .
+      dockerfile: Dockerfile.driver_finder
+    command: "uwsgi --ini uwsgi.ini --http-socket :9001"
+    working_dir: "/var/task/src"
+    networks:
+      - backend
+    depends_on:
+      - redis
+      - mongo
+    ports:
+      - "9001:9001"
+    env_file: "./lambda/searchDriverForRequests/.env.test_docker"
+
+  mongo:
+    container_name: circuit.mongo6.0.10
+    image: 'mongo:6.0.10'
+    networks:
+      - backend
+    ports:
+      - "27017:27017"
+
+  redis:
+    container_name: circuit.redis
+    image: "redis:4-alpine"
+    networks:
+      - backend
+    ports:
+      - "6379:6379"
+
+networks:
+  backend:

@@ -1,0 +1,134 @@
+config:
+  phases:
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 1
+      name: Warm up
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 1
+      name: Ramp up load
+    - duration: 10
+      arrivalRate: 1
+      rampTo: 1
+      name: Sustained load
+  environments:
+    development:
+      target: "https://devrider.tfrholdingscorp.com"
+    staging:
+      target: "https://stagerider.tfrholdingscorp.com"
+    production:
+      target: "https://rider.tfrholdingscorp.com"
+  payload:
+    path: ".auth/{{ $environment }}.csv"
+    skipHeader: true
+    fields:
+      - "rider_email"
+      - "rider_password"
+      - "driver_email"
+      - "driver_password"
+      - "locationId"
+  plugins:
+    apdex: {}
+    metrics-by-endpoint: {}
+    expect: {}
+    publish-metrics:
+      - type: cloudwatch
+        region: us-east-1
+        dimensions:
+          - name: "Environment"
+            value: "{{ $environment }}"
+  http:
+    timeout: 600
+  socketio:
+    path: "/socket.io"
+    transports: ["websocket"]
+    query: "EIO=3&transport=websocket"
+before:
+  flow:
+    - post:
+        url: "/v1/login"
+        json:
+          email: "{{ rider_email }}"
+          password: "{{ rider_password }}"
+        capture:
+          - json: "$.accessToken"
+            as: token
+    - put:
+        url: "/v1/user"
+        json:
+          location: {
+            id: "{{ locationId }}"
+          }
+scenarios:
+  - engine: "socketio"
+    flow:
+      - get:
+          url: "/v1/global-settings"
+          headers:
+            Content-Type: "application/json"
+            X-App-Version: '14.4.0'
+            X-Mobile-Os: 'Android'
+            Authorization: "Bearer {{ token }}"
+      - post:
+          url: "/v1/notifications"
+          headers:
+            Content-Type: "application/json"
+            X-App-Version: '14.4.0'
+            X-Mobile-Os: 'Android'
+            Authorization: "Bearer {{ token }}"
+          json:
+            {
+              deviceToken: "{{ token }}",
+              platform: "android",
+              environment: "debug"
+            }
+      - get:
+          url: "/v1/user"
+          headers:
+            Content-Type: "application/json"
+            X-App-Version: '14.4.0'
+            X-Mobile-Os: 'Android'
+            Authorization: "Bearer {{ token }}"
+      - post:
+          url: "/v1/ride/request"
+          ifTrue: "Math.random() < 0.3" # 30% chance to make the extra request
+          headers:
+            Content-Type: "application/json"
+            X-App-Version: '14.4.0'
+            X-Mobile-Os: 'Android'
+            Authorization: "Bearer {{ token }}"
+          json:
+            {
+              location: "{{locationId}}",
+              passengers: 3,
+              isADA: false,
+              message: "Sample message",
+              origin: {
+                address: "Sample address",
+                latitude: "40.186172",
+                longitude: "-8.399665",
+                fixedStopId: null,
+                fixedStopName: null
+              },
+              destination: {
+                address: "Sample address",
+                latitude: "40.186172",
+                longitude: "-8.389665",
+                fixedStopId: null,
+                fixedStopName: null
+              }
+            }
+      - emit:
+          channel: "authenticate"
+          data:
+            {
+              "token": "{{ token }}"
+            }
+      - emit:
+          channel: "ride-message"
+          data:
+            {
+              "ride": "notavalidride",
+              "message": "Test"
+            }

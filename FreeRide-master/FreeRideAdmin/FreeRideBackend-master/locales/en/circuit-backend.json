@@ -1,0 +1,251 @@
+{
+  "InvalidPhoneNumberFormatError": {
+    "default": "Invalid phone number",
+    "phoneParseFail": "Invalid phone format"
+  },
+  "InvalidPinCodeNumber": {
+    "default": "Wrong pincode"
+  },
+  "LocationNotFoundError": {
+    "default": "Location not found.",
+    "address": "We were unable to find an available address for your location.",
+    "fixedStopSearch": "We were unable to fetch this location's information."
+  },
+  "UnprocessableError": {
+    "default": "Unprocessable"
+  },
+  "RiderNotFoundError": {
+    "default": "Rider not found."
+  },
+  "EmailNotSentError": {
+    "default": "Email not sent"
+  },
+  "registration": {
+    "facebook": "An account already exists for this email, phone or Facebook id.",
+    "google": "An account already exists for this email, phone or Google id.",
+    "email": "An account already exists for this email or phone",
+    "other": "An account already exists for this email"
+  },
+  "login": {
+    "suspendedAccount": "Your account has been suspended.",
+    "inactiveAccount": "This account is no longer active.",
+    "userNotFound": "User not found",
+    "unknownUserType": "Unknown userType Token \"{{userType}}\"",
+    "genericFailure": "Authentication Failed",
+    "authenticationFailed": "The email or password you entered is incorrect.",
+    "requestFail": "We are unable to process your request at this time.",
+    "success": "Logged in Successfully"
+  },
+  "emailLogin": {
+    "emptyPassword": "Hey Rider, welcome back! Before we can log you in, we need you to update your password. Check your account's email inbox for a PIN code which you can enter here so that we can verify your account."
+  },
+  "InvalidAccessTokenError": {
+    "default": "Invalid access token"
+  },
+  "FacebookError": {
+    "default": "Facebook request error"
+  },
+  "facebookLogin": {
+    "accessTokenMissing": "Access token is required",
+    "success": "Logged in Successfully",
+    "userNotFound": "No FB user"
+  },
+  "googleLogin": {
+    "accessTokenMissing": "Access token is required",
+    "success": "Logged in Successfully",
+    "userNotFound": "Unable to retrieve user information from Google. Please try again later."
+  },
+  "appleLogin": {
+    "identityTokenMissing": "Identity token is required",
+    "success": "Logged in Successfully",
+    "userNotFound": "Unable to retrieve user information from Apple. Please try again later."
+  },
+  "logout": {
+    "deviceTokenMissing": "Device token is required",
+    "successful": "You've been successfully logged out.",
+    "fail": "Unable to log you out at this time."
+  },
+  "riderPassword": {
+    "updateSuccess": "Your password has been successfully updated.",
+    "updateFail": "We were unable to fetch these settings at this time."
+  },
+  "riderForgotPasswordRequest": {
+    "emailSendSuccess": "Please check your email inbox for a PIN code to verify your account.",
+    "emailSendUnexpectedFail": "We were unable to send a pincode to the email you provided."
+  },
+  "riderAccount": {
+    "infoFetchFail": "We were unable to fetch your account information.",
+    "updateFail": "We were unable to update your account information.",
+    "deleteFail": "We were unable to delete your account.",
+    "deleteSuccess": "We've deleted your account successfully."
+  },
+  "riderPhonePinCodeRequest": {
+    "sms": "Circuit phone verification PIN-code: {{pincode}}",
+    "smsSendSuccess": "Please check your text messages for a PIN code to verify your phone number.",
+    "smsSendFail": "We were unable to send a pincode to this number.",
+    "smsSendUnexpectedFail": "Something went wrong",
+    "smsDisabled": "This feature is unavailable at this time."
+  },
+  "riderEmailPinCodeRequest": {
+    "email": "Circuit email verification PIN-code: {{pincode}}",
+    "emailSendSuccess": "Please check your email inbox for a PIN code to verify your email address.",
+    "emailSendFail": "We were unable to send a pincode to this email address.",
+    "emailSendUnexpectedFail": "Something went wrong",
+    "emailAlreadyVerified": "The email address for this account is already verified",
+    "emailExists": "The email address you provided already exists for another user. Please enter a different email address to proceed with the verification process",
+    "wrongPassword": "Wrong password"
+  },
+  "riderPhoneVerification": {
+    "wrongPinCodeEntered": "The pincode you entered is invalid.",
+    "pinCodeVerifySuccess": "Your phone number has been successfully verified.",
+    "pinCodeVerifyUnexpectedFail": "Something went wrong!"
+  },
+  "riderEmailVerification": {
+    "riderNotFound": "No rider with such email",
+    "wrongPinCodeEntered": "The pincode you entered is invalid.",
+    "invalidEmail": "The email address you entered is not valid. Please reenter a valid email",
+    "emailVerificationSuccess": "Your email has been successfully verified - enjoy your next ride with Circuit.",
+    "emailAlreadyVerified": "The email address for this account is already verified"
+  },
+  "location": {
+    "fetchLocationInfoLocationIdNotFound": "We were unable to fetch this location information.",
+    "notFound": "Location with id of {{locationId}} not found",
+    "error": "Location error.",
+    "closed": "Location is currently closed"
+  },
+  "rider": {
+    "notFound": "Rider with id of {{riderId}} not found",
+    "unableToCreate": "Unable to create rider"
+  },
+  "googleMapsClient": {
+    "default": "Google Maps request was unsuccessful",
+    "locationFromZipFail": "Failed to retrieve lat and lng from users zip"
+  },
+  "notifications": {
+    "successfullySubscribed": "Successfully subscribed"
+  },
+  "stripe": {
+    "createCustomerFail": "Could not create Stripe customer",
+    "setupIntentFail": "Could not create setup intent for {{stripeCustomerId}}",
+    "removePaymentMethodFail": "Could not remove payment method",
+    "paymentConfirmSuccess": "We've confirmed payment successfully.",
+    "paymentIntentFail": "Could not create payment intent for {{stripeCustomerId}}"
+  },
+  "quote": {
+    "locationNotFound": "Could not retrieve quote for Location {{locationName}}",
+    "invalidRidePrice": "Whoops! We're having some trouble with the ride price. Please try again.",
+    "invalidPassengers": "Uh-Oh! We're picking up on an error in the number of passengers. Please try again!",
+    "invalidMaxPwywValue": "Whoa! That's a lot of green. Please verify and re-enter your payment amount.",
+    "invalidPwywOptions": "Uh-Oh! Looks like there was an error with your payment option. Please try again.",
+    "invalidPwywValue": "Whoops! Looks like there was an error with your chosen payment value. Please try again",
+    "lowPwywValue": "So close! Due to Credit Card Processing fees we ask for a minimum of $1 when chipping in and supporting the service. We really appreciate the support, people like you help keep the community moving!",
+    "highPwywValue": "So close! We were unable to process your chosen price option. Please try again."
+  },
+  "poweredBy": {
+    "copy":  "This ride is powered by {{- poweredBy}}."
+  },
+  "ride": {
+    "notFound": "Ride with specified id of {{rideId}} not found",
+    "notFoundSimple": "Ride not found",
+    "noRider": "This ride doesn't have rider",
+    "wrongId": "Wrong ride id",
+    "noActiveRidesForRider": "There are no active rides for rider {{riderId}}"
+  },
+  "reportByRider": {
+    "driver": "We are unable to report this Driver at this time."
+  },
+  "request": {
+    "fail": "We were unable to process your ride request at this time.",
+    "cancel": "You've chosen to cancel this request.",
+    "cancelSuccess": "We've cancelled your request successfully.",
+    "notFound": "Request not found",
+    "cancelCooldown": "Please try requesting again {{timeString}}",
+    "cancelCooldownDefault": "Please wait a few moments and trying again",
+    "passengerLimit": "To help keep our drivers and riders safe our passenger maximum has been reduced to {{passengerLimit}}. Please revise your request. Thank you for your help & stay safe during social distancing",
+    "stopOutsideArea": "Stop not found within the {{locationName}} service location",
+    "pickupOutsideArea": "Pick up is not within service area of {{locationName}}",
+    "dropoffOutsideArea": "Drop off is not within service area of {{locationName}}",
+    "riderAgeRequirement": "Location has an age requirement that is not met",
+    "unVerifiedEmail": "The email associated with your account has not been verified. Verify your email address to ride.",
+    "paymentMethodMissing": "Please attach a valid payment method to your account"
+  },
+  "feedbackByRider": {
+    "success": "Thank you for your feedback!",
+    "fail": "We were unable to rate this ride at this time."
+  },
+  "globalSettings": {
+    "fetchFail": "Error fetching global settings",
+    "fetchUnexpectedFail": "We were unable to fetch these settings at this time."
+  },
+  "genericFailure": "Something went wrong. Please try again.",
+  "promocode": {
+    "invalid": "Invalid promocode",
+    "invalidMessage": "Promocode is not valid",
+    "wrongLocationMessage": "Promocode cannot be used in current location",
+    "expiredMessage": "Promocode has expired",
+    "usageLimitMessage": "Usage limit for this promocode was reached"
+  },
+  "rideUpdates": {
+    "driverCancel": "Uh-oh! Your driver was not able to pick you up, please request another ride."
+  },
+  "driverArrivedNotification": {
+    "title": "Driver Arrived",
+    "body": "Let's ride! Please meet {{driverDisplayName}} now. They will only wait for 3 minutes.",
+    "bodyTimeEnd": "Let's ride! Please meet {{driverDisplayName}} now.",
+    "bodyWithTime": "Let's ride! Please meet {{driverDisplayName}} now. They will only wait for {{timeString}}."
+  },
+  "driverArrivingNotification": {
+    "title": "Driver Arriving",
+    "body": "Get ready! Driver {{driverDisplayName}} is almost there."
+  },
+  "rideConfirmedNotification": {
+    "title": "Ride Confirmed",
+    "body": "Wiring your route and connecting your driver."
+  },
+  "driverPassesOnRequestNotification": {
+    "title": "Ride Cancelled",
+    "body": "Uh-oh! Your driver was not able to pick you up, please request another ride."
+  },
+  "noDriversAvailableNotification": {
+    "title": "All Drivers Are Busy",
+    "body": "Rides are currently in high demand. Please try again soon."
+  },
+  "noDriversAvailable": "No drivers are available at this time.",
+  "ForbiddenError": {
+    "default": "Forbidden"
+  },
+  "ConflictError": {
+    "alreadySetLocation": "Already set location.",
+    "default": "There was a conflict with your request"
+  },
+  "PromocodeStatus": {
+    "1": "Promocode is not valid",
+    "2": "Promocode cannot be used in current location",
+    "3": "Promocode has expired",
+    "4": "Usage limit for this promocode was reached"
+  },
+  "outdatedApp": "You need to update Circuit app to the latest version in order to request rides",
+  "pincodeLimit": "Too Many Requests, please wait a few minutes before trying again",
+  "signupLimitExceeded": "Too Many Requests, please wait a few minutes before trying again",
+  "tip": {
+    "invalid": "Whoops! Having some trouble processing your driver tip. Please try again.",
+    "fail": "So close! We were unable to process your tip request. Please try again.",
+    "success": "All set! We've confirmed and captured your tip successfully.",
+    "cancelSuccess": "We've cancelled your tip successfully.",
+    "alreadySuccess": "A tip has already been processed successfully for this ride. Thanks again for helping support your local drivers!"
+  },
+  "OngoingRideError": {
+    "default": "There are ongoing rides."
+  },
+  "OngoingRequestError": {
+    "default": "There are ongoing requests."
+  },
+  "flux": {
+    "notBusy": "not busy",
+    "lessBusy": "less busy",
+    "normal": "normal",
+    "busy": "busy",
+    "veryBusy": "very busy"
+  },
+  "testOnlyEnglish": "English"
+}

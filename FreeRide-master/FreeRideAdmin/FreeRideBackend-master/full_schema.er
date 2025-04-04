@@ -1,0 +1,906 @@
+title {label: "Circuit ERD", size: "20"}
+
+# Entities
+
+[Admin] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  dob {label: "String"}
+  email {label: "String"}
+  emailCode {label: "Number"}
+  firstName {label: "String"}
+  gender {label: "String"}
+  isAllowedReports {label: "Boolean"}
+  isBanned {label: "Boolean"}
+  isDeleted {label: "Boolean"}
+  isEmailVerified {label: "Boolean"}
+  lastName {label: "String"}
+  locations {label: "Array<ObjectId>"}
+  password {label: "String"}
+  phone {label: "String"}
+  role {label: "Number"}
+  zip {label: "String"}
+
+  userType {label: "Virtual"}
+
+[Advertiser] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  campaigns {label: "Array<ObjectId>"}
+  clientId {label: "String"}
+  createdBy {label: "String"}
+  createdTimestamp {label: "Date"}
+  deletedBy {label: "String"}
+  deletedTimestamp {label: "Date"}
+  isDeleted {label: "Boolean"}
+  name {label: "String"}
+
+[Campaign] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  advertiserId {label: "ObjectId, ref: Advertiser"}
+  campaignEnd {label: "Date"}
+  campaignStart {label: "Date"}
+  createdBy {label: "String"}
+  createdTimestamp {label: "Date"}
+  deletedBy {label: "String"}
+  deletedTimestamp {label: "Date"}
+  featuredMedia {label: "ObjectId, ref: MediaItem"}
+  isDeleted {label: "Boolean"}
+  isEnabled {label: "Boolean"}
+  locations {label: "Array<ObjectId>"}
+  mediaList {label: "Array<ObjectId>"}
+  name {label: "String"}
+
+[Constant] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  key {label: "String"}
+  topic {label: "String"}
+  values {label: "Array<String>"}
+
+[Driver] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  activeLocation {label: "ObjectId, ref: Location"}
+
+  currentLocation {label: "SubSchema<>"}
+  __type {label: "String"}
+  __coordinates {label: "Array<Number>"}
+  ___id {label: "ObjectId"}
+
+  displayName {label: "String"}
+  dob {label: "String"}
+
+  driverRideList {label: "Array<SubSchema>"}
+  __rideId {label: "ObjectId, ref: Ride"}
+  __passengers {label: "Number"}
+  __isADA {label: "Boolean"}
+  __dropoffLatitude {label: "Number"}
+  __dropoffLongitude {label: "Number"}
+
+  email {label: "String"}
+  emailCode {label: "Number"}
+  employeeId {label: "String"}
+  firstName {label: "String"}
+  gender {label: "String"}
+  isADA {label: "Boolean"}
+  isAvailable {label: "Boolean"}
+  isBanned {label: "Boolean"}
+  isDeleted {label: "Boolean"}
+  isEmailVerified {label: "Boolean"}
+  isOnline {label: "Boolean"}
+  isTemporaryPassword {label: "Boolean"}
+  lastActiveLocation {label: "ObjectId, ref: Location"}
+  lastName {label: "String"}
+  locations {label: "Array<ObjectId>"}
+  loggedOutTimestamp {label: "Date"}
+  password {label: "String"}
+  phone {label: "String"}
+
+  profilePicture {label: "SubSchema<>"}
+  __imageUrl {label: "String"}
+
+  socketIds {label: "Array<String>"}
+  status {label: "String"}
+
+  vehicle {label: "SubSchema<>"}
+  __vehicleId {label: "ObjectId, ref: Vehicle"}
+  __vehicleName {label: "String"}
+  __licensePlate {label: "String"}
+
+  __vehicleType {label: "SubSchema<>"}
+  ____id {label: "ObjectId, ref: VehicleType"}
+  ____type {label: "String"}
+  ____profile {label: "String"}
+  ____fallbackProfile {label: "String"}
+
+  __publicId {label: "String"}
+  __passengerCapacity {label: "Number"}
+  __adaCapacity {label: "Number"}
+  __isADAOnly {label: "Boolean"}
+  __service {label: "Object<>"}
+  ____id {label: "ObjectId, ref: Service"}
+  ____key {label: "String"}
+  ____title {label: "String"}
+  __matchingRule {label: "Object<>"}
+  ____id {label: "ObjectId, ref: MatchingRule"}
+  ____key {label: "String"}
+  ____title {label: "String"}
+
+  __zones {label: "Array<SubSchema>"}
+  ____id {label: "ObjectId, ref: Zone"}
+  ____name {label: "String"}
+
+  __jobs {label: "Array<ObjectId>"}
+
+  zip {label: "String"}
+
+  currentLatitude {label: "Virtual"}
+  currentLongitude {label: "Virtual"}
+  userType {label: "Virtual"}
+
+[Event] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  createdTimestamp {label: "Date"}
+  eventData {label: "Mixed"}
+  eventType {label: "String"}
+  sourceId {label: "String"}
+  sourceName {label: "String"}
+  sourceType {label: "String"}
+  targetId {label: "String"}
+  targetName {label: "String"}
+  targetType {label: "String"}
+
+[FixedStop] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  address {label: "String"}
+  businessName {label: "String"}
+  isDeleted {label: "Boolean"}
+  location {label: "ObjectId, ref: Location"}
+
+  mapLocation {label: "SubSchema<>"}
+  __type {label: "String"}
+  __coordinates {label: "Array<Number>"}
+  ___id {label: "ObjectId"}
+
+  name {label: "String"}
+  status {label: "Number"}
+
+  latitude {label: "Virtual"}
+  longitude {label: "Virtual"}
+
+[InspectionForm] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  createdTimestamp {label: "Date"}
+  inspectionType {label: "String"}
+  isDeleted {label: "Boolean"}
+  name {label: "String"}
+  questionList {label: "Array<ObjectId>"}
+
+[InspectionResult] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  inspectionFormId {label: "ObjectId, ref: InspectionForm"}
+  inspectionType {label: "String"}
+  submitTimestamp {label: "Date"}
+  userId {label: "String"}
+  userType {label: "String"}
+  vehicleId {label: "ObjectId, ref: Vehicle"}
+
+[Job] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  active {label: "Boolean"}
+  clientCode {label: "String"}
+  code {label: "String"}
+  isDeleted {label: "Boolean"}
+  location {label: "ObjectId, ref: Location"}
+  locationCode {label: "String"}
+  typeCode {label: "String"}
+
+[Location] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+
+  advertisement {label: "SubSchema<>"}
+  __imageUrl {label: "String"}
+  __url {label: "String"}
+  __ageRestriction {label: "Number"}
+
+
+  alert {label: "SubSchema<>"}
+  __title {label: "String"}
+  __copy {label: "String"}
+
+  arrivedRangeFeet {label: "Number"}
+  blockLiveDriverLocation {label: "Boolean"}
+  breakDurations {label: "Array<Number>"}
+  cancelTime {label: "Number"}
+  closedCopy {label: "String"}
+  concurrentRideLimit {label: "Number"}
+
+  copyData {label: "Array<SubSchema>"}
+  __locale {label: "String"}
+  __localeName {label: "String"}
+  __closedCopy {label: "String"}
+  __suspendedCopy {label: "String"}
+  __suspendedTitle {label: "String"}
+
+  __alert {label: "SubSchema<>"}
+  ____title {label: "String"}
+  ____copy {label: "String"}
+
+
+  __failedAgeRequirementAlert {label: "SubSchema<>"}
+  ____title {label: "String"}
+  ____copy {label: "String"}
+
+  __pwywCopy {label: "String"}
+  __ridesFareCopy {label: "String"}
+
+  cronWorkingSet {label: "String"}
+  driverLocationUpdateInterval {label: "Number"}
+  etaIncreaseLimit {label: "Number"}
+
+  failedAgeRequirementAlert {label: "SubSchema<>"}
+  __title {label: "String"}
+  __copy {label: "String"}
+
+  fixedStopEnabled {label: "Boolean"}
+  fleetEnabled {label: "Boolean"}
+  freeRideAgeRestrictionEnabled {label: "Boolean"}
+
+  freeRideAgeRestrictionInterval {label: "SubSchema<>"}
+  __min {label: "Number"}
+  __max {label: "Number"}
+
+  hasAppService {label: "Boolean"}
+  hideFlux {label: "Boolean"}
+  inactiveCopy {label: "String"}
+  inversionRangeFeet {label: "Number"}
+  isADA {label: "Boolean"}
+  isActive {label: "Boolean"}
+  isAvailablilityOverlayActive {label: "Boolean"}
+  isOpen {label: "Boolean"}
+  isSuspended {label: "Boolean"}
+  isUsingServiceTimes {label: "Boolean"}
+  locationCode {label: "String"}
+  name {label: "String"}
+  organization {label: "String"}
+  passengerLimit {label: "Number"}
+  paymentEnabled {label: "Boolean"}
+
+  paymentInformation {label: "SubSchema<>"}
+  __ridePrice {label: "Number"}
+  __capEnabled {label: "Boolean"}
+  __priceCap {label: "Number"}
+  __pricePerHead {label: "Number"}
+  __currency {label: "String"}
+
+  poolingEnabled {label: "Boolean"}
+  poweredBy {label: "String"}
+  pwywCopy {label: "String"}
+  pwywEnabled {label: "Boolean"}
+
+  pwywInformation {label: "SubSchema<>"}
+  __pwywOptions {label: "Array<Number>"}
+  __maxCustomValue {label: "Number"}
+  __currency {label: "String"}
+
+  queueTimeLimit {label: "Number"}
+  riderAgeRequirement {label: "Number"}
+  riderPickupDirections {label: "Boolean"}
+  ridesFareCopy {label: "String"}
+
+  routingArea {label: "SubSchema<>"}
+  __type {label: "String"}
+  __coordinates {label: "Array<Array>"}
+  ___id {label: "ObjectId"}
+
+  routingAreaUpdatedAt {label: "Date"}
+
+  serviceArea {label: "SubSchema<>"}
+  __type {label: "String"}
+  __coordinates {label: "Array<Array>"}
+  ___id {label: "ObjectId"}
+
+
+  serviceHours {label: "Array<SubSchema>"}
+  __day {label: "String"}
+  __openTime {label: "String"}
+  __closeTime {label: "String"}
+  __closed {label: "Boolean"}
+
+  showAlert {label: "Boolean"}
+  stateCode {label: "String"}
+  suspendedCopy {label: "String"}
+  suspendedTitle {label: "String"}
+  timezone {label: "String"}
+  tipEnabled {label: "Boolean"}
+
+  tipInformation {label: "SubSchema<>"}
+  __tipOptions {label: "Array<Number>"}
+  __maxCustomValue {label: "Number"}
+  __currency {label: "String"}
+
+  unavailabilityReasons {label: "Array<String>"}
+  zones {label: "Array<ObjectId>"}
+
+  pwywBasePrice {label: "Virtual"}
+  tipBaseValue {label: "Virtual"}
+  tipMaxValue {label: "Virtual"}
+
+[MatchingRule] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  description {label: "String"}
+  key {label: "String"}
+  title {label: "String"}
+
+[MediaItem] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  __advertisementId {label: "String"}
+  advertisement {label: "Object<>"}
+  __advertiserId {label: "ObjectId, ref: Advertiser"}
+  __ageRestriction {label: "Number"}
+  __url {label: "String"}
+  createdBy {label: "String"}
+  createdTimestamp {label: "Date"}
+  deletedBy {label: "String"}
+  deletedTimestamp {label: "Date"}
+  filename {label: "String"}
+  filetype {label: "String"}
+  isDeleted {label: "Boolean"}
+  purpose {label: "String"}
+  sizeInKB {label: "Number"}
+  sourceUrl {label: "String"}
+  uploadedBy {label: "String"}
+  uploadedTimestamp {label: "Date"}
+  __height {label: "Number"}
+  __ratio {label: "String"}
+  __width {label: "Number"}
+
+
+[Message] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  createdTimestamp {label: "Date"}
+  message {label: "String"}
+  owner {label: "ObjectId, ref: Rider"}
+  ride {label: "ObjectId, ref: Ride"}
+  sender {label: "String"}
+
+[PaymentPolicies] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  destinationZone {label: "ObjectId, ref: Zones"}
+  location {label: "ObjectId, ref: Locations"}
+  originZone {label: "ObjectId, ref: Zones"}
+  value {label: "String"}
+
+[Promocode] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  code {label: "String"}
+  createdTimestamp {label: "Date"}
+  expiryDate {label: "Date"}
+  isDeleted {label: "Boolean"}
+  isEnabled {label: "Boolean"}
+  location {label: "ObjectId, ref: Location"}
+  name {label: "String"}
+  type {label: "String"}
+  usageLimit {label: "Number"}
+  value {label: "Number"}
+
+[Question] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  createdTimestamp {label: "Date"}
+  isDeleted {label: "Boolean"}
+  optional {label: "Boolean"}
+  questionKey {label: "String"}
+  questionString {label: "String"}
+  responseType {label: "String"}
+
+[Report] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  createdTimestamp {label: "Date"}
+
+  docs {label: "Array<SubSchema>"}
+  __url {label: "String"}
+  __filename {label: "String"}
+
+  feedback {label: "String"}
+  isDeleted {label: "Boolean"}
+  notes {label: "String"}
+  reason {label: "String"}
+
+  reportee {label: "SubSchema<>"}
+  __id {label: "ObjectId"}
+  __userType {label: "String"}
+  __firstName {label: "String"}
+  __lastName {label: "String"}
+
+
+  reporter {label: "SubSchema<>"}
+  __id {label: "ObjectId"}
+  __userType {label: "String"}
+  __firstName {label: "String"}
+  __lastName {label: "String"}
+
+  reporterReason {label: "String"}
+
+  ride {label: "SubSchema<>"}
+  __id {label: "ObjectId"}
+  __location {label: "ObjectId"}
+
+  status {label: "String"}
+
+[Request] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  cancelTimestamp {label: "Date"}
+  cancelledBy {label: "String"}
+  driver {label: "ObjectId, ref: Driver"}
+  dropoffAddress {label: "String"}
+  dropoffFixedStopId {label: "ObjectId, ref: FixedStop"}
+  dropoffFixedStopName {label: "String"}
+  dropoffLatitude {label: "Number"}
+  dropoffLongitude {label: "Number"}
+
+  dropoffZone {label: "SubSchema<>"}
+  __id {label: "ObjectId, ref: Zone"}
+  __name {label: "String"}
+
+  isADA {label: "Boolean"}
+  isDropoffFixedStop {label: "Boolean"}
+  isFixedStop {label: "Boolean"}
+  isPickupFixedStop {label: "Boolean"}
+  lastRetryTimestamp {label: "Date"}
+  location {label: "ObjectId, ref: Location"}
+  passengers {label: "Number"}
+
+  paymentInformation {label: "SubSchema<>"}
+  __paymentIntentId {label: "String"}
+  __clientSecret {label: "String"}
+  __status {label: "String"}
+  __promocodeCode {label: "String"}
+  __promocodeId {label: "ObjectId, ref: Promocode"}
+  __isPromocodeValid {label: "Boolean"}
+  __promocodeInvalidMessage {label: "String"}
+  __promocodeUsed {label: "Boolean"}
+  __promocodeName {label: "String"}
+  __ridePrice {label: "Number"}
+  __pricePerHead {label: "Number"}
+  __amountRefunded {label: "Number"}
+  __totalPrice {label: "Number"}
+  __totalWithoutDiscount {label: "Number"}
+  __discount {label: "Number"}
+  __currency {label: "String"}
+  __pwywOptions {label: "Array<Number>"}
+  __maxCustomValue {label: "Number"}
+
+  pickupAddress {label: "String"}
+  pickupFixedStopId {label: "ObjectId, ref: FixedStop"}
+  pickupFixedStopName {label: "String"}
+  pickupLatitude {label: "Number"}
+  pickupLongitude {label: "Number"}
+
+  pickupZone {label: "SubSchema<>"}
+  __id {label: "ObjectId, ref: Zone"}
+  __name {label: "String"}
+
+  processing {label: "Boolean"}
+  requestMessages {label: "Array<ObjectId>"}
+  requestTimestamp {label: "Date"}
+  ride {label: "ObjectId, ref: Ride"}
+  rider {label: "ObjectId, ref: Rider"}
+  riderFirstName {label: "String"}
+  riderLastName {label: "String"}
+  searchRetries {label: "Number"}
+  status {label: "Number"}
+  waitingPaymentConfirmation {label: "Boolean"}
+
+[Response] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  adminId {label: "String"}
+  driverId {label: "ObjectId, ref: Driver"}
+  inspectionResultId {label: "ObjectId, ref: InspectionResult"}
+  questionId {label: "ObjectId, ref: Question"}
+  questionKey {label: "String"}
+  response {label: "Mixed"}
+  responseType {label: "String"}
+  submitTimestamp {label: "Date"}
+  vehicleId {label: "ObjectId, ref: Vehicle"}
+
+[Rider] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  apple {label: "String"}
+  createdTimestamp {label: "Date"}
+  dob {label: "String"}
+  email {label: "String"}
+  emailCode {label: "Number"}
+  emailVerificationDeadline {label: "Date"}
+  facebook {label: "String"}
+  firstName {label: "String"}
+  gender {label: "String"}
+  google {label: "String"}
+  isBanned {label: "Boolean"}
+  isDeleted {label: "Boolean"}
+  isEmailVerified {label: "Boolean"}
+  isExistingUser {label: "Boolean"}
+  isLegacyUser {label: "Boolean"}
+  isPhoneVerified {label: "Boolean"}
+  lastCancelTimestamp {label: "Date"}
+  lastName {label: "String"}
+  lastSeen {label: "Date"}
+  legacyId {label: "String"}
+  locale {label: "String"}
+  location {label: "ObjectId, ref: Location"}
+  organization {label: "String"}
+  password {label: "String"}
+  phone {label: "String"}
+  phoneCode {label: "Number"}
+  promocode {label: "ObjectId, ref: Promocode"}
+  socketIds {label: "Array<String>"}
+  strikeCount {label: "Number"}
+  stripeCustomerId {label: "String"}
+
+  subscriptions {label: "SubSchema<>"}
+  __receipt {label: "Boolean"}
+
+  tempEmail {label: "String"}
+  zip {label: "String"}
+
+  userType {label: "Virtual"}
+
+[Ride] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  __v {label: "Number"}
+  ackReceived {label: "Boolean"}
+  arrivalTimestamp {label: "Date"}
+  cancelTimestamp {label: "Date"}
+  cancelledBy {label: "String"}
+  createdTimestamp {label: "Date"}
+  driver {label: "ObjectId, ref: Driver"}
+  driverArrivedTimestamp {label: "Date"}
+  driverArrivingTimestamp {label: "Date"}
+  driverDisplayName {label: "String"}
+  driverFirstName {label: "String"}
+  driverInitialLatitude {label: "Number"}
+  driverInitialLongitude {label: "Number"}
+  driverLastName {label: "String"}
+  driverProfilePicture {label: "String"}
+  dropoffAddress {label: "String"}
+  dropoffEta {label: "Number"}
+  dropoffFixedStopId {label: "ObjectId, ref: FixedStop"}
+  dropoffFixedStopName {label: "String"}
+  dropoffLatitude {label: "Number"}
+  dropoffLongitude {label: "Number"}
+  dropoffTimestamp {label: "Date"}
+
+  dropoffZone {label: "SubSchema<>"}
+  __id {label: "ObjectId, ref: Zone"}
+  __name {label: "String"}
+
+  eta {label: "Number"}
+  etaDifference {label: "Number"}
+  etaMinutes {label: "Number"}
+  feedbackForDriver {label: "String"}
+  feedbackForRider {label: "String"}
+  fixedStopsBeforeDropoff {label: "Number"}
+  hailedDropoffLatitude {label: "Number"}
+  hailedDropoffLongitude {label: "Number"}
+  hailedPickupLatitude {label: "Number"}
+  hailedPickupLongitude {label: "Number"}
+  initialDropoffEta {label: "Number"}
+  initialEta {label: "Number"}
+  isADA {label: "Boolean"}
+  isDropoffFixedStop {label: "Boolean"}
+  isFixedStop {label: "Boolean"}
+  isOldRecord {label: "Boolean"}
+  isPickupFixedStop {label: "Boolean"}
+  location {label: "ObjectId, ref: Location"}
+  passengers {label: "Number"}
+  pickupAddress {label: "String"}
+  pickupFixedStopId {label: "ObjectId, ref: FixedStop"}
+  pickupFixedStopName {label: "String"}
+  pickupLatitude {label: "Number"}
+  pickupLongitude {label: "Number"}
+  pickupTimestamp {label: "String"}
+
+  pickupZone {label: "SubSchema<>"}
+  __id {label: "ObjectId, ref: Zone"}
+  __name {label: "String"}
+
+  poolingLocation {label: "Boolean"}
+  poolingTag {label: "Boolean"}
+  ratingForDriver {label: "Number"}
+  ratingForRider {label: "Number"}
+  request {label: "ObjectId, ref: Request"}
+  requestMessages {label: "Array<ObjectId>"}
+  requestTimestamp {label: "Date"}
+  rider {label: "ObjectId, ref: Rider"}
+  riderFirstName {label: "String"}
+  riderLastName {label: "String"}
+  status {label: "Number"}
+  stopsBeforeDropoff {label: "Number"}
+
+  vehicle {label: "SubSchema<>"}
+  __vehicleId {label: "ObjectId, ref: Vehicle"}
+  __vehicleName {label: "String"}
+  __licensePlate {label: "String"}
+
+  __vehicleType {label: "SubSchema<>"}
+  ____id {label: "ObjectId, ref: VehicleType"}
+  ____type {label: "String"}
+  ____profile {label: "String"}
+  ____fallbackProfile {label: "String"}
+
+  __publicId {label: "String"}
+  __service {label: "Object<>"}
+  ____id {label: "ObjectId, ref: Service"}
+  ____key {label: "String"}
+  ____title {label: "String"}
+  __matchingRule {label: "Object<>"}
+  ____id {label: "ObjectId, ref: MatchingRule"}
+  ____key {label: "String"}
+  ____title {label: "String"}
+
+  __zones {label: "Array<SubSchema>"}
+  ____id {label: "ObjectId, ref: Zone"}
+  ____name {label: "String"}
+
+  __jobs {label: "Array<ObjectId>"}
+  __profile {label: "String"}
+
+
+  tips {label: "Virtual"}
+
+[Route] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  active {label: "Boolean"}
+  activeRideId {label: "ObjectId, ref: Ride"}
+  driver {label: "ObjectId, ref: Driver"}
+  firstRequestTimestamp {label: "Date"}
+  lastUpdate {label: "Date"}
+  lock {label: "Boolean"}
+  lockTimestamp {label: "Date"}
+
+  stops {label: "Array<SubSchema>"}
+  __ride {label: "ObjectId, ref: Ride"}
+  __cost {label: "Number"}
+  __stopType {label: "String"}
+  __status {label: "String"}
+  __coordinates {label: "Array<Number>"}
+  __fixedStopId {label: "ObjectId, ref: FixedStop"}
+  __initialEta {label: "Number"}
+  __passengers {label: "Number"}
+  __ADApassengers {label: "Number"}
+
+
+[Service] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  desc {label: "String"}
+  isDeleted {label: "Boolean"}
+  key {label: "String"}
+  title {label: "String"}
+
+[Setting] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  blacklistedEmailDomains {label: "String"}
+  blockNumberPatterns {label: "String"}
+  driverLimitSort {label: "String"}
+  driveriOS {label: "String"}
+  finalDriverLimit {label: "Number"}
+  hideFlux {label: "Boolean"}
+  hideTripAlternativeSurvey {label: "Boolean"}
+  initialDriverLimit {label: "Number"}
+  isDynamicRideSearch {label: "Boolean"}
+  riderAndroid {label: "String"}
+  rideriOS {label: "String"}
+  skipDistanceTSP {label: "Boolean"}
+  smsDisabled {label: "Boolean"}
+
+[SnsArn] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  deviceToken {label: "String"}
+  endpointArn {label: "String"}
+  env {label: "String"}
+  platform {label: "String"}
+  userId {label: "ObjectId"}
+  userType {label: "String"}
+
+[Timeseries] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  measurement {label: "Number"}
+
+  metadata {label: "SubSchema<>"}
+  __location {label: "ObjectId, ref: Location"}
+  __intervals {label: "Mixed"}
+  __instantaneous {label: "Number"}
+  __timestampType {label: "String"}
+  __measurements {label: "Array<Number>"}
+  __rideIds {label: "Array<ObjectId>"}
+
+  timestamp {label: "Date"}
+  type {label: "String"}
+
+[Tip] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  amountRefunded {label: "Number"}
+  balanceTransactionId {label: "String"}
+  clientSecret {label: "String"}
+  createdTimestamp {label: "Date"}
+  currency {label: "String"}
+  driverDisplayName {label: "String"}
+  driverFirstName {label: "String"}
+  driverId {label: "ObjectId, ref: Driver"}
+  driverLastName {label: "String"}
+  fee {label: "Number"}
+  locationId {label: "ObjectId, ref: Location"}
+  locationName {label: "String"}
+  net {label: "Number"}
+  paymentIntentId {label: "String"}
+  rideId {label: "ObjectId, ref: Ride"}
+  ridePassengers {label: "Number"}
+  rideTimestamp {label: "Date"}
+  riderFirstName {label: "String"}
+  riderId {label: "ObjectId, ref: Rider"}
+  riderLastName {label: "String"}
+  status {label: "String"}
+  timezone {label: "String"}
+  total {label: "Number"}
+  waitingPaymentConfirmation {label: "Boolean"}
+
+[VehicleProfile] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  configuration {label: "Mixed"}
+  createdTimestamp {label: "Date"}
+  description {label: "String"}
+  isDeleted {label: "Boolean"}
+  profileId {label: "String"}
+
+[VehicleType] {bgcolor: "#d0e0d0"}
+  *_id {label: "ObjectId"}
+  adaCapacity {label: "Number"}
+  checkInForm {label: "ObjectId, ref: InspectionForm"}
+  checkOutForm {label: "ObjectId, ref: InspectionForm"}
+  fallbackProfile {label: "String"}
+  isDeleted {label: "Boolean"}
+  passengerCapacity {label: "Number"}
+  profile {label: "String"}
+  type {label: "String"}
+
+[Vehicle] {bgcolor: "#fcecec"}
+  *_id {label: "ObjectId"}
+  adaCapacity {label: "Number"}
+  battery {label: "Number"}
+  driverId {label: "ObjectId, ref: Driver"}
+  isADAOnly {label: "Boolean"}
+  isDeleted {label: "Boolean"}
+  isReady {label: "Boolean"}
+  jobs {label: "Array<ObjectId>"}
+  lastCheckIn {label: "Date"}
+  lastCheckOut {label: "Date"}
+  licensePlate {label: "String"}
+  location {label: "ObjectId, ref: Location"}
+  matchingRule {label: "String"}
+  mileage {label: "Number"}
+  name {label: "String"}
+  passengerCapacity {label: "Number"}
+  pluggedIn {label: "Boolean"}
+  publicId {label: "String"}
+  vehicleType {label: "ObjectId, ref: VehicleType"}
+  zones {label: "Array<ObjectId>"}
+
+  matchingRuleInfo {label: "Virtual"}
+
+[Zone] {bgcolor: "#ececfc"}
+  *_id {label: "ObjectId"}
+  code {label: "String"}
+  description {label: "String"}
+  fixedStopEnabled {label: "Boolean"}
+  isDefault {label: "Boolean"}
+  isDeleted {label: "Boolean"}
+  location {label: "ObjectId, ref: Location"}
+  name {label: "String"}
+  paymentEnabled {label: "Boolean"}
+
+  paymentInformation {label: "SubSchema<>"}
+  __ridePrice {label: "Number"}
+  __capEnabled {label: "Boolean"}
+  __priceCap {label: "Number"}
+  __pricePerHead {label: "Number"}
+  __currency {label: "String"}
+
+  polygonFeatureId {label: "String"}
+  poweredBy {label: "String"}
+  pwywEnabled {label: "Boolean"}
+
+  pwywInformation {label: "SubSchema<>"}
+  __pwywOptions {label: "Array<Number>"}
+  __maxCustomValue {label: "Number"}
+  __currency {label: "String"}
+
+
+  serviceArea {label: "SubSchema<>"}
+  __type {label: "String"}
+  __coordinates {label: "Array<Array>"}
+  ___id {label: "ObjectId"}
+
+
+  pwywBasePrice {label: "Virtual"}
+
+
+# Relationships
+
+Campaign *--1 Advertiser {label: "advertiserId"}
+Campaign *--1 MediaItem {label: "featuredMedia"}
+
+Driver *--1 Location {label: "activeLocation"}
+Driver *--1 Ride {label: "driverRideList.rideId"}
+Driver *--1 Location {label: "lastActiveLocation"}
+Driver *--1 Vehicle {label: "vehicle.vehicleId"}
+Driver *--1 VehicleType {label: "vehicle.vehicleType.id"}
+Driver *--1 Service {label: "vehicle.service.id"}
+Driver *--1 MatchingRule {label: "vehicle.matchingRule.id"}
+Driver *--1 Zone {label: "zones.id"}
+
+FixedStop *--1 Location {label: "location"}
+
+InspectionResult *--1 InspectionForm {label: "inspectionFormId"}
+InspectionResult *--1 Vehicle {label: "vehicleId"}
+
+Job *--1 Location {label: "location"}
+
+MediaItem *--1 Advertiser {label: "advertisement.advertiserId"}
+
+Message *--1 Rider {label: "owner"}
+Message *--1 Ride {label: "ride"}
+
+PaymentPolicies *--1 Zones {label: "destinationZone"}
+PaymentPolicies *--1 Locations {label: "location"}
+PaymentPolicies *--1 Zones {label: "originZone"}
+
+Promocode *--1 Location {label: "location"}
+
+Request *--1 Driver {label: "driver"}
+Request *--1 FixedStop {label: "dropoffFixedStopId"}
+Request *--1 Zone {label: "dropoffZone.id"}
+Request *--1 Location {label: "location"}
+Request *--1 Promocode {label: "paymentInformation.promocodeId"}
+Request *--1 FixedStop {label: "pickupFixedStopId"}
+Request *--1 Zone {label: "pickupZone.id"}
+Request *--1 Ride {label: "ride"}
+Request *--1 Rider {label: "rider"}
+
+Response *--1 Driver {label: "driverId"}
+Response *--1 InspectionResult {label: "inspectionResultId"}
+Response *--1 Question {label: "questionId"}
+Response *--1 Vehicle {label: "vehicleId"}
+
+Rider *--1 Location {label: "location"}
+Rider *--1 Promocode {label: "promocode"}
+
+Ride *--1 Driver {label: "driver"}
+Ride *--1 FixedStop {label: "dropoffFixedStopId"}
+Ride *--1 Zone {label: "dropoffZone.id"}
+Ride *--1 Location {label: "location"}
+Ride *--1 FixedStop {label: "pickupFixedStopId"}
+Ride *--1 Zone {label: "pickupZone.id"}
+Ride *--1 Request {label: "request"}
+Ride *--1 Rider {label: "rider"}
+Ride *--1 Vehicle {label: "vehicle.vehicleId"}
+Ride *--1 VehicleType {label: "vehicle.vehicleType.id"}
+Ride *--1 Service {label: "vehicle.service.id"}
+Ride *--1 MatchingRule {label: "vehicle.matchingRule.id"}
+Ride *--1 Zone {label: "zones.id"}
+
+Route *--1 Ride {label: "activeRideId"}
+Route *--1 Driver {label: "driver"}
+Route *--1 Ride {label: "stops.ride"}
+Route *--1 FixedStop {label: "stops.fixedStopId"}
+
+Timeseries *--1 Location {label: "metadata.location"}
+
+Tip *--1 Driver {label: "driverId"}
+Tip *--1 Location {label: "locationId"}
+Tip *--1 Ride {label: "rideId"}
+Tip *--1 Rider {label: "riderId"}
+
+VehicleType *--1 InspectionForm {label: "checkInForm"}
+VehicleType *--1 InspectionForm {label: "checkOutForm"}
+
+Vehicle *--1 Driver {label: "driverId"}
+Vehicle *--1 Location {label: "location"}
+Vehicle *--1 VehicleType {label: "vehicleType"}
+
+Zone *--1 Location {label: "location"}

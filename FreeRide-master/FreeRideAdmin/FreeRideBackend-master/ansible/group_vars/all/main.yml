@@ -1,0 +1,49 @@
+app_name: 'free_ride_backend'
+cron_name: 'free_ride_cron'
+application_user: "{{ app_name }}"
+first_root_user: 'vagrant'
+provisioner_user: 'provisioner'
+users:
+  free_ride_backend:
+    name: "{{ application_user }}"
+    comment: Application user
+    groups: web
+    shell: /bin/bash
+    authorized_commands: []
+    authorized_keys:
+      - "ssh_keys/circuit.pub"
+      - "ssh_keys/marta.pub"
+      - "ssh_keys/pjaneiro.pub"
+      - "ssh_keys/tunde.pub"
+      - "ssh_keys/rui.pub"
+  provisioner:
+    name: "{{ provisioner_user }}"
+    comment: Provision user
+    groups: admin
+    shell: /bin/bash
+    authorized_commands: []
+    authorized_keys:
+      - "ssh_keys/circuit.pub"
+      - "ssh_keys/marta.pub"
+      - "ssh_keys/pjaneiro.pub"
+      - "ssh_keys/tunde.pub"
+      - "ssh_keys/rui.pub"
+service_keys:
+  - "ssh_keys/circuit.pub"
+
+
+# service name for startup system
+pm2_service_name: pm2-{{ provisioner_user }}
+pm2_service_state: stopped
+pm2_user: "{{ provisioner_user }}"
+pm2_max_size: 5M
+pm2_version: 5.3.0
+
+distro_id: Ubuntu
+distro_codename: bionic
+
+nodejs_version: "16.x"
+
+driver_finder_deploy_requires_confirmation: false
+
+admin_location: '/var/www/free_ride_admin/current/build'

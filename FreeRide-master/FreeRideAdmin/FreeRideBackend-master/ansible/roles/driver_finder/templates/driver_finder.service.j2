@@ -1,0 +1,16 @@
+[Unit]
+Description=uWSGI instance running driver finder code
+Wants=network-online.target
+After=network.target
+
+[Service]
+Type=simple
+User={{ provisioner_user }}
+Group=www-data
+WorkingDirectory=/var/task
+ExecStart=/usr/local/bin/uwsgi --ini /var/task/uwsgi.ini
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
