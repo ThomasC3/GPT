@@ -1,0 +1,4 @@
+appId: com.thefreeride.driver.stage
+---
+- assertVisible: "Ride Cancelled"
+- tapOn: "Ok"

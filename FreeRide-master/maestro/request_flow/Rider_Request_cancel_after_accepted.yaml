@@ -1,0 +1,12 @@
+appId: com.thefreeride.rider.stage
+---
+- extendedWaitUntil:
+    visible: "Your driver is on the way"
+    timeout: 10000 #Timeout in milliseconds
+- tapOn: "Manage Ride"
+- waitForAnimationToEnd
+- tapOn: "Cancel Ride"
+- tapOn: "YES, CANCEL"
+- tapOn:
+    id: "com.thefreeride.rider.stage:id/text_name"
+    index: 0

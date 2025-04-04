@@ -1,0 +1,40 @@
+appId: com.thefreeride.driver.stage
+---
+
+# Sign In
+- runFlow:
+    file: Driver_SignIn_should_succeed.yaml
+
+# Multiple login errors  
+#- runFlow:
+#    file: Driver_SignIn_should_fail_with_invalid_email.yaml
+
+# Prepare app for next tests:
+
+- launchApp
+
+- runFlow:
+    file: DriverLogin.yaml
+    env:
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}
+
+- assertVisible:
+    id: "checkOutVehicleButton"
+
+# Check Out
+- runFlow:
+    file: Driver_Vehicle_should_be_able_to_check_out.yaml
+    env:
+      VEHICLE_NAME: ${VEHICLE_NAME}
+
+- runFlow:
+    file: Driver_should_be_able_add_hailed_ride.yaml
+
+# Check In
+- runFlow:
+    file: Driver_Vehicle_should_be_able_to_check_in.yaml
+
+- launchApp
+- runFlow:
+    file: DriverLogout.yaml

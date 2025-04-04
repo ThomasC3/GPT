@@ -1,0 +1,21 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn: "Log In"
+- tapOn:
+    id: "continueWithEmailButton"
+- tapOn:
+    id: "emailTextField"
+- inputText: ${USERNAME}
+- tapOn: "Welcome Back!" #Hide keyboard: clicking on some non-tappable region.
+- tapOn:
+    id: "passwordTextField"
+- inputText: ${PASSWORD}
+- tapOn: "Welcome Back!" #Hide keyboard: clicking on some non-tappable region.
+- tapOn:
+    id: "confirmationButton"
+
+- runFlow:
+    when:
+      visible: "Would you like to save this password in your Keychain to use with apps and websites?"
+    commands:
+      - tapOn: "Not Now"

@@ -1,0 +1,8 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn:
+    id: "button_drawer" #menu_button
+- tapOn:
+    text: "Log Out"
+# Answer dialog:
+- tapOn: "LOG OUT"

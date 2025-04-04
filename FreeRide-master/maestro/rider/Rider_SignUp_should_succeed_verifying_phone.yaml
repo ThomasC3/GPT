@@ -1,0 +1,8 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn:
+    id: "pincodeTextField"
+- inputText: "91919"
+- tapOn: "Confirm Phone" #Hide keyboard: clicking on some non-tappable region.
+- takeScreenshot: VerifyPhoneScreen
+- tapOn: "Verify"

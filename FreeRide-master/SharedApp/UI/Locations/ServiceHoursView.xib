@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="b6y-wx-mQ5" customClass="ServiceHoursView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Us2-WE-uLK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9V-Mn-MuP" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                            <rect key="frame" x="20" y="0.0" width="335" height="36.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DG7-dh-MvC">
+                            <rect key="frame" x="20" y="56.5" width="335" height="203.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="BKB-Wz-8aV">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZY-aa-mt9" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="61.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhc-sB-jn2" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="330.5" y="0.0" width="4.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="CaW-ln-nS7">
+                                    <rect key="frame" x="0.0" y="30.5" width="335" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWy-2H-Z5v" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="64.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1el-Fh-WWK" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="330.5" y="0.0" width="4.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-rh-KHz">
+                                    <rect key="frame" x="0.0" y="61" width="335" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC8-7a-qTP" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q69-oD-0UU" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="330.5" y="0.0" width="4.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="HuR-NK-EkD">
+                                    <rect key="frame" x="0.0" y="91.5" width="335" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAE-dv-mrP" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="72" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-U2-omp" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="330.5" y="0.0" width="4.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="VDe-kQ-Q2e">
+                                    <rect key="frame" x="0.0" y="122" width="335" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7m-qR-OvI" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouc-bM-oT6" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="330.5" y="0.0" width="4.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fd8-2W-N0d">
+                                    <rect key="frame" x="0.0" y="152.5" width="335" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGu-n6-BBc" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fon-Tg-q8e" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="330.5" y="0.0" width="4.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="DjV-wu-0ow">
+                                    <rect key="frame" x="0.0" y="183" width="335" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-9b-RUy" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="57.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouz-eJ-svE" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="330.5" y="0.0" width="4.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="DG7-dh-MvC" firstAttribute="leading" secondItem="Us2-WE-uLK" secondAttribute="leading" constant="20" id="BwG-0C-1Rk"/>
+                        <constraint firstItem="w9V-Mn-MuP" firstAttribute="leading" secondItem="Us2-WE-uLK" secondAttribute="leading" constant="20" id="VTO-9n-FOy"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Us2-WE-uLK" firstAttribute="leading" secondItem="ZJJ-9K-ZgW" secondAttribute="leading" id="P8t-d2-Wo7"/>
+                <constraint firstItem="ZJJ-9K-ZgW" firstAttribute="bottom" secondItem="Us2-WE-uLK" secondAttribute="bottom" id="mB7-Sp-Gr0"/>
+                <constraint firstItem="Us2-WE-uLK" firstAttribute="top" secondItem="ZJJ-9K-ZgW" secondAttribute="top" id="ohj-NA-C26"/>
+                <constraint firstItem="ZJJ-9K-ZgW" firstAttribute="trailing" secondItem="Us2-WE-uLK" secondAttribute="trailing" id="p8k-hw-59M"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ZJJ-9K-ZgW"/>
+            <connections>
+                <outlet property="fridayLabel" destination="g7m-qR-OvI" id="zhE-ux-Omy"/>
+                <outlet property="mondayLabel" destination="vZY-aa-mt9" id="PaK-2B-GJE"/>
+                <outlet property="saturdayLabel" destination="RGu-n6-BBc" id="hyx-47-gwc"/>
+                <outlet property="sundayLabel" destination="YwJ-9b-RUy" id="wkc-XR-Ukp"/>
+                <outlet property="thursdayLabel" destination="KAE-dv-mrP" id="ymC-64-pHW"/>
+                <outlet property="titleLabel" destination="w9V-Mn-MuP" id="KEE-DA-2EI"/>
+                <outlet property="tuesdayLabel" destination="BWy-2H-Z5v" id="JuJ-Xd-t1j"/>
+                <outlet property="wednesdayLabel" destination="dC8-7a-qTP" id="nUl-RZ-1Cc"/>
+                <outletCollection property="dayLabels" destination="vZY-aa-mt9" collectionClass="NSMutableArray" id="V6G-9N-vZl"/>
+                <outletCollection property="hourLabels" destination="Yhc-sB-jn2" collectionClass="NSMutableArray" id="K8H-QH-lFG"/>
+                <outletCollection property="dayLabels" destination="BWy-2H-Z5v" collectionClass="NSMutableArray" id="MZy-XG-EqB"/>
+                <outletCollection property="hourLabels" destination="1el-Fh-WWK" collectionClass="NSMutableArray" id="98x-Ml-cv8"/>
+                <outletCollection property="dayLabels" destination="dC8-7a-qTP" collectionClass="NSMutableArray" id="DFB-VL-wen"/>
+                <outletCollection property="hourLabels" destination="Q69-oD-0UU" collectionClass="NSMutableArray" id="FhB-FO-NXr"/>
+                <outletCollection property="dayLabels" destination="KAE-dv-mrP" collectionClass="NSMutableArray" id="Hat-KZ-QTO"/>
+                <outletCollection property="hourLabels" destination="cdE-U2-omp" collectionClass="NSMutableArray" id="S1y-7m-m72"/>
+                <outletCollection property="dayLabels" destination="g7m-qR-OvI" collectionClass="NSMutableArray" id="ytl-hz-OXS"/>
+                <outletCollection property="hourLabels" destination="Ouc-bM-oT6" collectionClass="NSMutableArray" id="59K-eD-oX9"/>
+                <outletCollection property="dayLabels" destination="RGu-n6-BBc" collectionClass="NSMutableArray" id="clW-tf-SgF"/>
+                <outletCollection property="hourLabels" destination="Fon-Tg-q8e" collectionClass="NSMutableArray" id="LcU-2V-Beo"/>
+                <outletCollection property="dayLabels" destination="YwJ-9b-RUy" collectionClass="NSMutableArray" id="JAo-R4-hmj"/>
+                <outletCollection property="hourLabels" destination="ouz-eJ-svE" collectionClass="NSMutableArray" id="etO-Qx-Xmv"/>
+            </connections>
+            <point key="canvasLocation" x="-100" y="-405.69715142428788"/>
+        </view>
+    </objects>
+</document>

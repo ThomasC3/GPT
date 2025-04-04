@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CurrentRidesTableViewCell" id="yTv-GE-nQl" customClass="CurrentRidesTableViewCell" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yTv-GE-nQl" id="8R5-dW-eYO">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1A-XY-LpR" customClass="CardView" customModule="DriverApp" customModuleProvider="target">
+                        <rect key="frame" x="20" y="10" width="335" height="324.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4wU-vY-ab8">
+                                <rect key="frame" x="20" y="4" width="295" height="300.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jz4-bX-EXj">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="70.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mRU-mV-bJR">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="70.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jsl-ra-mn7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="129" height="70.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49D-tC-niC" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="129" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNv-dq-gwz" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="20.5" width="129" height="50"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pax" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XuT-dm-hJp" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                        <rect key="frame" x="267.5" y="25" width="27.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eQ0-Mu-Udu"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvq-HT-mTK">
+                                        <rect key="frame" x="0.0" y="80.5" width="295" height="1"/>
+                                        <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="rkv-RR-kFy"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uSd-aV-aLa">
+                                        <rect key="frame" x="0.0" y="91.5" width="295" height="45"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_near_me_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="0x9-YT-faE">
+                                                <rect key="frame" x="0.0" y="12.5" width="20" height="20"/>
+                                                <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Jg1-dx-p2C"/>
+                                                    <constraint firstAttribute="width" constant="20" id="djd-pi-QVg"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="5oN-bK-VW6">
+                                                <rect key="frame" x="36" y="4.5" width="259" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsT-lS-Fur" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="259" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXD-WU-ZRl" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="19" width="259" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="cRP-Dn-Lej"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Rb7-Uf-4EP">
+                                        <rect key="frame" x="0.0" y="146.5" width="295" height="45"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_flag_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="Ns6-tq-L1K">
+                                                <rect key="frame" x="0.0" y="12.5" width="20" height="20"/>
+                                                <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Er2-Ke-51j"/>
+                                                    <constraint firstAttribute="width" constant="20" id="bcF-WX-Y3M"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ihe-68-QIs">
+                                                <rect key="frame" x="36" y="4.5" width="259" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropoff" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLO-ov-4iO" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="259" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eks-6P-TrU" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="19" width="259" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="O5t-8S-vAW"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CG-jU-96H">
+                                        <rect key="frame" x="0.0" y="201.5" width="295" height="1"/>
+                                        <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="SOz-th-HpR"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rUD-JT-U0G">
+                                        <rect key="frame" x="0.0" y="212.5" width="295" height="39"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QbD-TS-WnB">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="39"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OS1-G3-j22" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="142.5" height="39"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="39" id="0IL-vq-pMj"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Cancel"/>
+                                                        <connections>
+                                                            <action selector="cancelAction" destination="yTv-GE-nQl" eventType="touchUpInside" id="wfW-oB-Zh6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvl-5K-fT8" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                                        <rect key="frame" x="152.5" y="0.0" width="142.5" height="39"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="39" id="uet-m9-FKr"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Contact"/>
+                                                        <connections>
+                                                            <action selector="contactAction" destination="yTv-GE-nQl" eventType="touchUpInside" id="N8D-cU-yIW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="SKk-CV-REA"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poX-qb-nHE" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="261.5" width="295" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="btu-1c-f4w"/>
+                                        </constraints>
+                                        <state key="normal" title="Pickup"/>
+                                        <connections>
+                                            <action selector="rideUpdateAction" destination="yTv-GE-nQl" eventType="touchUpInside" id="ibo-8l-N6j"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4wU-vY-ab8" secondAttribute="trailing" constant="20" id="Txj-X9-okU"/>
+                            <constraint firstItem="4wU-vY-ab8" firstAttribute="top" secondItem="L1A-XY-LpR" secondAttribute="top" constant="4" id="hc2-Zh-khS"/>
+                            <constraint firstAttribute="bottom" secondItem="4wU-vY-ab8" secondAttribute="bottom" constant="20" id="qCI-Ht-4l9"/>
+                            <constraint firstItem="4wU-vY-ab8" firstAttribute="leading" secondItem="L1A-XY-LpR" secondAttribute="leading" constant="20" id="zjL-0z-fVu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="L1A-XY-LpR" secondAttribute="trailing" constant="20" id="AZV-mS-xnT"/>
+                    <constraint firstItem="L1A-XY-LpR" firstAttribute="leading" secondItem="8R5-dW-eYO" secondAttribute="leading" constant="20" id="Lnt-pM-FOI"/>
+                    <constraint firstAttribute="bottom" secondItem="L1A-XY-LpR" secondAttribute="bottom" constant="10" id="kIl-H2-6DH"/>
+                    <constraint firstItem="L1A-XY-LpR" firstAttribute="top" secondItem="8R5-dW-eYO" secondAttribute="top" constant="10" id="nO5-dF-VMS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cancelButton" destination="OS1-G3-j22" id="gjU-me-ZvF"/>
+                <outlet property="contactButton" destination="Rvl-5K-fT8" id="dmJ-oa-hJQ"/>
+                <outlet property="contactCancelStackHeight" destination="SKk-CV-REA" id="Qt6-yf-Nmv"/>
+                <outlet property="contactCancelStackView" destination="QbD-TS-WnB" id="9uY-Ou-k9s"/>
+                <outlet property="dividerView" destination="Xvq-HT-mTK" id="72L-Vz-zhd"/>
+                <outlet property="dropoffLabel" destination="Eks-6P-TrU" id="A6C-Z3-yx4"/>
+                <outlet property="dropoffStackView" destination="Rb7-Uf-4EP" id="v3D-YN-apB"/>
+                <outlet property="etaLabel" destination="bNv-dq-gwz" id="mLH-bh-oKn"/>
+                <outlet property="nameLabel" destination="49D-tC-niC" id="SNw-Nv-jdQ"/>
+                <outlet property="paxLabel" destination="XuT-dm-hJp" id="Ijl-GT-cIz"/>
+                <outlet property="pickupLabel" destination="LXD-WU-ZRl" id="E8B-B0-hhC"/>
+                <outlet property="pickupStackView" destination="uSd-aV-aLa" id="fup-y1-Muu"/>
+                <outlet property="rideUpdateButton" destination="poX-qb-nHE" id="Qhg-9Y-LPJ"/>
+                <outletCollection property="subtitleLabels" destination="ZsT-lS-Fur" collectionClass="NSMutableArray" id="XnI-QX-Sif"/>
+                <outletCollection property="subtitleLabels" destination="WLO-ov-4iO" collectionClass="NSMutableArray" id="mbf-Uy-Tae"/>
+            </connections>
+            <point key="canvasLocation" x="120.8" y="138.98050974512745"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="round_flag_black_24pt" width="24" height="24"/>
+        <image name="round_near_me_black_24pt" width="24" height="24"/>
+    </resources>
+</document>

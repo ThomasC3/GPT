@@ -1,0 +1,9 @@
+appId: $appId
+---
+# Set pickup with current location
+- tapOn: "Pickup Address"
+- tapOn: "Clear text"
+- hideKeyboard
+- tapOn:
+    id: "text_address"
+    index: 0

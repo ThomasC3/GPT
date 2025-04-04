@@ -1,0 +1,31 @@
+appId: com.thefreeride.rider.stage
+---
+- runFlow: Rider_set_pickup_with_current_location.yaml
+
+- runFlow:
+    file: Rider_set_dropoff_with_first_search_result.yaml
+    env:
+      DROPOFF: ${DROPOFF}
+
+- tapOn: "Confirm Route"
+
+- scrollUntilVisible:
+    element: "Ride Value"
+
+- runFlow:
+    when:
+      visible: "Add Payment Method"
+    commands:
+        - tapOn: "Add Payment Method"
+        - runFlow: Rider_Request_add_payment_method.yaml
+
+- runFlow:
+    when:
+      visible: "Request"
+    commands:
+        - assertVisible: ${COST_PREVIEW_COPY}
+        - tapOn: "Request"
+
+- assertVisible: "Request confirmation"
+- assertVisible: ${COST_CONFIRMATION_COPY}
+- tapOn: "Confirm"

@@ -1,0 +1,12 @@
+appId: $appId
+---
+# Set dropoff with first result of ${DROPOFF}
+- tapOn: "Where to?"
+- tapOn:
+    id: "input_dropoff_edit_text"
+- inputText:
+    text: ${DROPOFF}
+- hideKeyboard
+- tapOn:
+    id: "text_address"
+    index: 0

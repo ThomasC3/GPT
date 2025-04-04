@@ -1,0 +1,33 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp
+- runFlow:
+    file: RiderLogin.yaml
+    env:
+      USERNAME: "invalid@ridecircuit.com"
+      PASSWORD: "123"
+- assertVisible: "The email or password you entered is incorrect."
+
+- launchApp
+- runFlow:
+    file: RiderLogin.yaml
+    env:
+      USERNAME: ""
+      PASSWORD: "123"
+- assertVisible: "Email is required"
+
+- launchApp
+- runFlow:
+    file: RiderLogin.yaml
+    env:
+      USERNAME: "invalid@ridecircuit.com"
+      PASSWORD: ""
+- assertVisible: "Password is required"
+
+- launchApp
+- runFlow:
+    file: RiderLogin.yaml
+    env:
+      USERNAME: "@"
+      PASSWORD: "123"
+- assertVisible: "Email address is not valid"

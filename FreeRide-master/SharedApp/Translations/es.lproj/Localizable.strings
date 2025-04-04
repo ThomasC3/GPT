@@ -1,0 +1,529 @@
+// MENU
+"menu_ride" = "Viaje";
+"menu_ride_history" = "Historial De Viajes";
+"menu_payments" = "Pagos";
+"menu_locations" = "Ubicaciones";
+"menu_edit_profile" = "Editar Perfil";
+"menu_faq" = "Preguntas Frecuentes";
+"menu_more_options" = "Mas Opciones";
+
+
+// LOGIN & SIGNUP
+"launch_login_to_continue" = "Iniciar sesión para continuar usando Circuit";
+"launch_signup_with_circuit" = "Registrate con Circuit";
+"launch_walkthrough_title_1" = "Montar Es Mejor Que Manejar";//[a][b]
+"launch_walkthrough_subtitle_1" = "Deshazte del auto y únete a una comunidad de pasajeros que han encontrado una manera más relajada de moverse.";
+"launch_walkthrough_title_2" = "Energiza tu viaje";
+"launch_walkthrough_subtitle_2" = "Solicita y disfruta viajes con conductores locales traídos a ti por ciudades y marcas con visión de futuro.";
+"launch_walkthrough_title_3" = "Haz Más Con Menos Emisiones";
+"launch_walkthrough_subtitle_3" = "Estamos apoyando a las comunidades ofreciendo movilidad segura y confiable con una flotilla de carros 100% eléctricos.";
+
+//SERVICE
+"service_is" = "El servicio";
+
+// USER
+"user_first_name" = "Nombre";
+"user_last_name" = "Apellido";
+"user_email" = "Correo Electrónico";
+"user_password" = "Contraseña";
+"user_home_zip_code" = "Código Postal";
+"user_gender" = "Género";
+"user_country_code" = "Código de País";
+"user_dob" = "Fecha De Nacimiento";
+"user_mobile_phone" = "Número De Teléfono Móvil";
+"user_signup" = "Regístrate";
+"user_invalid_registration" = "Registro Inválido";
+"user_invalid_registration_info" = "Por favor asegurar de completar todos los campos de registro adecuados.";
+"user_change_password" = "Cambiar Contraseña";
+"user_change_phone" = "Cambiar Número De Teléfono";
+"user_edit_profile" = "Editar Perfil";
+"user_updates_saved" = "Actualizaciones Guardadas";
+"user_updates_saved_info" = "La información de tu perfil ha sido actualizado con éxito.";
+"user_verify_email" = "Verificar Correo Electrónico";
+"user_verify_phone" = "Verificar Teléfono";
+"user_almost_there" = "¡Casi llegamos!";
+"user_almost_there_info" = "Solo necesitamos confirmar tu número de teléfono.";
+"user_delete_account" = "Borrar Tu Cuenta";
+"user_delete_account_description" = "Su cuenta se eliminará de forma permanente. No podrá volver a iniciar sesión y solicitar viajes con esta cuenta.";
+"user_gender_woman" = "Mujer";
+"user_gender_man" = "Hombre";
+"user_gender_trans_woman" = "Mujer transgénero";
+"user_gender_trans_man" = "Hombre transgénero";
+"user_gender_non_binary" = "No binario";
+"user_gender_agender" = "Agender/No me identifico con ningún género";
+"user_gender_not_listed" = "Género no listado";
+"user_gender_not_state" = "Prefiero no decir";
+"user_i_agree" = "Acepto";
+"user_optional" = "Opcional";
+
+// SETTINGS
+"settings_title" = "Configuraciones";
+"settings_terms" = "Términos y Condiciones";
+"settings_privacy" = "Política de Privacidad";
+"settings_conduct" = "Código de Conducta";
+"settings_accessibility" = "Accesibilidad";
+"settings_logout" = "Cerrar Sesión";
+"settings_ready_logout" = "¿Listo para cerrar sesión?";
+"settings_ready_logout_info" = "¿Estás seguro de que quieres cerrar sesión?";
+"settings_turned_on" = "Encendido";
+"settings_turned_off" = "Apagado";
+"settings_child_seat" = "Child Seat";
+"settings_wheelchair" = "Wheelchair";
+"accessibility_not_available" = "La accesibilidad no está disponible en su ubicación. Esperamos poner a su disposición las opciones de accesibilidad del circuito muy pronto.";
+"settings_enable_location_permissions" = "Activar los servicios de ubicación";
+"settings_enable_location_permissions_info" = "Por favor activa los servicios de ubicación en la Configuración que se encuentra en tu teléfono para Circuit. Esto permitirá que Circuit use tu ubicación actual como dirección.";
+"settings_faq_title" = "Preguntas Frecuentes";
+"settings_pwyw_title" = "";
+"settings_contact" = "Contactános";
+"settings_about" = "Aprende Más Sobre Nosotros";
+"settings_advertise" = "Anúnciate Con Circuit";
+"settings_support" = "Talk To Us";
+
+// RIDE
+"ride_contact_driver" = "Contactános";
+"ride_cancel_ride" = "Cancelar Viaje";
+"ride_cancel_request" = "Cancelar Pedido";
+"ride_pickup_address" = "Dirección de Partida";
+"ride_dropoff_address" = "Dirección de Destino";
+"ride_cancelled" = "Viaje Cancelado";
+"ride_cancelled_info" = "El conductor ha cancelado el viaje.";
+"ride_unable_to_locate" = "No Pudimos Localizar";
+"ride_unable_to_locate_pickup_info" = "No se pudo encontrar la dirección ingresada para recogerte. Por favor indique una dirección diferente.";
+"ride_unable_to_locate_dropoff_info" = "No se pudo encontrar la dirección ingresada para tu destino. Por favor indique una dirección diferente.";
+"ride_address_missing" = "Dirección Incompleta";
+"ride_address_missing_info" = "Por favor asegúrate de completar las ubicaciones de recogida y destino. ";
+"ride_too_soon" = "¡Muy pronto!";
+"ride_yes_cancel" = "Sí, Cancelar";
+"ride_cancel_request_info" = "Si cancelas y deseas solicitar otra vez, perderás tu lugar en la fila";
+"ride_Ill_wait" = "No, Mejor Esperaré";
+"ride_cancel_reason" = "Viaje Cancelado. Por favor ayúdanos a mejorar,\ncuéntanos el motivo de la cancelación:";
+"ride_driver_on_the_way" = "Dirigiéndose hacia usted";
+"ride_driver_on_the_way_info" = "Ya estás conectado con un conductor. Si cancelas ahora tendrás que esperar tres minutos antes de poder solicitar otro viaje";
+"ride_no_drivers" = "No Hay Conductores Disponibles.";
+"ride_no_drivers_info" = "Todos los conductores están ocupados con otros viajes. Por favor solicitar de nuevo.";
+"ride_request_cancelled" = "Solicitud de Viaje Cancelada";
+"ride_place_is_empty" = "Lugar está vacio";
+"ride_tap_pin_to_set" = "Toque el marcador nuevamente para establecer la ubicación";
+"ride_tap_pin_to_change" = "Toque un marcador para cambiar la ubicación.";
+"ride_number_of_riders" = "¿Cuántos pasajeros tienes para este viaje?";
+"ride_request" = "Solicitar";
+"ride_need_accessibility" = "Acceso Para Silla De Ruedas";
+"ride_calculating_price" = "Calculando el precio de tu viaje ...";
+"ride_searching" = "Buscando...";
+"ride_scanning_for_driver" = "Buscando un conductor disponible, esto puede tardar unos minutos.";
+"ride_still_looking" = "Seguimos buscando...";
+"ride_circuits_busy" = "Los circuitos están ocupados, espere mientras continuamos la búsqueda.";
+"ride_pooled_ride" = "Viaje Compartido";
+"ride_driver_arrived" = "Aquí para recoger";
+"ride_arriving_in" = "Llegando en";
+"ride_connecting_driver" = "Conectándote con un conductor...";
+"ride_calculating_arrival" = "Calculando la hora de llegada ...";
+"ride_wiring_route" = "Generando tu ruta....";
+"ride_is_finishing_ride" = "Terminando otro viaje";
+"ride_driver_is_on_the_way" = "Tu conductor está en camino";
+"ride_be_ready_for_pickup" = "Por favor, esté preparado cuando llegue.";
+"ride_your_ride_is_in_queue" = "Tu viaje está en la cola";
+"ride_your_driver_has" = "Tu conductor tiene";
+"ride_before_your_pickup" = "antes de tu recogida";
+"ride_driver_arrived" = "Tu conductor ha llegado";
+"ride_driver_arrived_now" = "Por favor, reúnase con ellos ahora.";
+"ride_driver_arrive_within" = "Por favor, reúnase con ellos en";
+"ride_ride_confirmation" = "Confirmación de Viaje";
+"ride_rating_reason" = "Lamentamos que no estuviste satisfecho con tu viaje.\n¿Puedes decirnos el motivo?";
+"ride_rating_submitted" = "Calificación Enviada!";
+"ride_your_driver" = "Tu conductor";
+"ride_select_pickup_stop" = "Selecciona tu punto de partida";
+"ride_select_dropoff_stop" = "Selecciona tu punto de destino";
+"ride_select_this_stop" = "Selecciona este punto";
+"ride_go_to_stop_short" = "Su conductor lo recogerá en la ubicación seleccionada.";
+"ride_go_to_stop" = "Su conductor lo recogerá en la ubicación seleccionada. Por favor asegúrese de estar allí cuando llegue el conductor.";
+"ride_select_another_stop" = "Selecciona otro punto";
+"ride_pickup_at" = "Recoger en";
+"ride_dropoff_at" = "Dejar en";
+"ride_driver_pickup" = "Su conductor lo recogerá en la ubicación seleccionada. ¿Necesita un punto de recogida diferente? Ingrese otra ubicación arriba o toque 'Mover Marcador'";
+"ride_driver_dropoff" = "Su conductor lo dejará en la ubicación seleccionada. Para buscar otras opciones por favor ingrese una ubicación diferente arriba o toque 'Mover Marcador'";
+"ride_driver_pickup_fs" = "Este es el punto de recogida más cercano. ¿Necesita un punto de recogida diferente? Ingrese otra ubicación arriba o toque 'Mover Marcador'";
+"ride_driver_dropoff_fs" = "Este es el punto más cercano a su destino final. Para buscar otras opciones cercanas por favor ingrese una ubicación diferente arriba o toque 'Mover Marcador'";
+"ride_driver_pickup_fs_simple" = "Este es el punto de recogida más cercano.";
+"ride_driver_dropoff_fs_simple" = "Este es el punto más cercano a su destino final.";
+"ride_driver_pickup_simple" = "Su conductor lo recogerá en la ubicación seleccionada.";
+"ride_driver_dropoff_simple" = "Su conductor lo dejará en la ubicación seleccionada.";
+"ride_fetching_stops" = "Consiguiendo puntos disponibles...";
+"ride_request_not_valid" = "¡Uh-oh! Asegúrese de haber seleccionado todos los detalles de su viaje primero";
+"ride_from" = "Viajar desde";
+"ride_to" = "a";
+"ride_with" = "con";
+"ride_passenger" = "pasajero";
+"ride_tap_to_rate" = "Toca para calificar tu viaje";
+"ride_tap_to_tip" = "Toca para darle propina a tu conductor";
+"ride_move_pin" = "Mover marcador";
+"ride_review_body" = "¿Cómo nos fue en tu último viaje? Su calificación nos ayuda a mejorar el servicio.";
+"ride_review_btn" = "Califica mi último viaje";
+"ride_eta_info" = "Se estima que su conductor llegará en";
+"ride_eta_less_one_minute" = "menos de un minuto";
+"ride_eta_one_minute" = "un minuto";
+"ride_eta_minutes" = "minutos";
+"ride_pooling_tag" = "Este es un viaje compartido con otros pasajeros";
+"rider_why_can_wait_times_vary" = "Donde esta mi conductor?";
+"rider_route_is_optimized" = "Las rutas de los conductores se optimizan para garantizar la eficiencia de todos los viajes en la cola, teniendo en cuenta la distancia, la cantidad de paradas y el tiempo de espera.";
+"rider_keep_eye_on_app" = "A medida que se agregan, completan y cancelan viajes, los cambios en la cola se reflejan en la hora de llegada del conductor y la cantidad de paradas antes de la recogida.";
+
+
+// REQUEST FLOW
+"passengers" = "Pasajeros";
+"pwyw_contribution" = "Contribución";
+"accessibility" = "Accesibilidad";
+"ride_request_ride_value" = "Valor del viaje";
+"ride_request_where_to" = "¿A donde?";
+"ride_request_confirm_route" = "Confirmar ruta";
+
+// QUOTE
+"good_news_age_restriction" = "¡Buenas noticias! Su grupo de edad está recibiendo viajes gratis.";
+"your_ride_will_be_free" = "Tu viaje será gratis"; //to be reviewed
+"quote_more_info" = "Más Info";
+
+
+// LOCATIONS
+"locations_loc_invalid" = "Ubicación No Es Válida";
+"locations_loc_invalid_info" = "Por Favor asegúrate de haber seleccionado una ubicación.";
+"locations_open" = "Abierto";
+"locations_closed" = "Cerrado";
+
+
+// PAYMENTS
+"payments_payment_method" = "Método de Pago";
+"payments_promocode" = "Código Promocional";
+"payments_no_payment_method" = "no has agregado método de pago";
+"payments_ending_in" = "terminando en";
+"payments_no_pc_added" = "No has agregado un código promocional";
+"payments_remove_payment" = "Sí, elimina mi método de pago";
+"payments_this_will_delete_pm" = "Esto eliminará tu método de pago pero tienes que agregar uno nuevo para solicitar viajes pagados en el futuro.";
+"payments_remove_promocode" = "Sí, elimina mi código promocional";
+"payments_this_will_remove_pc" = "Esto eliminará tu código promocional";
+"payments_save_card" = "Guardar Tarjeta";
+"payments_add_pm" = "Agregar Método de Pago";
+"payments_save_pc" = "Guardar Código Promocional";
+"payments_add_pc" = "Agregar Código Promocional";
+"payments_add_card" = "Agregar Tarjeta";
+"payments_payment_error" = "Error de Pago";
+"payments_payment_error_info" = "Hubo un problema con tu método de pago. Por favor intenta otra vez o agrega uno nuevo.";
+"payments_payment_not_completed" = "Pago No Completado";
+"payments_pc_off" = "de descuento"; //20% Off
+"payments_pc_free_rides" = "Viajes Gratis";
+"payments_pc_invalid" = "Código Promocional No Es Válido";
+"payments_pc_of" = "de"; //4 of 6 usages left
+"payments_pc_usages_left" = "usos quedan";
+"payments_pc_valid_until" = "Válido hasta";
+"payments_total_ride_cost" = "Costo total del viaje";
+"payments_including" = "incluyendo";
+"payments_of_discount" = "de descuento";
+"payments_using" = "utilizando";
+"payments_quote_info" = ". Solo se te cobrará cuando te recojan.\n\nDespués de la confirmación, el valor total del viaje será preautorizado, lo verá reflejado en su cuenta de pago.";
+"payments_title_payment_required" = "Falta el método de pago";
+"payments_title_info_required" = "Esta ubicación requiere que los usuarios agreguen un método de pago para solicitar un viaje";
+
+
+//PWYW
+"pwyw_invalid_value" = "¡Ya casi estamos! Parece que el valor ingresado es muy bajo o muy alto. Por favor inténtalo de nuevo.";
+"tip_invalid" = "Propina no válida";
+"tip_invalid_value" = "¡Ya casi estamos! Parece que la propina ingresada es muy baja o muy alta. Por favor inténtalo de nuevo.";
+"pwyw_quote_info" = "¡Buenas noticias! El pago mínimo se ha reducido mediante un código promocional";
+"pwyw_more" = "Otro";
+"pwyw_payment" = "¿Quieres contribuir? Juntos, todos podemos hacer más.";
+"pwyw_enter_payment" = "Ingresa lo que quieres pagar aquí";
+"pwyw_custom_payment" = "Eso es muy generoso";
+"pwyw_thank_you" = "¡Gracias por apoyar a Circuit!";
+"pwyw_more_info" = "¿Necesitas más información?";
+"pwyw_next_time" = "No\nahora";
+
+
+//DRIVER TIPS
+"driver_tip_title" = "Agrega una propina para tu conductor";
+"driver_tip_no_tip" = "Más\ntarde";
+
+
+//OPTIONS
+"ride_cancel_reason_1" = "Ya no necesito el viaje";
+"ride_cancel_reason_2" = "Conductor demasiado lejos";
+"ride_cancel_reason_3" = "Mi aplicación tenía un problema";
+"ride_cancel_reason_4" = "No puedo ver a mi conductor en el mapa";
+"ride_cancel_reason_5" = "Tengo un problema con el conductor";
+"ride_rating_reason_1" = "Hubo un problema con el conductor";
+"ride_rating_reason_2" = "Hubo un problema con otro pasajero";
+"ride_rating_reason_3" = "No recibí este viaje";
+"ride_rating_reason_4" = "Tuve problemas con la aplicación ";
+"searching_first_period_1" = "Montar es mejor que manejar";
+"searching_first_period_2" = "¿Quién hubiera sabido que los viajes ecológicos serían tan populares?";
+"searching_first_period_3" = "Divertido, Eléctrico y Conveniente";
+"searching_first_period_4" = "Escaneando para conductores disponibles...";
+"searching_first_period_5" = "¡Gracias por elegir Circuit!";
+"searching_first_period_6" = "¿Sabías que nuestros autos son 100% eléctricos?";
+"searching_first_period_7" = "Vehículos eléctricos = Aire más limpio";
+"searching_second_period_1" = "¡Agradecemos tu paciencia!";
+"searching_second_period_2" = "Gracias por hacer la diferencia 🌱";
+"searching_second_period_3" = "No hemos dejado de buscar";
+"searching_second_period_4" = "Nuestros autos sólo pueden ir tan rápido";
+"searching_second_period_5" = "¡No te preocupes, no nos quedamos sin gasolina!";
+"searching_second_period_6" = "Parece que solicitaste en un tiempo muy ocupado";
+"searching_second_period_7" = "Si el problema es el estacionamiento, nosotros somos la solución";
+
+
+// GENERAL
+"general_no" = "No";
+"general_yes" = "Sí";
+"general_cancel" = "Cancelar";
+"general_edit" = "Editar";
+"general_remove" = "Eliminar";
+"general_next" = "Siguiente";//[h][i][j]
+"general_save" = "Guardar";
+"general_ok" = "Ok";
+"general_are_you_sure" = "¿Estás seguro?";
+"general_confirm" = "Confirmar";
+"general_done" = "Done";
+"general_invalid_input" = "Entrada no válida";
+
+
+// MESSAGES
+"messages_me" = "Yo";
+"messages_I_understand" = "Entiendo";
+"messages_driver_comm" = "Comunicación Con Conductor";
+"messages_driver_comm_info" = "Los conductores no pueden responder a mensajes de texto, pero pueden llamar si hay alguna pregunta o problema que necesitan responder.";
+"messages_request_call" = "Solicitar llamada";
+"messages_request_call_info" = "¿Deseas solicitar que el conductor te llame?";
+
+//ADA/WAV
+"accessibility_toggle_title" = "Activar o desactivar las solicitudes de accesibilidad para sillas de ruedas";
+"accessibility_toggle_title_request" = "¿Necesita acceso para sillas de ruedas?";
+"accessibility_want_to_hide_accessibility_options_message" = "Quieres ocultar las opciones de accesibilidad a partir de ahora? Puedes volver a activarlos en el menú lateral.";
+"accessibility_show_option_on_request_negative_option" = "No, muéstrales";
+"accessibility_show_option_on_request_positive_option" = "Sí, escóndelas";
+"wav_button_on" = "Solicitud de acceso para sillas de ruedas";
+"wav_button_off" = "No solicitar acceso para silla de ruedas";
+"wav_request_toggle_title" = "Opción WAV bajo pedido";
+"wav_toggle_info" = "Controle el acceso WAV para solicitudes de viajes individuales, active o desactive el botón de arriba para ocultar o mostrar el botón de acceso para sillas de ruedas durante el proceso de solicitud";
+
+//EMAIL VERIFICATION
+"email_deadline_warning_title" = "Verifique Su Correo Electrónico";
+"email_pre_deadline_warning_btn" = "Verificar Correo Electrónico";
+"email_pre_deadline_warning_body_1" = "Su dirección registrada es";
+"email_pre_deadline_warning_body_2" = "Confirme que esta es la dirección de correo electrónico correcta haciendo clic a continuación. Tienes";
+"email_pre_deadline_warning_body_3" = "día";
+"email_pre_deadline_warning_body_4" = " para verificar tu cuenta.";
+"email_post_deadline_warning_body_1" = "Antes de que puedas reservar tu próximo viaje, necesitamos que verifiques tu cuenta de Circuit. Su dirección registrada es";
+"email_post_deadline_warning_body_2" = "Confirme que esta es la dirección de correo electrónico correcta haciendo clic a continuación.";
+"email_confirm_email_title" = "Confirmar Correo Electrónico";
+"email_confirm_email_desc" = "Verifique la dirección de correo electrónico a continuación tocando Verificar correo electrónico. Si desea actualizar su dirección de correo electrónico, ingrésela a continuación y luego toque Verificar correo electrónico. Si ingresa una dirección de correo electrónico diferente, deberá ingresar su contraseña en la siguiente página.";
+"email_confirm_pwd_title" = "Introducir la Contraseña";
+"email_confirm_pwd_desc" = "Ingrese su contraseña para que podamos confirmar que realmente es usted. Luego toque Verificar correo electrónico para continuar con el proceso de verificación.";
+"email_confirm_pin_title" = "Ingrese el Código PIN";
+"email_confirm_pin_desc" = "Le enviamos un código PIN a su dirección de correo electrónico. Ingrese el código de 4 dígitos en el cuadro a continuación y haga clic en verificar. Si no ve el correo electrónico, verifique su carpeta de correo no deseado. Si aún no ve el correo electrónico, comuníquese con soporte.";
+
+//ACCESSIBILITY
+"accessibility_text_add_promo_code" = "Añadir promo code";
+"accessibility_text_add_payment_method" = "Añadir payment method";
+"accessibility_text_remove_promo_code" = "Eliminar código promocional";
+"accessibility_text_remove_payment_method" = "Eliminar método de pago";
+"accessibility_text_edit_promo_code" = "Editar código promocional";
+"accessibility_text_edit_payment_method" = "Editar método de pago";
+
+//SURVEYS
+"Answer" = "Respuesta";
+"Survey" = "Encuesta";
+"Submit" = "Enviar";
+// Survey: How would you have made this trip?
+"If this service wasn’t available, how would you have made this trip?" = "Si este servicio no estuviera disponible, ¿cómo hubieras realizado este viaje?";
+"Bike or scooter" = "Bicicleta o scooter";
+"Drive alone" = "Conducir solo";
+"Get dropped off or carpool" = "Reciba un viaje o comparta el viaje";
+"I would not have made the trip" = "No hubiera hecho el viaje";
+"Public Transit" = "Tránsito público";
+"Ridehail (Uber/Lyft) or Taxi" = "Transporte privado (Uber/Lyft) o taxi";
+"Walk" = "Caminar";
+"Other" = "Otra";
+
+// Apple Sign-in errors
+"Sign in was canceled." = "Se canceló el inicio de sesión.";
+"We couldn't process the response from Apple." = "No pudimos procesar la respuesta de Apple.";
+"Sign in request couldn't be handled at this time." = "No se pudo procesar la solicitud de inicio de sesión en este momento.";
+"Sign in request failed. Please check your internet connection and try again." = "Falló la solicitud de inicio de sesión. Por favor, verifica tu conexión a internet e inténtalo de nuevo.";
+"Sign in requires interaction. Please try again and follow the prompts." = "El inicio de sesión requiere interacción. Por favor, inténtalo de nuevo y sigue las indicaciones.";
+"An unexpected error occurred with Apple Sign In. Please try again later." = "Ocurrió un error inesperado con el inicio de sesión de Apple. Por favor, inténtalo más tarde.";
+"An error occurred during Apple Sign In" = "Ocurrió un error durante el inicio de sesión de Apple";
+
+//ACTION TITLEs
+"Signing in" = "Iniciando sesión";
+"Recovering password" = "Recuperando contraseña";
+"Verifying phone number" = "Verificando número de teléfono";
+"Verifying email" = "Verificando correo electrónico";
+"Changing password" = "Cambiando contraseña";
+"Updating user" = "Actualizando usuario";
+"Updating driver" = "Actualizando conductor";
+"Fetching user" = "Obteniendo usuario";
+"Fetching settings" = "Obteniendo configuraciones";
+"Fetching location" = "Obteniendo ubicación";
+"Fetching locations" = "Obteniendo ubicaciones";
+"Fetching rides" = "Obteniendo viajes";
+"Rating ride" = "Calificando viaje";
+"Reporting ride" = "Reportando viaje";
+"Fetching ride polyline" = "Obteniendo polilínea del viaje";
+"Registering for push notifications" = "Registrando para notificaciones push";
+"Unregistering for push notifications" = "Cancelando registro para notificaciones push";
+"Signing out" = "Cerrando sesión";
+"Registering user" = "Registrando usuario";
+"Fetching address" = "Obteniendo dirección";
+"Requesting ride" = "Solicitando viaje";
+"Canceling ride request" = "Cancelando solicitud de viaje";
+"Confirming ride request" = "Confirmando solicitud de viaje";
+"Validating ride request" = "Validando solicitud de viaje";
+"Fetching ride requests" = "Obteniendo solicitudes de viaje";
+"Fetching rides" = "Obteniendo viajes";
+"Fetching last ride" = "Obteniendo último viaje";
+"Fetching current ride" = "Obteniendo viaje actual";
+"Fetching payment settings" = "Obteniendo configuraciones de pago";
+"Setting up payment method" = "Configurando método de pago";
+"Removing payment method" = "Eliminando método de pago";
+"Creating payment intent" = "Creando intención de pago";
+"Creating payment capture" = "Creando captura de pago";
+"Fetching quote" = "Obteniendo cotización";
+"Adding tip" = "Agregando propina";
+"Confirming tip" = "Confirmando propina";
+"Canceling tip" = "Cancelando propina";
+"Adding promocode" = "Agregando código promocional";
+"Removing promocode" = "Eliminando código promocional";
+"Fetching stops" = "Obteniendo paradas";
+"Updating user locale" = "Actualizando configuración regional del usuario";
+"Deleting user" = "Eliminando usuario";
+"Requesting email verification" = "Solicitando verificación de correo electrónico";
+"Verifying email" = "Verificando correo electrónico";
+"Fetching location payment information" = "Obteniendo información de pago de la ubicación";
+"Fetching location service status" = "Obteniendo estado del servicio de la ubicación";
+"Adding payment method" = "Agregando método de pagamento";
+"Fetching addresses" = "Obtenção de endereços";
+"Continue with email" = "Continuar con el email";
+"Continue with Google" = "Continuar con Google";
+"Continue with Apple" = "Continuar con Apple";
+"Signed up with Google" = "Regístrate con Google";
+"Signed up with Apple" = "Regístrate con Apple";
+
+//DRIVER COMPATIBILITY
+"Email" = "Correo Electrónico";
+"Password" = "Contraseña";
+"Sign In" = "Iniciar Sesión";
+"Forgot Password" = "¿Olvidaste tu contraseña?";
+"Change Password" = "Cambiar Contraseña";
+"Verify Email" = "Verificar Correo Electrónico";
+"Pincode" = "Código PIN";
+"Check Texts for Pin" = "Revisa tus textos para ver el PIN";
+"Check Email for Pin" = "Revisa tu correo electrónico para el Pin";
+"Validate" = "Validar";
+"Resend Code" = "Reenviar Código";
+"Pincode Sent" = "Código PIN enviado";
+"Success!" = "Éxito!";
+"Re-enter Password" = "Reingresar Contraseña";
+"Change Password" = "Cambiar contraseña";
+"Passwords Not Matching" = "Las contraseñas no coinciden";
+"Please make sure that you've entered the same password twice." = "Por favor asegúrate de haber ingresado la misma contraseña dos veces.";
+"Welcome Back!" = "¡Bienvenido de nuevo!";
+"Sign in below with your account info" = "Favor de ingresar la información de tu cuenta para iniciar sesión";
+"Welcome Aboard!" = "¡Bienvenido A Bordo!";
+"Start by filling out your basic account info\nMust be 16 or older to create an account" = "Comience por completar la información básica de su cuenta\nCircuit requiere que usuarios tengan una edad mínima de 16 años para crear una cuenta";
+"Tell us a little bit more about yourself" = "Cuéntanos un poco más sobre ti";
+"Change Phone" = "Cambiar Teléfono";
+"First we will send a PIN code to your new mobile phone" = "Primero te enviaremos un código PIN a el nuevo teléfono móvil";
+"Confirm Phone" = "Confirmar Teléfono";
+"Please check your text messages for a pincode" = "Favor de revisar tus mensajes de texto para obtener el código PIN";
+"Confirm Email" = "Confirmar Correo Electrónico";
+"Please check your email inbox for a pincode" = "Favor de revisar el buzón de tu correo electrónico para obtener el código PIN.";
+"Forgot Password" = "¿Olvidaste tu contraseña?";
+"First we need to verify your email" = "Primero necesitamos verificar tu correo electrónico";
+"Change Password" = "Cambiar Contraseña";
+"First we need to verify your email" = "Primero necesitamos verificar tu correo electrónico";
+"Please enter your new password" = "Favor de ingresar una nueva contraseña";
+"Good news!" = "¡Buenas noticias!";
+"Your location doesn't require payments. Go ahead and ask for a ride. It's free!" = "Esta ubicación no requiere pagos. Solicita un viaje.¡Es gratis!";
+"By signing up, you agree to our" = "Al registrate aceptas nuestro";
+"By logging in, you agree to our" = "Al iniciar sesión aceptas nuestro";
+"Locations Unavailable" = "Ubicaciones No Disponibles";
+"There are no rides available at this time." = "No hay viajes disponibles en este momento.";
+"Use Current Location" = "Usar Ubicación Actual";
+"Set as Pick Up" = "Establecer Como Punto De Partida";
+"Set as Drop Off" = "Establecer Como Destino";
+"Enable Location Settings" = "Activar Configuración De Ubicación";
+"Outside Service Area" = "Fuera De Area De Servicio";
+"Leave some feedback..." = "Deja un comentario ...";
+"Feedback" = "Comentarios";
+"Thank you for Riding" = "Gracias Por Viajar Con Circuit";
+"Submit Feedback" = "Enviar Comentarios";
+"Contact Us" = "Contactános";
+"Unable to Email" = "No se realiza enviar por correo electrónico";
+"Sorry, sending emails from your device is not currently configured properly." = "Lo sentimos, el envío de correos electrónicos desde este dispositivo actualmente no está configurado correctamente.";
+"Rate Ride" = "Califica El Viaje";
+"Please make sure to give your ride a rating between 1 and 5 stars." = "¿Cómo estuvo el viaje? Por favor, proporcione una calificación de 1 a 5 estrellas.";
+"Feedback Sent" = "Comentarios Enviados";
+"Thank you for your feedback!" = "¡Gracias por tus comentarios!";
+"Failed Sending" = "No se ha podido enviar";
+"We were unable to send this email at this time." = "No se pudo enviar este correo electrónico en este momento.";
+"Report reason" = "Reportar motivo";
+"Edit Location" = "Editar Ubicación";
+"Set Location" = "Establecer Ubicación";
+"Current Location" = "Ubicación Actual";
+"Contact Us" = "Contactános";
+"Unable to Email" = "No se realiza enviar por correo electrónico";
+"Sorry, sending emails from your device is not currently configured properly." = "Lo sentimos, el envío de correos electrónicos desde este dispositivo actualmente no está configurado correctamente.";
+"Service Hours" = "Horas De Servicio";
+"Normal Service Hours" = "Horas Normales De Servicio";
+"Privacy Policy" = "Política De Privacidad";
+"Terms & Conditions" = "Términos y Condiciones";
+"Messages" = "Mensajes";
+"Open Now" = "Abierto Ahora";
+"Open Without App Service" = "Abrir Sin Servicio de Aplicación";
+"Closed Now" = "Cerrado Ahora";
+"App Request service is not available at this location. Flag down a car to catch a ride!" = "Solicitud de servicio de aplicación no está disponible en esta ubicación. ¡Señala un auto Circuit para tomar un viaje!";
+"Monday" = "lunes";
+"Tuesday" = "martes";
+"Wednesday" = "miércoles";
+"Thursday" = "jueves";
+"Friday" = "viernes";
+"Saturday" = "sábado";
+"Sunday" = "domingo";
+"Location Prices" = "Precios De Ubicación ";
+"Base ride price" = "Precio Base De Viaje";
+"Price per additional passenger" = "Precio por cada pasajero adicional";
+"Max ride price" = "Precio Máximo De Viaje";
+"Pickup" = "Partida";
+"Dropoff" = "Destino";
+"Ride Price" = "Contribución";
+"Cancel Ride" = "Cancelar Viaje";
+"Log In" = "Iniciar sesión";
+"Sign Up" = "Regístrate";
+"and" = "y";
+"You need to update Circuit app to the latest version in order to request rides" = "Necesitas actualizar la aplicación Circuit";
+"Invalid Submission" = "Forma no es válida";
+"Email address is not valid" = "Favor de ingresar un correo electrónico válido";
+"Mobile phone number is not valid" = "Favor de ingresar un número de teléfono móvil válido";
+"Password must be at least 8 characters" = "Tu contraseña debe tener al menos 8 caracteres";
+"Password must contain at least 1 uppercase letter" =  "Tu contraseña debe tener al menos 1 letra mayúscula";
+"Password must contain at least 1 special character" = "Tu contraseña debe tener al menos 1 carácter especial";
+"Password must contain at least 1 number" = "Tu contraseña debe tener al menos 1 número";
+"This field" = "Este campo";
+"is required" = "es requerido";
+"Date of Birth is required" = "Por favor ingresar una fecha valida";
+"Invalid date format" = "Formato de fecha inválido";
+"You must be at least 16 years of age" = "Circuit requiere que usuarios tengan una edad mínima de 16 años para crear una cuenta";
+"terms of use" = "términos de uso";
+"privacy policy" = "política de privacidad";
+"code of conduct" = "código de conducta";
+"Your ride summary" = "Tu resumen de viaje";
+"Tell us about your ride" = "Cuéntanos sobre tu viaje";
+"Driver Tip" = "Propina al Conductor";
+"Verify" = "Verificar";
+"Resend code" = "Reenviar codigo";
+"We are not hearing from our servers. Please check your internet connection." = "No tenemos noticias de nuestros servidores. Por favor revise su conexion a internet.";
+"Something went wrong" = "Algo salió mal";
+"Upgrade required" = "Actualización requerida";
+"Please try again later or contact support if the issue persists." = "Vuelva a intentarlo más tarde o póngase en contacto con el servicio de asistencia si el problema persiste.";
+"failed" = "fallo";
+"minute" = "minuto";
+"stop" = "parada";
+"Dismiss" = "Descartar";
+"Manage Ride" = "Gestionar Viaje";

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kuV-eE-ulK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Walkthrough View Controller-->
+        <scene sceneID="1ur-kx-azc">
+            <objects>
+                <viewController id="kuV-eE-ulK" customClass="WalkthroughViewController" customModule="RiderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mmF-85-t1M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fy-Zn-DLG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tfU-ha-0Fh">
+                                <rect key="frame" x="30" y="546" width="315" height="101"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="aNc-WK-7fP">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQz-71-eza" customClass="Button" customModule="RiderApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="44"/>
+                                                <state key="normal" title="Log In"/>
+                                                <connections>
+                                                    <action selector="loginAction" destination="kuV-eE-ulK" eventType="touchUpInside" id="maN-qT-JYn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eg-Jd-Bbm" customClass="Button" customModule="RiderApp" customModuleProvider="target">
+                                                <rect key="frame" x="172.5" y="0.0" width="142.5" height="44"/>
+                                                <state key="normal" title="Sign Up"/>
+                                                <connections>
+                                                    <action selector="registerAction" destination="kuV-eE-ulK" eventType="touchUpInside" id="b77-Ga-LYp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="rYr-mk-DMM"/>
+                                        </constraints>
+                                    </stackView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zZA-hZ-2ht">
+                                        <rect key="frame" x="138" y="64" width="39" height="37"/>
+                                        <color key="pageIndicatorTintColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </pageControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aNc-WK-7fP" firstAttribute="width" secondItem="tfU-ha-0Fh" secondAttribute="width" id="I0h-ex-p5h"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoImageWhite" translatesAutoresizingMaskIntoConstraints="NO" id="UDJ-4N-ojG">
+                                <rect key="frame" x="80" y="40" width="215" height="51"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Fy-Zn-DLG" firstAttribute="top" secondItem="mmF-85-t1M" secondAttribute="top" id="0w8-mm-Wk1"/>
+                            <constraint firstItem="8oH-tQ-PQd" firstAttribute="bottom" secondItem="tfU-ha-0Fh" secondAttribute="bottom" constant="20" id="1hP-0w-LLF"/>
+                            <constraint firstItem="tfU-ha-0Fh" firstAttribute="leading" secondItem="8oH-tQ-PQd" secondAttribute="leading" constant="30" id="54P-Yg-hMl"/>
+                            <constraint firstAttribute="trailing" secondItem="9Fy-Zn-DLG" secondAttribute="trailing" id="B6a-8L-XQ1"/>
+                            <constraint firstItem="UDJ-4N-ojG" firstAttribute="centerX" secondItem="8oH-tQ-PQd" secondAttribute="centerX" id="CCC-Zy-i1C"/>
+                            <constraint firstItem="UDJ-4N-ojG" firstAttribute="top" secondItem="8oH-tQ-PQd" secondAttribute="top" constant="20" id="hRn-Ud-7Tq"/>
+                            <constraint firstAttribute="bottom" secondItem="9Fy-Zn-DLG" secondAttribute="bottom" id="lkG-uu-PxX"/>
+                            <constraint firstItem="8oH-tQ-PQd" firstAttribute="trailing" secondItem="tfU-ha-0Fh" secondAttribute="trailing" constant="30" id="pDV-ST-XIQ"/>
+                            <constraint firstItem="9Fy-Zn-DLG" firstAttribute="leading" secondItem="mmF-85-t1M" secondAttribute="leading" id="qgp-Om-ny1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8oH-tQ-PQd"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="9Fy-Zn-DLG" id="Ree-f3-CKY"/>
+                        <outlet property="loginButton" destination="eQz-71-eza" id="vNx-qH-gcG"/>
+                        <outlet property="pageControl" destination="zZA-hZ-2ht" id="oUp-F2-VBB"/>
+                        <outlet property="registerButton" destination="7eg-Jd-Bbm" id="kF3-FB-PCH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTs-qQ-y1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="-248"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogoImageWhite" width="215" height="51"/>
+    </resources>
+</document>

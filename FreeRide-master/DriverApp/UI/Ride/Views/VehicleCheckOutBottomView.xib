@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ONv-P3-hSL" customClass="VehicleCheckOutBottomView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c8s-df-afc">
+                    <rect key="frame" x="20" y="54" width="340" height="179"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR2-k6-M6Z" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="116"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iun-e0-2gC" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                            <rect key="frame" x="30" y="131" width="280" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="dmU-aE-jeO"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Check Out"/>
+                            <connections>
+                                <action selector="vehicleCheckOutAction" destination="ONv-P3-hSL" eventType="touchUpInside" id="fvu-Xr-iEf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DR2-k6-M6Z" secondAttribute="trailing" id="96E-20-r0J"/>
+                        <constraint firstAttribute="trailing" secondItem="Iun-e0-2gC" secondAttribute="trailing" constant="30" id="AmE-GE-fBc"/>
+                        <constraint firstItem="DR2-k6-M6Z" firstAttribute="leading" secondItem="c8s-df-afc" secondAttribute="leading" id="bVG-wt-9CK"/>
+                        <constraint firstItem="Iun-e0-2gC" firstAttribute="leading" secondItem="c8s-df-afc" secondAttribute="leading" constant="30" id="inv-Ay-8I6"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="8ts-6r-PZk"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="c8s-df-afc" firstAttribute="top" secondItem="8ts-6r-PZk" secondAttribute="top" constant="10" id="Mt9-hr-mni"/>
+                <constraint firstItem="8ts-6r-PZk" firstAttribute="trailing" secondItem="c8s-df-afc" secondAttribute="trailing" constant="20" id="YZR-iV-UEK"/>
+                <constraint firstItem="8ts-6r-PZk" firstAttribute="bottom" secondItem="c8s-df-afc" secondAttribute="bottom" constant="20" id="pvw-dL-8IG"/>
+                <constraint firstItem="c8s-df-afc" firstAttribute="leading" secondItem="ONv-P3-hSL" secondAttribute="leading" constant="20" id="ysV-ao-hDP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="subtitleLabel" destination="DR2-k6-M6Z" id="Q09-6g-Un4"/>
+                <outlet property="vehicleCheckOutButton" destination="Iun-e0-2gC" id="u5x-8a-wwJ"/>
+            </connections>
+            <point key="canvasLocation" x="-516" y="-51"/>
+        </view>
+    </objects>
+</document>

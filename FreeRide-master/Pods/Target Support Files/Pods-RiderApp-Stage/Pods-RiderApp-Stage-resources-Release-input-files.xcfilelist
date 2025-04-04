@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-RiderApp-Stage/Pods-RiderApp-Stage-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/GoogleMaps/GoogleMapsResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/GooglePlaces/GooglePlacesResources.bundle

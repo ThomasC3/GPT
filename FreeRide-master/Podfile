@@ -1,0 +1,81 @@
+platform :ios, '14.0'
+
+inhibit_all_warnings!
+
+def shared_pods
+  pod 'Alamofire', '5.9.0'
+  pod 'AlamofireImage', '4.3.0'
+  pod 'lottie-ios', '3.5.0'
+  pod 'Socket.IO-Client-Swift', '16.1.0'
+  pod 'Mixpanel-swift', '4.2.3'
+  pod 'Bugsnag', '6.28.1'
+  pod 'BugsnagNetworkRequestPlugin', '6.28.1'
+  pod 'KeychainSwift', '22.0.0'
+  pod 'GoogleMaps', '8.3.1'
+  pod 'GooglePlaces', '8.3.0'
+  pod 'Stripe', '23.26.0'
+  pod 'Firebase/AnalyticsWithoutAdIdSupport', '10.24.0'
+  pod 'GoogleSignIn', '7.1.0'
+end
+
+def rider_pods
+  shared_pods
+end
+
+target 'RiderApp' do
+  use_frameworks!
+
+  rider_pods
+end
+
+target 'DriverApp' do
+  use_frameworks!
+
+  shared_pods
+end
+
+target 'DriverApp-Stage' do
+  use_frameworks!
+
+  shared_pods
+end
+
+target 'RiderApp-Stage' do
+  use_frameworks!
+
+  rider_pods
+end
+
+target 'RiderApp-Prod' do
+  use_frameworks!
+
+  rider_pods
+end
+
+target 'DriverApp-Prod' do
+  use_frameworks!
+
+  shared_pods
+end
+
+post_install do |installer| 
+  puts "Custom settings for Pods project"
+  installer.pods_project.targets.each do |target|
+    outdatedTargets = []
+    if !outdatedTargets.include?(target.name)
+      puts "Changing build settings for '#{target.name}' target"
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '5.0'
+        if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 14.0
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+        end
+      end
+    end
+    if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+        target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+    end
+  end 
+end
+

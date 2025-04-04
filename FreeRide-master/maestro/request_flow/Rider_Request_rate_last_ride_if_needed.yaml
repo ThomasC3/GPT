@@ -1,0 +1,8 @@
+appId: com.thefreeride.rider.stage
+---
+- runFlow:
+    when:
+      visible: "RATE MY LAST RIDE"
+    commands:
+        - tapOn: "RATE MY LAST RIDE"
+        - runFlow: Rider_Request_submit_feedback_without_tip.yaml

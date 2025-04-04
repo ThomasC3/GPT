@@ -1,0 +1,4 @@
+appId: com.thefreeride.driver.stage
+---
+- assertVisible: "Pick Up"
+- tapOn: "Pick Up"

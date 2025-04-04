@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Y0m-gj-pOt" customClass="AddHailedRideView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muh-bm-7B1" customClass="CardView" customModule="DriverApp" customModuleProvider="target">
+                    <rect key="frame" x="20" y="10" width="280" height="145"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SQQ-S6-bDR">
+                            <rect key="frame" x="20" y="10" width="240" height="125"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dKY-OZ-JnD">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="84"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qno-Lp-dah">
+                                            <rect key="frame" x="0.0" y="9" width="119" height="66.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Riders" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="2sY-cA-9Gw" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="119" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fmp-Z0-bfM">
+                                                    <rect key="frame" x="0.0" y="30.5" width="119" height="36"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtq-X6-NBO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="36"/>
+                                                            <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" image="round_remove_black_36pt"/>
+                                                            <connections>
+                                                                <action selector="passengerAction:" destination="Y0m-gj-pOt" eventType="touchUpInside" id="lZY-0F-G4d"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L3-aq-7C1" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="47" y="0.0" width="24" height="36"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="24" id="Xk3-Pq-2d5"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdk-IQ-HOK">
+                                                            <rect key="frame" x="83" y="0.0" width="36" height="36"/>
+                                                            <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" image="round_add_black_36pt"/>
+                                                            <connections>
+                                                                <action selector="passengerAction:" destination="Y0m-gj-pOt" eventType="touchUpInside" id="9JG-x1-9uz"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFb-9a-VsW" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="129" y="22.5" width="111" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" priority="999" constant="111" id="MD9-KR-pzO"/>
+                                                <constraint firstAttribute="height" constant="39" id="Rte-Yk-pVn"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="uaF-nh-cdf"/>
+                                            </constraints>
+                                            <state key="normal" title="Add Ride"/>
+                                            <connections>
+                                                <action selector="requestAction" destination="Y0m-gj-pOt" eventType="touchUpInside" id="xw5-qP-jBm"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="N3t-lk-e6t">
+                                    <rect key="frame" x="0.0" y="94" width="240" height="31"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rider needs Accessibility?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4J-wh-KJW" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="7.5" width="171" height="16"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OkD-I4-wlO">
+                                            <rect key="frame" x="191" y="0.0" width="51" height="31"/>
+                                            <color key="onTintColor" red="0.20000000000000001" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31" id="yJU-UN-sGg"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="N3t-lk-e6t" firstAttribute="leading" secondItem="SQQ-S6-bDR" secondAttribute="leading" id="18B-mL-Hjh"/>
+                                <constraint firstItem="dKY-OZ-JnD" firstAttribute="leading" secondItem="SQQ-S6-bDR" secondAttribute="leading" id="dv8-ra-Ye7"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="bzN-cU-4YN"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="bzN-cU-4YN" firstAttribute="bottom" secondItem="SQQ-S6-bDR" secondAttribute="bottom" constant="10" id="Q8Q-cT-s3h"/>
+                        <constraint firstItem="SQQ-S6-bDR" firstAttribute="leading" secondItem="bzN-cU-4YN" secondAttribute="leading" constant="20" id="aqf-kR-koN"/>
+                        <constraint firstItem="SQQ-S6-bDR" firstAttribute="top" secondItem="bzN-cU-4YN" secondAttribute="top" constant="10" id="cfE-Nz-0OJ"/>
+                        <constraint firstItem="bzN-cU-4YN" firstAttribute="trailing" secondItem="SQQ-S6-bDR" secondAttribute="trailing" constant="20" id="rum-Bv-5fu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Vyg-RV-UBm"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="muh-bm-7B1" firstAttribute="top" secondItem="Vyg-RV-UBm" secondAttribute="top" constant="10" id="7CE-Dj-pHS"/>
+                <constraint firstItem="muh-bm-7B1" firstAttribute="leading" secondItem="Vyg-RV-UBm" secondAttribute="leading" constant="20" id="BZr-Do-HaQ"/>
+                <constraint firstItem="Vyg-RV-UBm" firstAttribute="trailing" secondItem="muh-bm-7B1" secondAttribute="trailing" constant="20" id="eXh-Ji-WQB"/>
+                <constraint firstItem="Vyg-RV-UBm" firstAttribute="bottom" secondItem="muh-bm-7B1" secondAttribute="bottom" constant="10" id="idl-wF-5rk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="accessibilityToggle" destination="OkD-I4-wlO" id="yee-LG-HNj"/>
+                <outlet property="minusButton" destination="wtq-X6-NBO" id="7y4-jG-zzX"/>
+                <outlet property="passengerNumberLabel" destination="6L3-aq-7C1" id="mft-vz-aXt"/>
+                <outlet property="passengerTitleLabel" destination="2sY-cA-9Gw" id="fus-wf-Xc8"/>
+                <outlet property="plusButton" destination="xdk-IQ-HOK" id="j89-4P-6e3"/>
+                <outlet property="requestButton" destination="CFb-9a-VsW" id="cx4-hn-rt8"/>
+            </connections>
+            <point key="canvasLocation" x="-331.19999999999999" y="-515.8920539730135"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="round_add_black_36pt" width="36" height="36"/>
+        <image name="round_remove_black_36pt" width="36" height="36"/>
+    </resources>
+</document>

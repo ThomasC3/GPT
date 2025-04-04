@@ -1,0 +1,28 @@
+appId: com.thefreeride.driver.stage
+---
+- tapOn:
+    id: "menuNavigationButton"
+- tapOn:
+    text: "Settings"
+- tapOn:
+    text: "Log out"
+
+- runFlow:
+    when:
+      visible: "Please change your availability"
+    commands:
+      - tapOn: "Ok"
+      - tapOn:
+          id: "leftNavigationButton"
+      - tapOn: "Drive"
+      - runFlow: Driver_Request_check_in_vehicle.yaml
+      # Repeat
+      - tapOn:
+          id: "menuNavigationButton"
+      - tapOn:
+          text: "Settings"
+      - tapOn:
+          text: "Log out"
+
+# Answer dialog:
+- tapOn: "Yes"

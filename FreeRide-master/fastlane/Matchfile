@@ -1,0 +1,10 @@
+git_url("https://github.com/thefreerideinc/freeride-certificates.git")
+
+storage_mode("git")
+
+app_identifier(["com.thefreeride.rider", "com.thefreeride.rider.dev", "com.thefreeride.driver", "com.thefreeride.driver.dev", "com.thefreeride.rider.prod", "com.thefreeride.driver.prod", "com.thefreeride.rider.stage", "com.thefreeride.driver.stage"])
+username("andrewcboryk@gmail.com")
+
+shallow_clone true
+force_for_new_devices true
+verbose true

@@ -1,0 +1,44 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp
+- waitForAnimationToEnd
+
+- tapOn:
+    id: "menuNavigationButton"
+- tapOn: "Payments"
+
+# Remove existing card if needed
+- runFlow:
+    when:
+      visible: "Remove payment method"
+    commands:
+        - tapOn: "Remove payment method"
+        - tapOn: "Yes, remove my payment method"
+
+# Expecting: no card present.
+- assertVisible: "No payment methods added"
+
+- takeScreenshot: PaymentsWithoutCardScreen
+
+- tapOn: "Add Card"
+# Credit Card Number
+- tapOn:
+    id: "cardTextField"
+# Month
+- inputText: "01"
+# Year
+- inputText: "29"
+# Secure Code
+- inputText: "0123"
+# Card Number
+- inputText: "4242424242424242"
+- tapOn: "Save Card"
+- assertVisible: "VISA ending in 4242"
+
+- takeScreenshot: PaymentsWithCardScreen
+
+- tapOn: "Remove payment method"
+- assertVisible: "Are you sure?"
+- tapOn: "Yes, remove my payment method"
+
+- assertVisible: "No payment methods added"

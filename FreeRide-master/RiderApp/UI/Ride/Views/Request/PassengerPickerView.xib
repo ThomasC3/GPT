@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3IQ-zl-x5A" customClass="PassengerPickerView" customModule="RiderApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="221"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ieT-cq-muy">
+                    <rect key="frame" x="20" y="48" width="360" height="173"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAg-PY-zE2">
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="1"/>
+                            <color key="backgroundColor" red="0.88235294117647056" green="0.88627450980392153" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="XhX-aj-bfn"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSm-Od-6YP" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="28" width="360" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Number of Riders" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5K-Ps-LI4" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="75.5" width="360" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="jyt-Tk-fSH">
+                            <rect key="frame" x="0.0" y="123" width="360" height="51"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="RFa-UJ-lY3"/>
+                            </constraints>
+                            <segments>
+                                <segment title="1"/>
+                                <segment title="2"/>
+                                <segment title="3"/>
+                                <segment title="4"/>
+                                <segment title="5"/>
+                            </segments>
+                            <color key="selectedSegmentTintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="passengerValueChanged:" destination="3IQ-zl-x5A" eventType="valueChanged" id="iiE-QE-kPr"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="lAg-PY-zE2" firstAttribute="leading" secondItem="ieT-cq-muy" secondAttribute="leading" id="e5y-y5-1Bz"/>
+                        <constraint firstAttribute="trailing" secondItem="lAg-PY-zE2" secondAttribute="trailing" id="sQo-mD-uHl"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VZn-yg-BPG"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="VZn-yg-BPG" firstAttribute="bottom" secondItem="ieT-cq-muy" secondAttribute="bottom" id="Cmm-DV-Sou"/>
+                <constraint firstItem="ieT-cq-muy" firstAttribute="top" secondItem="VZn-yg-BPG" secondAttribute="top" id="JIc-Ja-iOt"/>
+                <constraint firstItem="ieT-cq-muy" firstAttribute="leading" secondItem="VZn-yg-BPG" secondAttribute="leading" constant="20" id="cxW-W4-DLy"/>
+                <constraint firstItem="VZn-yg-BPG" firstAttribute="trailing" secondItem="ieT-cq-muy" secondAttribute="trailing" constant="20" id="uYc-JM-WDd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="passangerTitleSectionLabel" destination="aSm-Od-6YP" id="6RD-3u-d1f"/>
+                <outlet property="passengerTitleLabel" destination="Q5K-Ps-LI4" id="JHg-kG-0pn"/>
+                <outlet property="ridersControl" destination="jyt-Tk-fSH" id="Xwf-Bl-CP1"/>
+            </connections>
+            <point key="canvasLocation" x="-530.43478260869574" y="-671.98660714285711"/>
+        </view>
+    </objects>
+</document>

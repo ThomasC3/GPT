@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="PrL-2u-mPm" customClass="PaymentPickerView" customModule="RiderApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="226"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UaE-7h-Pf0">
+                    <rect key="frame" x="20" y="48" width="360" height="178"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDr-kT-91H">
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="1"/>
+                            <color key="backgroundColor" red="0.88235294117647056" green="0.88627450980392153" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="nWJ-6d-R2G"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gss-IO-o76" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="29.5" width="360" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Payment" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfp-Ud-Ry3" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="79" width="360" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9D-17-6SO">
+                            <rect key="frame" x="0.0" y="128" width="360" height="50"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-Gk-qpp">
+                                    <rect key="frame" x="0.0" y="0.0" width="360" height="51"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="ENp-rI-aOn"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="$0"/>
+                                        <segment title="$5"/>
+                                        <segment title="$10"/>
+                                        <segment title="More"/>
+                                    </segments>
+                                    <color key="selectedSegmentTintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="paymentValueChanged:" destination="PrL-2u-mPm" eventType="valueChanged" id="b3b-gy-LhM"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="XZF-hH-srA"/>
+                                <constraint firstAttribute="trailing" secondItem="gh4-Gk-qpp" secondAttribute="trailing" id="nN1-78-Glb"/>
+                                <constraint firstItem="gh4-Gk-qpp" firstAttribute="leading" secondItem="x9D-17-6SO" secondAttribute="leading" id="o92-I4-vak"/>
+                                <constraint firstItem="gh4-Gk-qpp" firstAttribute="top" secondItem="x9D-17-6SO" secondAttribute="top" id="x4c-mU-BjQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="QDr-kT-91H" firstAttribute="leading" secondItem="UaE-7h-Pf0" secondAttribute="leading" id="2ei-9L-bhR"/>
+                        <constraint firstAttribute="trailing" secondItem="QDr-kT-91H" secondAttribute="trailing" id="UMC-jk-Qca"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="eVr-Jx-txI"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="UaE-7h-Pf0" firstAttribute="centerX" secondItem="PrL-2u-mPm" secondAttribute="centerX" id="Tng-v7-GgO"/>
+                <constraint firstItem="UaE-7h-Pf0" firstAttribute="top" secondItem="eVr-Jx-txI" secondAttribute="top" id="a20-v1-gOF"/>
+                <constraint firstItem="eVr-Jx-txI" firstAttribute="trailing" secondItem="UaE-7h-Pf0" secondAttribute="trailing" constant="20" id="rye-gy-oXO"/>
+                <constraint firstItem="UaE-7h-Pf0" firstAttribute="leading" secondItem="eVr-Jx-txI" secondAttribute="leading" constant="20" id="wwA-vb-CBI"/>
+                <constraint firstItem="eVr-Jx-txI" firstAttribute="bottom" secondItem="UaE-7h-Pf0" secondAttribute="bottom" id="z6s-yu-iux"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="paymentControl" destination="gh4-Gk-qpp" id="Tcw-FA-Nfx"/>
+                <outlet property="paymentPicketTitleSectionLabel" destination="Gss-IO-o76" id="LAx-WY-xWV"/>
+                <outlet property="paymentTitleLabel" destination="Hfp-Ud-Ry3" id="0g8-HZ-a4K"/>
+            </connections>
+            <point key="canvasLocation" x="-539" y="-590"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

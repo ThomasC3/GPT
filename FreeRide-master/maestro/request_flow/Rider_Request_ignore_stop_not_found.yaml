@@ -1,0 +1,7 @@
+appId: com.thefreeride.rider.stage
+---
+- runFlow:
+    when:
+      visible: Stop not found within the .+?\sservice location #regex
+    commands:
+        - tapOn: "OK"

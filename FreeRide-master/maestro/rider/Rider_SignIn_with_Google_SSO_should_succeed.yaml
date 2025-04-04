@@ -1,0 +1,40 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp
+- waitForAnimationToEnd
+
+# Logout if needed
+- runFlow:
+    when:
+      visible:
+        id: "menuNavigationButton"
+    file: RiderLogout.yaml
+
+- tapOn: "Log In"
+- tapOn:
+    id: "continueWithGoogleButton"
+
+- assertVisible: "“Circuit Staging” Wants to Use “google.com” to Sign In"
+- tapOn: "Continue"
+
+# Device should be configured with Google Account "google.tester@whitesmith.co"
+- runFlow:
+    when:
+      notVisible: "Google Tester google.tester@whitesmith.co"
+    commands:
+        - inputText: "google.tester@whitesmith.co"
+        - assertVisible: "Finish account setup by solving the reCAPTCHA and retry"
+
+- runFlow:
+    when:
+      visible: "Google Tester google.tester@whitesmith.co"
+    commands:
+        - tapOn: "Google Tester google.tester@whitesmith.co"
+        - assertVisible: "Sign in to Circuit (Staging)"
+        - tapOn: "Continue"        
+
+- assertVisible:
+    id: "pickupAddressField"
+
+- runFlow:
+    file: RiderLogout.yaml

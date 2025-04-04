@@ -1,0 +1,28 @@
+appId: com.thefreeride.rider.stage
+---
+- extendedWaitUntil:
+    visible: "Thank you for Riding"
+    timeout: 45000 #Timeout in milliseconds
+
+- runFlow:
+    when:
+      visible: "Contribution"
+    commands:
+        - assertVisible: ${CONTRIBUTION_COPY}
+
+- tapOn:
+    id: "tip_btn1"
+- tapOn:
+    id: "rating"
+- tapOn:
+    id: "input_feedback"
+- inputText: "created by maestro"
+- hideKeyboard
+- tapOn: "Submit Feedback"
+
+- runFlow:
+    when:
+      visible: "Add Payment Method"
+    commands:
+        - tapOn: "Add Payment Method"
+        - runFlow: Rider_Request_add_payment_method.yaml

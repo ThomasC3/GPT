@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ylC-94-4Kj" customClass="DriverStatusBottomView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5ox-7w-6Nl">
+                    <rect key="frame" x="20" y="68" width="340" height="165"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XHe-Sh-Oa0">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQ1-cl-zLo" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="aiU-aH-Yen"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Status description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vo0-ev-iL8" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="80" width="340" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXT-ho-aqP" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                            <rect key="frame" x="30" y="120" width="280" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="XJ9-tT-0jm"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Vehicle"/>
+                            <connections>
+                                <action selector="vehicleCheckInAction" destination="ylC-94-4Kj" eventType="touchUpInside" id="YtJ-5g-Ah5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="yXT-ho-aqP" firstAttribute="leading" secondItem="5ox-7w-6Nl" secondAttribute="leading" constant="30" id="JWS-c0-SQi"/>
+                        <constraint firstAttribute="trailing" secondItem="Vo0-ev-iL8" secondAttribute="trailing" id="Lat-AT-R9s"/>
+                        <constraint firstItem="XHe-Sh-Oa0" firstAttribute="leading" secondItem="5ox-7w-6Nl" secondAttribute="leading" id="Ucc-Aa-NAo"/>
+                        <constraint firstAttribute="trailing" secondItem="XHe-Sh-Oa0" secondAttribute="trailing" id="gK2-uI-oZc"/>
+                        <constraint firstItem="Vo0-ev-iL8" firstAttribute="leading" secondItem="5ox-7w-6Nl" secondAttribute="leading" id="t3d-Nv-N9z"/>
+                        <constraint firstAttribute="trailing" secondItem="yXT-ho-aqP" secondAttribute="trailing" constant="30" id="xcD-aw-Dzi"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Gnd-mn-PBI"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Gnd-mn-PBI" firstAttribute="trailing" secondItem="5ox-7w-6Nl" secondAttribute="trailing" constant="20" id="4tH-ey-fVx"/>
+                <constraint firstItem="5ox-7w-6Nl" firstAttribute="leading" secondItem="ylC-94-4Kj" secondAttribute="leading" constant="20" id="MeA-db-6Oz"/>
+                <constraint firstItem="5ox-7w-6Nl" firstAttribute="top" secondItem="Gnd-mn-PBI" secondAttribute="top" constant="20" id="eUf-L7-X8z"/>
+                <constraint firstItem="Gnd-mn-PBI" firstAttribute="bottom" secondItem="5ox-7w-6Nl" secondAttribute="bottom" constant="20" id="ueo-hG-kCp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="subtitleLabel" destination="Vo0-ev-iL8" id="ZMK-by-WAd"/>
+                <outlet property="titleLabel" destination="JQ1-cl-zLo" id="ppq-5l-HyK"/>
+                <outlet property="vehicleButton" destination="yXT-ho-aqP" id="5qS-M9-m8r"/>
+            </connections>
+            <point key="canvasLocation" x="-516" y="-51"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,21 @@
+# For more information about this configuration visit
+# https://github.com/fastlane/fastlane/tree/master/scan#scanfile
+
+# In general, you can use the options available
+# scan --help
+
+# Remove the # in front of the line to enable the option
+# Go to PATH/fastlane to exceute "scan init" first to gen the scanfile
+
+scheme "DriverApp"
+
+# Run multi devices such as -> devices ["A device", "B device"]
+# Run single device such as -> device c device
+#device "iPad Air 2"
+
+# Run real device
+#destination "platform=iOS,id=e978651f69c571e0b7b6c863fd426188db686c75"
+
+open_report false
+#output_types "html"
+#clean true

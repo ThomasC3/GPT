@@ -1,0 +1,21 @@
+appId: com.thefreeride.driver.stage
+---
+- launchApp
+- runFlow:
+    file: DriverLogin.yaml
+    env:
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}
+
+- assertVisible:
+    id: "checkOutVehicleButton"
+
+- runFlow:
+    file: DriverLogout.yaml
+
+- runFlow:
+    file: DriverLogin.yaml
+    env:
+      USERNAME: "invalid@ridecircuit.com"
+      PASSWORD: "123"
+- assertVisible: "The email or password you entered is incorrect."

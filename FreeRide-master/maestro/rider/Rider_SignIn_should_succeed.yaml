@@ -1,0 +1,29 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp:
+    # https://maestro.mobile.dev/advanced/configuring-permissions
+    permissions:
+      location: inuse
+      usertracking: allow
+      notifications: allow
+
+- waitForAnimationToEnd
+
+# Logout if needed
+- runFlow:
+    when:
+      visible:
+        id: "menuNavigationButton"
+    file: RiderLogout.yaml
+
+- runFlow:
+    file: RiderLogin.yaml
+    env:
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}
+
+- assertVisible:
+    id: "pickupAddressField"
+
+- runFlow:
+    file: RiderLogout.yaml

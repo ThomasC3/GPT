@@ -1,0 +1,6 @@
+appId: com.thefreeride.driver.stage
+---
+- assertVisible: "Rate your Rider"
+- tapOn:
+    id: "ratingButton4"
+- tapOn: "Submit Feedback"

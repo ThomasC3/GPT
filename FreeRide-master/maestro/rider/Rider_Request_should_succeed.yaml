@@ -1,0 +1,24 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp
+
+- tapOn:
+    id: "pickupAddressField"
+
+- tapOn:
+    text: "Use Current Location"
+
+- tapOn:
+    id: "dropoffAddressField"
+
+- inputText: "IKEA"
+
+- tapOn:
+    text: "IKEA Loures"
+
+- tapOn:
+    id: "numberOfRidersSegmentedControl"
+    containsChild: "1"
+
+- tapOn:
+    text: "Request"

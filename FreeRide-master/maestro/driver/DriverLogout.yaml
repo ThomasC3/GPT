@@ -1,0 +1,10 @@
+appId: com.thefreeride.driver.stage
+---
+- tapOn:
+    id: "menuNavigationButton"
+- tapOn:
+    text: "Settings"
+- tapOn:
+    text: "Log out"
+# Answer dialog:
+- tapOn: "Yes"

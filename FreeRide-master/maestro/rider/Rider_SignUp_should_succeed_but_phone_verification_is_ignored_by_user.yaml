@@ -1,0 +1,152 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp:
+    # https://maestro.mobile.dev/advanced/configuring-permissions
+    permissions:
+      location: inuse
+      usertracking: allow
+      notifications: allow
+
+- tapOn: "Sign Up"
+- takeScreenshot: SignUpScreen
+- tapOn:
+    id: "continueWithEmailButton"
+
+- tapOn: "I agree"
+- assertVisible: "First Name is required"
+- tapOn: "Ok"
+- tapOn:
+    id: "firstNameTextField"
+- inputText: "iOS Tester"
+- pressKey: enter
+- tapOn: Welcome Aboard! #Hide keyboard: clicking on some non-tappable region.
+
+- tapOn: "I agree"
+- assertVisible: "Last Name is required"
+- tapOn: "Ok"
+- tapOn:
+    id: "lastNameTextField"
+- inputText: "Test Suite"
+- pressKey: enter
+- tapOn: Welcome Aboard! #Hide keyboard: clicking on some non-tappable region.
+
+- tapOn: "I agree"
+- assertVisible: "Email is required"
+- tapOn: "Ok"
+- tapOn:
+    id: "emailTextField"
+- inputText: "aaa"
+- pressKey: enter
+- tapOn: Welcome Aboard! #Hide keyboard: clicking on some non-tappable region.
+- tapOn: "I agree"
+- assertVisible: "Email address is not valid"
+- tapOn: "Ok"
+- tapOn:
+    id: "emailTextField"
+- eraseText
+- inputText: "@"
+- pressKey: enter
+- tapOn: Welcome Aboard! #Hide keyboard: clicking on some non-tappable region.
+- tapOn: "I agree"
+- assertVisible: "Email address is not valid"
+- tapOn: "Ok"
+- tapOn:
+    id: "emailTextField"
+- eraseText
+- runScript: ../js/new-test-email.js
+- inputText: ${output.testEmail}
+- pressKey: enter
+- tapOn: Welcome Aboard! #Hide keyboard: clicking on some non-tappable region.
+
+- inputText: "123"
+- tapOn: "Welcome Aboard!" #Hide keyboard: clicking on some non-tappable region.
+- tapOn: "I agree"
+- assertVisible: "Password is required"
+- tapOn: "Ok"
+- tapOn:
+    id: "passwordTextField"
+- eraseText
+- inputText: "123"
+- tapOn: "Welcome Aboard!" #Hide keyboard: clicking on some non-tappable region.
+- tapOn: "I agree"
+- assertVisible: "Password must be at least 8 characters"
+- tapOn: "Ok"
+- tapOn:
+    id: "passwordTextField"
+- inputText: "45678"
+- tapOn: "Welcome Aboard!" #Hide keyboard: clicking on some non-tappable region.
+
+- takeScreenshot: SignUpWelcomeScreen
+- tapOn: "I agree"
+
+- tapOn:
+    id: "zipCodeTextField"
+- tapOn: "Welcome Aboard!" #Hide keyboard: clicking on some non-tappable region.
+- tapOn: "Next"
+- assertVisible: "Home Zip Code is required"
+- tapOn: "Ok"
+
+- tapOn:
+    id: "zipCodeTextField"
+- inputText: "11111"
+- pressKey: enter
+
+- tapOn:
+    id: "dateOfBirthTextField"
+- inputText: ""
+- tapOn: "Done"
+- tapOn: "Next"
+- assertVisible: "Date of Birth is required"
+- tapOn: "Ok"
+- tapOn:
+    id: "dateOfBirthTextField"
+- inputText: "1"
+- tapOn: "Done"
+- tapOn: "Next"
+- assertVisible: "Invalid date format"
+- tapOn: "Ok"
+- tapOn:
+    id: "dateOfBirthTextField"
+- eraseText
+- inputText: "11/21/2025"
+- tapOn: "Done"
+- tapOn: "Next"
+- assertVisible: "You must be at least 16 years of age"
+- tapOn: "Ok"
+- tapOn:
+    id: "dateOfBirthTextField"
+- eraseText
+- inputText: "11/21/1987"
+- tapOn: "Done"
+
+- tapOn:
+    id: "genderTextField"
+- inputText: "Prefer not to state"
+- tapOn: "Done"
+
+- takeScreenshot: SignUpUserDetailsScreen
+- tapOn: "Next"
+
+# Phone Verification
+- tapOn:
+    id: "countryCodeTextField"
+- inputText: "United States +1"
+- tapOn: "Done"
+- tapOn:
+    id: "phoneNumberTextField"
+- inputText: "9199999999"
+- tapOn: "Welcome Aboard!" #Hide keyboard: clicking on some non-tappable region.
+
+- takeScreenshot: PhoneNumberScreen
+- tapOn: "Sign Up"
+
+- runFlow:
+    when:
+      visible:
+        id: "pincodeTextField"
+    file: Rider_SignUp_should_succeed_verifying_phone.yaml
+
+- assertVisible: "Verify Your Email"
+
+- runFlow:
+    file: RiderLogout.yaml

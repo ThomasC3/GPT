@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Admin URL</key>
+	<string>https://devadmin.tfrholdingscorp.com</string>
+	<key>Intercom API Key</key>
+	<string>ios_sdk-efd85790fc1e82b167904f7b821e04044e91bae5</string>
+	<key>Intercom App Id</key>
+	<string>a83wfr32</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To upload images to our support team</string>
+	<key>NSCameraUsageDescription</key>
+	<string>To scan cards</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>PLEASE NOTE: Circuit is a ride-share service that needs the ability to work with other apps to operate as efficiently as possible. Your activity helps us build a better service with more informed updates to our routing system and better direct communication with you about things that matter. We value your privacy and use this information to provide better services for you and the community.</string>
+	<key>Maps Polyline API Key</key>
+	<string>AIzaSyDp85LVYefPDMqVufD7UHl1CWUccJTxCos</string>
+	<key>Maps API Key</key>
+	<string>AIzaSyDW16mNMyFsUjFQ9RevDoB36LtIlOuFD3E</string>
+	<key>Stripe PK</key>
+	<string>pk_test_LV6hXBkRtIOOmZnC59AlVyuT00xMkv5T2h</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Dev Rider</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Circuit Dev</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(SHARED_RIDER_BETA_VERSION_NUMBER)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1072858426064579</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.691659874814-ldmhoud326v8uis9g5o30osqvcjj99gd</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>Host URL</key>
+	<string>https://devrider.tfrholdingscorp.com/v1</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>Mixpanel token</key>
+	<string>98dea37365391abf4ff4fde9fe3fcb92</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We&apos;d like to use your location to help you find nearby available Drivers.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We&apos;d like to use your location to help you find nearby available Drivers.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We&apos;d like to use your location to help you find nearby available Drivers.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We&apos;d like to use your location to help you find nearby available Drivers.</string>
+	<key>Socket URL</key>
+	<string>https://devrider.tfrholdingscorp.com:443</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+		<string>OpenSans-Bold.ttf</string>
+		<string>OpenSans-Semibold.ttf</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>AppLaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Walkthrough</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>bugsnag</key>
+	<dict>
+		<key>apiKey</key>
+		<string>c315e1f943561a37c5a6e37fb7f70937</string>
+		<key>releaseStage</key>
+		<string>development</string>
+	</dict>
+</dict>
+</plist>

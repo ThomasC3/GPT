@@ -1,0 +1,36 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp
+- waitForAnimationToEnd
+
+# Logout if needed
+- runFlow:
+    when:
+      visible:
+        id: "menuNavigationButton"
+    file: RiderLogout.yaml
+
+- tapOn: "Log In"
+- takeScreenshot: SignInScreen
+- tapOn:
+    id: "continueWithAppleButton"
+
+- runFlow:
+    when:
+      visible: "Sign in with Apple"
+    commands:
+        - tapOn: "Continue"
+
+# Device should be configured with Apple ID "apple.tester@whitesmith.co"
+- tapOn: "Continue with Password"
+- tapOn: "Password"
+- inputText:
+    text: ${SSO_PASSWORD}
+    label: "Apple ID password"
+- tapOn: "Sign In"
+
+- assertVisible:
+    id: "pickupAddressField"
+
+- runFlow:
+    file: RiderLogout.yaml

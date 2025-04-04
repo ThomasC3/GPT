@@ -1,0 +1,25 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn:
+    id: "button_drawer" #menu_button
+- tapOn: "Payments"
+
+- runFlow:
+    when:
+      visible: "Remove promo code"
+    commands:
+        - tapOn: "Remove promo code"
+        - tapOn: "Yes, remove my promocode"
+
+- assertVisible: "No promocode added"
+- tapOn: "Add Promocode"
+- tapOn:
+    id: "promocode_input"
+- inputText: ${PROMOCODE}
+- tapOn: "Add Promocode"
+
+- takeScreenshot: ScreenshotAddPromocode
+
+- tapOn:
+    id: "bar_image" #back
+- tapOn: "Ride"

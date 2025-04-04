@@ -1,0 +1,4 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp
+- waitForAnimationToEnd

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="BYN-lZ-tbs" customClass="LegalDisclaimerView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="212"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AKf-cp-drV">
+                    <rect key="frame" x="0.0" y="44" width="400" height="168"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Avg-K1-D2w">
+                            <rect key="frame" x="0.0" y="60" width="400" height="48"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, you agree to our" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvw-g9-0EC">
+                                    <rect key="frame" x="106.5" y="0.0" width="187.5" height="18"/>
+                                    <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Tcf-0r-OJa">
+                                    <rect key="frame" x="40.5" y="18" width="319" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va6-YC-QQ0">
+                                            <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                            <state key="normal" title="terms of use"/>
+                                            <connections>
+                                                <action selector="termsAction" destination="BYN-lZ-tbs" eventType="touchUpInside" id="YRV-xS-tzT"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr8-j5-nu2">
+                                            <rect key="frame" x="80" y="0.0" width="23.5" height="30"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-0m-gkh">
+                                            <rect key="frame" x="107.5" y="0.0" width="82" height="30"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                            <state key="normal" title="privacy policy"/>
+                                            <connections>
+                                                <action selector="privacyAction" destination="BYN-lZ-tbs" eventType="touchUpInside" id="9AC-7a-M8z"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlN-Mv-xTO">
+                                            <rect key="frame" x="193.5" y="0.0" width="23.5" height="30"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMJ-NL-g19">
+                                            <rect key="frame" x="221" y="0.0" width="98" height="30"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                            <state key="normal" title="code of conduct"/>
+                                            <connections>
+                                                <action selector="conductAction" destination="BYN-lZ-tbs" eventType="touchUpInside" id="yyI-iB-5G3"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="AKf-cp-drV" firstAttribute="top" secondItem="6OT-Jf-Dg0" secondAttribute="top" id="3EW-FQ-Wq4"/>
+                <constraint firstItem="6OT-Jf-Dg0" firstAttribute="trailing" secondItem="AKf-cp-drV" secondAttribute="trailing" id="CIo-A3-DWl"/>
+                <constraint firstItem="AKf-cp-drV" firstAttribute="leading" secondItem="6OT-Jf-Dg0" secondAttribute="leading" id="dxb-bb-4PB"/>
+                <constraint firstItem="6OT-Jf-Dg0" firstAttribute="bottom" secondItem="AKf-cp-drV" secondAttribute="bottom" id="oMI-F3-rQo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="6OT-Jf-Dg0"/>
+            <connections>
+                <outlet property="andConductLabel" destination="xlN-Mv-xTO" id="hTl-2U-M1s"/>
+                <outlet property="andLabel" destination="Hr8-j5-nu2" id="5oP-Ze-Vcn"/>
+                <outlet property="conductButton" destination="dMJ-NL-g19" id="3S1-D1-UuI"/>
+                <outlet property="privacyButton" destination="8vb-0m-gkh" id="KHO-jK-XwK"/>
+                <outlet property="termsButton" destination="va6-YC-QQ0" id="R7g-ki-Kp8"/>
+                <outlet property="titleLabel" destination="gvw-g9-0EC" id="Nxk-GN-Uaf"/>
+            </connections>
+            <point key="canvasLocation" x="240.57971014492756" y="-340.17857142857139"/>
+        </view>
+    </objects>
+</document>

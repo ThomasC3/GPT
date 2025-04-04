@@ -1,0 +1,12 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "symbols" : [
+    {
+      "filename" : "airport_shuttle_airport_shuttle_symbol.svg",
+      "idiom" : "universal"
+    }
+  ]
+}

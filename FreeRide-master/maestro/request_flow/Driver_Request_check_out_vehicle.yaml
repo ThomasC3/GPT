@@ -1,0 +1,36 @@
+appId: com.thefreeride.driver.stage
+---
+- assertVisible: "Check Out Vehicle"
+- tapOn:
+    text: "Check Out Vehicle"
+- assertVisible: "Select a Vehicle"
+- tapOn: ${VEHICLE_NAME}
+
+- assertVisible: "Select a Service"
+- runFlow:
+    when:
+      visible: "Mixed Service"
+    commands:
+        - tapOn: "Mixed Service"
+- runFlow:
+    when:
+      visible: "Non WAV"
+    commands:
+        - tapOn: "Non WAV"
+
+- assertVisible: "Vehicle Inspection"
+- tapOn:
+    id: "battery"
+- inputText: "100"
+- tapOn:
+    id: "mileage"
+- inputText: "10000"
+- tapOn: "Vehicle Inspection"
+- tapOn:
+    id: "confirmationButton"
+
+- tapOn:
+    id: "menuNavigationButton"
+- assertVisible: "Available"
+- tapOn:
+    id: "menuNavigationButton"

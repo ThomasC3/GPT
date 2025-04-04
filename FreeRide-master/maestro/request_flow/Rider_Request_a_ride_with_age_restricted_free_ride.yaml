@@ -1,0 +1,22 @@
+appId: com.thefreeride.rider.stage
+---
+- runFlow: Rider_set_pickup_with_current_location.yaml
+
+- runFlow:
+    file: Rider_set_dropoff_with_first_search_result.yaml
+    env:
+      DROPOFF: ${DROPOFF}
+
+- tapOn: "Confirm Route"
+
+- scrollUntilVisible:
+    element: "Ride Value"
+- scrollUntilVisible:
+    element: "Good news! Your age group is receiving free rides."
+
+- assertVisible: "Good news! Your age group is receiving free rides."
+
+- takeScreenshot: ScreenshotAgeGroupReceivingFreeRide
+
+- tapOn:
+    id: "bar_image" #back

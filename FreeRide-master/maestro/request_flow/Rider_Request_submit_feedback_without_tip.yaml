@@ -1,0 +1,17 @@
+appId: com.thefreeride.rider.stage
+---
+- assertVisible: "Thank you for Riding"
+
+- runFlow:
+    when:
+      visible: "Contribution"
+    commands:
+        - assertVisible: ${CONTRIBUTION_COPY}
+
+- tapOn:
+    id: "rating"
+- tapOn:
+    id: "input_feedback"
+- inputText: "created by maestro"
+- hideKeyboard
+- tapOn: "Submit Feedback"

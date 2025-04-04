@@ -1,0 +1,12 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn:
+    id: "button_drawer" #menu_button
+- tapOn: "Payments"
+
+- tapOn: "Remove promo code"
+- tapOn: "Yes, remove my promocode"
+
+- tapOn:
+    id: "bar_image" #back
+- tapOn: "Ride"

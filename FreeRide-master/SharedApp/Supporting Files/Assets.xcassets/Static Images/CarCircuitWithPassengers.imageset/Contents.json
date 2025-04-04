@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "car_circuit_with_passengers.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

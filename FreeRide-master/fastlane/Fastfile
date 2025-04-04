@@ -1,0 +1,348 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+fastlane_version "2.207.0"
+REQUIRED_XCODE_VERSION = "13.1"
+default_platform :ios
+
+PROJECT_NAME = "FreeRide"
+OUTPUT_DIR = "./build"
+
+RIDER_DEV_SCHEME = "RiderApp"
+RIDER_DEV_IDENTIFIER = "com.thefreeride.rider.dev"
+RIDER_DEV_IPA_PATH = "#{OUTPUT_DIR}/#{RIDER_DEV_SCHEME}.ipa"
+RIDER_DEV_DSYM_PATH = "#{OUTPUT_DIR}/#{RIDER_DEV_SCHEME}.app.dSYM.zip"
+RIDER_DEV_PLIST = "./RiderApp/Supporting Files/Info.plist"
+
+RIDER_STAGE_SCHEME = "RiderApp-Stage"
+RIDER_STAGE_IDENTIFIER = "com.thefreeride.rider.stage"
+RIDER_STAGE_IPA_PATH = "#{OUTPUT_DIR}/#{RIDER_STAGE_SCHEME}.ipa"
+RIDER_STAGE_DSYM_PATH = "#{OUTPUT_DIR}/#{RIDER_STAGE_SCHEME}.app.dSYM.zip"
+RIDER_STAGE_PLIST = "./RiderApp/Supporting Files/Stage-Info.plist"
+
+RIDER_PROD_SCHEME = "RiderApp-Prod"
+RIDER_PROD_IDENTIFIER = "com.thefreeride.app"
+RIDER_PROD_IPA_PATH = "#{OUTPUT_DIR}/#{RIDER_PROD_SCHEME}.ipa"
+RIDER_PROD_DSYM_PATH = "#{OUTPUT_DIR}/#{RIDER_PROD_SCHEME}.app.dSYM.zip"
+RIDER_PROD_PLIST = "./RiderApp/Supporting Files/Prod-Info.plist"
+
+DRIVER_DEV_SCHEME = "DriverApp"
+DRIVER_DEV_IDENTIFIER = "com.thefreeride.driver.dev"
+DRIVER_DEV_IPA_PATH = "#{OUTPUT_DIR}/#{DRIVER_DEV_SCHEME}.ipa"
+DRIVER_DEV_DSYM_PATH = "#{OUTPUT_DIR}/#{DRIVER_DEV_SCHEME}.app.dSYM.zip"
+DRIVER_DEV_PLIST = "./DriverApp/Supporting Files/Info.plist"
+
+DRIVER_STAGE_SCHEME = "DriverApp-Stage"
+DRIVER_STAGE_IDENTIFIER = "com.thefreeride.driver.stage"
+DRIVER_STAGE_IPA_PATH = "#{OUTPUT_DIR}/#{DRIVER_STAGE_SCHEME}.ipa"
+DRIVER_STAGE_DSYM_PATH = "#{OUTPUT_DIR}/#{DRIVER_STAGE_SCHEME}.app.dSYM.zip"
+DRIVER_STAGE_PLIST = "./DriverApp/Supporting Files/Stage-Info.plist"
+
+DRIVER_PROD_SCHEME = "DriverApp-Prod"
+DRIVER_PROD_IDENTIFIER = "com.thefreeride.driver"
+DRIVER_PROD_IPA_PATH = "#{OUTPUT_DIR}/#{DRIVER_PROD_SCHEME}.ipa"
+DRIVER_PROD_DSYM_PATH = "#{OUTPUT_DIR}/#{DRIVER_PROD_SCHEME}.app.dSYM.zip"
+DRIVER_PROD_PLIST = "./DriverApp/Supporting Files/Prod-Info.plist"
+
+
+default_platform(:ios)
+
+desc "(private lane) Increment the Build Number of a .plist file"
+desc "  Parameters:"
+desc "    plist - .plist file path"
+private_lane :bump_build_number do |options|
+  plist_file = options[:plist]
+  build_number = get_info_plist_value(
+    path: plist_file,
+    key: 'CFBundleVersion',
+  )
+  new_number = (build_number.to_i + 1).to_s
+  puts "Current build number is #{build_number}"
+  puts "Updated build number to #{new_number}"
+  set_info_plist_value(
+    path: plist_file,
+    key: 'CFBundleVersion',
+    value: new_number
+  )
+end
+
+desc "(private lane) Bump the Version Number of the project"
+desc "  Parameters:"
+desc "    version_setting_key - .plist file path"
+desc "    bump_type - major, minor or patch"
+desc "    omit_zero_patch_version - true or false. Omit the patch part when it's zero"
+private_lane :bump_version do |options|
+  version_setting_key = options[:version_setting_key]
+
+  version_number = ""
+  build_number = ""
+
+  project = Xcodeproj::Project.open("../#{PROJECT_NAME}.xcodeproj")
+  project.build_configurations.each do |build|
+    # Version Number
+    current_version = build.build_settings[version_setting_key]
+    puts "#{build.name}: current #{version_setting_key} is #{current_version}"
+
+    version_array = current_version.split(".").map(&:to_i)
+    case options[:bump_type]
+    when "patch"
+      version_array[2] = (version_array[2] ? version_array[2] : 0) + 1
+    when "minor"
+      version_array[1] = (version_array[1] ? version_array[1] : 0) + 1
+      version_array[2] = version_array[2] = 0
+    when "major"
+      version_array[0] = (version_array[0] ? version_array[0] : 0) + 1
+      version_array[1] = version_array[1] = 0
+      version_array[1] = version_array[2] = 0
+    end
+
+    if options[:omit_zero_patch_version] && version_array[2] == 0
+      version_array.pop()
+    end
+
+    version_number = version_array.join(".")
+    puts "#{build.name}: setting new #{version_setting_key} with #{version_number}"
+    build.build_settings[version_setting_key] = version_number
+  end
+  project.save()
+
+  ENV["VERSION_NUMBER"] = version_number
+  version_number
+end
+
+desc "Bump version for Rider Beta"
+desc "  Parameters:"
+desc "    bump_type - major, minor or patch"
+lane :bump_version_rider_beta do |options|
+  ensure_git_status_clean(show_uncommitted_changes: true)
+
+  version_number = bump_version(
+    version_setting_key: "SHARED_RIDER_BETA_VERSION_NUMBER",
+    bump_type: options[:bump_type],
+    omit_zero_patch_version: false
+  )
+
+  commit_message = "Bump Rider Beta to v#{version_number}"
+  puts commit_message
+  git_commit(path: [
+    "./#{PROJECT_NAME}.xcodeproj/project.pbxproj",
+  ], message: commit_message)
+end
+
+desc "Bump version for Driver Beta"
+desc "  Parameters:"
+desc "    bump_type - major, minor or patch"
+lane :bump_version_driver_beta do |options|
+  ensure_git_status_clean(show_uncommitted_changes: true)
+
+  version_number = bump_version(
+    version_setting_key: "SHARED_DRIVER_BETA_VERSION_NUMBER",
+    bump_type: options[:bump_type],
+    omit_zero_patch_version: false
+  )
+
+  commit_message = "Bump Driver Beta to v#{version_number}"
+  puts commit_message
+  git_commit(path: [
+    "./#{PROJECT_NAME}.xcodeproj/project.pbxproj",
+  ], message: commit_message)
+end
+
+desc "Bump version for Rider"
+desc "  Parameters:"
+desc "    bump_type - major, minor or patch"
+lane :bump_version_rider do |options|
+  ensure_git_status_clean(show_uncommitted_changes: true)
+
+  bump_version(
+    version_setting_key: "SHARED_RIDER_BETA_VERSION_NUMBER",
+    bump_type: options[:bump_type],
+    omit_zero_patch_version: false
+  )
+  version_number = bump_version(
+    version_setting_key: "SHARED_RIDER_VERSION_NUMBER",
+    bump_type: options[:bump_type],
+    omit_zero_patch_version: false
+  )
+
+  commit_message = "Bump Rider to v#{version_number}"
+  puts commit_message
+  git_commit(path: [
+    "./#{PROJECT_NAME}.xcodeproj/project.pbxproj",
+  ], message: commit_message)
+end
+
+desc "Bump version for Driver"
+desc "  Parameters:"
+desc "    bump_type - major, minor or patch"
+lane :bump_version_driver do |options|
+  ensure_git_status_clean(show_uncommitted_changes: true)
+
+  bump_version(
+    version_setting_key: "SHARED_DRIVER_BETA_VERSION_NUMBER",
+    bump_type: options[:bump_type],
+    omit_zero_patch_version: false
+  )
+  version_number = bump_version(
+    version_setting_key: "SHARED_DRIVER_VERSION_NUMBER",
+    bump_type: options[:bump_type],
+    omit_zero_patch_version: false
+  )
+
+  commit_message = "Bump Driver to v#{version_number}"
+  puts commit_message
+  git_commit(path: [
+    "./#{PROJECT_NAME}.xcodeproj/project.pbxproj",
+  ], message: commit_message)  
+end
+
+desc "(private lane) Build app for AppStore"
+desc "  Parameters:"
+desc "    plist - .plist file path"
+desc "    scheme - scheme name"
+private_lane :appstore_build do |options|
+  # FIXME: set the CURRENT_PROJECT_VERSION instead.
+  #bump_build_number(plist: options[:plist])
+  gym(
+    scheme: options[:scheme], 
+    export_method: "app-store", 
+    include_bitcode: false,
+    output_directory: OUTPUT_DIR,
+  )
+end
+
+desc "(private lane) Upload the latest build to AppStore Connect"
+desc "  Parameters:"
+desc "    username - Apple ID username"
+desc "    app_identifier - builded app identifier"
+desc "    binary_path - builded IPA file path"
+private_lane :upload_latest_to_appstore do |options|
+  pilot(
+    username: options[:username],
+    team_id: "117763137", #"The Free Ride Inc"
+    dev_portal_team_id: "5J7V7XU3SQ",
+    app_identifier: options[:app_identifier],
+    ipa: options[:binary_path],
+    skip_submission: true,
+    skip_waiting_for_build_processing: true,
+    uses_non_exempt_encryption: false,
+  )
+end
+
+desc "Create a TestFlight beta for Driver using the Development environment"
+desc "  Parameters:"
+desc "    username - Apple ID username"
+desc "⚠️ Note: do your first build manually on Xcode to update your certificates"
+lane :beta_driver_dev do |options|
+  appstore_build(
+    scheme: DRIVER_DEV_SCHEME,
+    plist: DRIVER_DEV_PLIST
+  )
+  upload_latest_to_appstore(
+    username: options[:username],
+    app_identifier: DRIVER_DEV_IDENTIFIER,
+    binary_path: DRIVER_DEV_IPA_PATH
+  )
+end
+
+desc "Create a TestFlight beta for Rider using the Development environment"
+desc "  Parameters:"
+desc "    username - Apple ID username"
+desc "⚠️ Note: do your first build manually on Xcode to update your certificates"
+lane :beta_rider_dev do |options|
+  appstore_build(
+    scheme: RIDER_DEV_SCHEME,
+    plist: RIDER_DEV_PLIST
+  )
+  upload_latest_to_appstore(
+    username: options[:username],
+    app_identifier: RIDER_DEV_IDENTIFIER,
+    binary_path: RIDER_DEV_IPA_PATH
+  )
+end
+
+desc "Create a TestFlight beta for Driver using the Staging environment"
+desc "  Parameters:"
+desc "    username - Apple ID username"
+desc "⚠️ Note: do your first build manually on Xcode to update your certificates"
+lane :beta_driver_staging do |options|
+  appstore_build(
+    scheme: DRIVER_STAGE_SCHEME,
+    plist: DRIVER_STAGE_PLIST
+  )
+  upload_latest_to_appstore(
+    username: options[:username],
+    app_identifier: DRIVER_STAGE_IDENTIFIER,
+    binary_path: DRIVER_STAGE_IPA_PATH
+  )
+end
+
+desc "Create a TestFlight beta for Rider using the Staging environment"
+desc "  Parameters:"
+desc "    username - Apple ID username"
+desc "⚠️ Note: do your first build manually on Xcode to update your certificates"
+lane :beta_rider_staging do |options|
+  appstore_build(
+    scheme: RIDER_STAGE_SCHEME,
+    plist: RIDER_STAGE_PLIST
+  )
+  upload_latest_to_appstore(
+    username: options[:username],
+    app_identifier: RIDER_STAGE_IDENTIFIER,
+    binary_path: RIDER_STAGE_IPA_PATH
+  )
+end
+
+desc "Release Driver app to the App Store"
+desc "  Parameters:"
+desc "    username - Apple ID username"
+desc "⚠️ Note: do your first build manually on Xcode to update your certificates"
+lane :release_driver do |options|
+  appstore_build(
+    scheme: DRIVER_PROD_SCHEME,
+    plist: DRIVER_PROD_PLIST
+  )
+  upload_latest_to_appstore(
+    username: options[:username],
+    app_identifier: DRIVER_PROD_IDENTIFIER,
+    binary_path: DRIVER_PROD_IPA_PATH
+  )
+end
+
+desc "Release Rider app to the App Store"
+desc "  Parameters:"
+desc "    username - Apple ID username"
+desc "⚠️ Note: do your first build manually on Xcode to update your certificates"
+lane :release_rider do |options|
+  appstore_build(
+    scheme: RIDER_PROD_SCHEME,
+    plist: RIDER_PROD_PLIST
+  )
+  upload_latest_to_appstore(
+    username: options[:username],
+    app_identifier: RIDER_PROD_IDENTIFIER,
+    binary_path: RIDER_PROD_IPA_PATH
+  )
+end
+
+lane :run_integration_tests do |options|
+  run_tests(
+    workspace: "FreeRide.xcworkspace",
+    scheme: "RiderApp-Stage",
+    device: "iPhone 13"
+  )
+  run_tests(
+    workspace: "FreeRide.xcworkspace",
+    scheme: "DriverApp-Stage",
+    device: "iPhone 13"
+  )
+end

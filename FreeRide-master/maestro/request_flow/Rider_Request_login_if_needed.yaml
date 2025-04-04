@@ -1,0 +1,9 @@
+appId: com.thefreeride.rider.stage
+---
+- runFlow:
+    when:
+      visible: "Log In"
+    file: Rider_Request_login.yaml
+    env:
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}

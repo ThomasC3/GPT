@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="myw-hH-6rC" customClass="LocationUnavailableView" customModule="RiderApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hap-0f-xre">
+                    <rect key="frame" x="20" y="10" width="307" height="70"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oGg-cl-T2o">
+                            <rect key="frame" x="0.0" y="0.0" width="307" height="70"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yy1-oB-rhG">
+                                    <rect key="frame" x="0.0" y="14.5" width="307" height="41"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Closed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvG-f6-ywR" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="307" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f39-Dd-zQi" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="20.5" width="307" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="ebG-uL-EKH"/>
+                        <constraint firstItem="oGg-cl-T2o" firstAttribute="leading" secondItem="Hap-0f-xre" secondAttribute="leading" id="lRF-sP-PPr"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="59q-yQ-wdf" firstAttribute="bottom" secondItem="Hap-0f-xre" secondAttribute="bottom" constant="10" id="S7P-D3-IVs"/>
+                <constraint firstItem="Hap-0f-xre" firstAttribute="top" secondItem="myw-hH-6rC" secondAttribute="top" constant="10" id="T9p-HH-xJl"/>
+                <constraint firstItem="59q-yQ-wdf" firstAttribute="trailing" secondItem="Hap-0f-xre" secondAttribute="trailing" constant="20" id="ZoB-g1-98z"/>
+                <constraint firstItem="Hap-0f-xre" firstAttribute="leading" secondItem="myw-hH-6rC" secondAttribute="leading" constant="20" id="ahh-75-Ltn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="59q-yQ-wdf"/>
+            <connections>
+                <outlet property="infoLabel" destination="f39-Dd-zQi" id="8fa-B0-0hS"/>
+                <outlet property="locationLabel" destination="fvG-f6-ywR" id="xm3-fI-UsX"/>
+            </connections>
+            <point key="canvasLocation" x="609.4202898550725" y="-308.70535714285711"/>
+        </view>
+    </objects>
+</document>

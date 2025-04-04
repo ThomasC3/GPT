@@ -1,0 +1,54 @@
+appId: com.thefreeride.rider.stage
+---
+
+# Sign In
+- runFlow:
+    file: Rider_SignIn_should_succeed.yaml
+- runFlow:
+    file: Rider_SignIn_should_fail_with_invalid_email.yaml
+
+# Apple Sign-in
+- runFlow:
+    when:
+      true: ${ SSO_PASSWORD !== null && SSO_PASSWORD.trim() != '' }
+    file: Rider_SignIn_with_Apple_SSO_should_succeed.yaml
+    env:
+      SSO_PASSWORD: ${SSO_PASSWORD}
+
+# Google Sign-in
+- runFlow:
+    when:
+      true: ${ SSO_PASSWORD !== null && SSO_PASSWORD.trim() != '' }
+    file: Rider_SignIn_with_Google_SSO_should_succeed.yaml
+    env:
+      SSO_PASSWORD: ${SSO_PASSWORD}
+
+# Sign Up
+- runFlow:
+    file: Rider_SignUp_should_succeed_but_phone_verification_is_ignored_by_user.yaml
+
+# Prepare app for next tests:
+- runFlow:
+    file: RiderLogin.yaml
+    env:
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}
+
+- assertVisible:
+    id: "pickupAddressField"
+
+# Profile
+- runFlow:
+    file: Rider_Profile_should_present_information_of_the_current_user.yaml
+
+# Payments
+- runFlow:
+    file: Rider_Payments_should_be_able_to_add_card.yaml
+
+# Locations
+- runFlow:
+    file: Rider_Locations_should_be_able_to_change_location_from_the_list.yaml
+
+- launchApp
+- runFlow:
+    file: RiderLogout.yaml

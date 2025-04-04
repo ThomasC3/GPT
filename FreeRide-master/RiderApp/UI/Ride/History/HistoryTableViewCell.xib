@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryTableViewCell" rowHeight="340" id="ea5-sY-fGE" customClass="HistoryTableViewCell" customModule="RiderApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ea5-sY-fGE" id="RqX-8f-CZX">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyA-Db-6mN" customClass="CardView" customModule="RiderApp" customModuleProvider="target">
+                        <rect key="frame" x="20" y="10" width="335" height="316"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eE6-eA-ETN">
+                                <rect key="frame" x="20" y="4" width="295" height="292"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qeo-rP-hAi">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="61"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tef-mR-5WI">
+                                                <rect key="frame" x="0.0" y="0.0" width="236" height="61"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAO-Ge-o0s" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="236" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="RMa-wR-ZwM">
+                                                        <rect key="frame" x="0.0" y="25.5" width="236" height="35.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4sv-oR-m1z">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="15" id="2WM-HB-669"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9R2-o5-KQc" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="15" width="41.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="hCM-tn-gFM">
+                                                <rect key="frame" x="241" y="18.5" width="54" height="24"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="xRN-hE-0E7" customClass="PassengerStackView" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="54" height="24"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="54" id="7tl-wa-Ltf"/>
+                                                    <constraint firstAttribute="height" constant="24" id="Sg8-vd-LbQ"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="4nm-UL-1SW"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gU-Fd-eXh">
+                                        <rect key="frame" x="0.0" y="71" width="295" height="1"/>
+                                        <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="4zX-OA-Ge4"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-Ro-siQ">
+                                        <rect key="frame" x="0.0" y="82" width="295" height="45"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_near_me_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="rwA-cW-Rcm">
+                                                <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="9q5-4g-5OP"/>
+                                                    <constraint firstAttribute="width" constant="24" id="rYk-z5-sDs"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="EKD-8p-MYb">
+                                                <rect key="frame" x="40" y="4.5" width="255" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-dQ-rnh" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLD-xd-DHx" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="19" width="255" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="aQM-os-xfO"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7K5-8D-IKB">
+                                        <rect key="frame" x="0.0" y="137" width="295" height="45"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_flag_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="8UM-Ql-ZcC">
+                                                <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="3Is-Dg-vKs"/>
+                                                    <constraint firstAttribute="height" constant="24" id="bkj-JV-6Fm"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-Ly-Y0p">
+                                                <rect key="frame" x="40" y="4.5" width="255" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropoff" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGQ-rL-p2h" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhA-vh-V8v" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="19" width="255" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="hsV-Sk-vcC"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-rf-BBp">
+                                        <rect key="frame" x="0.0" y="192" width="295" height="45"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_credit_card_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="Exx-YJ-agB">
+                                                <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="8vh-Ys-tfY"/>
+                                                    <constraint firstAttribute="height" constant="24" id="fQv-5L-Aud"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XeX-pb-P16">
+                                                <rect key="frame" x="40" y="4.5" width="255" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZ8-LF-FqL" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oy-9a-SRh" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="19" width="255" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="1Sb-2W-g1B"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kus-k8-4if">
+                                        <rect key="frame" x="0.0" y="247" width="295" height="45"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_card_giftcard_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="kFa-Sx-zq7">
+                                                <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="4eb-OR-CWT"/>
+                                                    <constraint firstAttribute="height" constant="24" id="cuy-l4-VTa"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="tGX-Bo-4SR">
+                                                <rect key="frame" x="40" y="4.5" width="255" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bz9-cz-1YJ" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLc-LB-NMD" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="19" width="255" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="adX-6T-qbm"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eE6-eA-ETN" secondAttribute="trailing" constant="20" id="Aay-BB-XAV"/>
+                            <constraint firstItem="eE6-eA-ETN" firstAttribute="leading" secondItem="fyA-Db-6mN" secondAttribute="leading" constant="20" id="NEf-fd-gWd"/>
+                            <constraint firstItem="eE6-eA-ETN" firstAttribute="top" secondItem="fyA-Db-6mN" secondAttribute="top" constant="4" id="XHh-hS-D8H"/>
+                            <constraint firstAttribute="bottom" secondItem="eE6-eA-ETN" secondAttribute="bottom" constant="20" id="v1n-ok-Pro"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="fyA-Db-6mN" firstAttribute="top" secondItem="RqX-8f-CZX" secondAttribute="top" constant="10" id="FDY-2h-GRk"/>
+                    <constraint firstAttribute="bottom" secondItem="fyA-Db-6mN" secondAttribute="bottom" constant="10" id="OsR-Ng-45g"/>
+                    <constraint firstAttribute="trailing" secondItem="fyA-Db-6mN" secondAttribute="trailing" constant="20" id="nIw-yu-EXx"/>
+                    <constraint firstItem="fyA-Db-6mN" firstAttribute="leading" secondItem="RqX-8f-CZX" secondAttribute="leading" constant="20" id="zPq-vv-bpL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="dropoffLabel" destination="QhA-vh-V8v" id="cVU-01-BsG"/>
+                <outlet property="dropoffSubLabel" destination="EGQ-rL-p2h" id="Whi-iq-PJy"/>
+                <outlet property="missingRatingLabel" destination="9R2-o5-KQc" id="xaC-eX-9DI"/>
+                <outlet property="nameLabel" destination="KAO-Ge-o0s" id="6fU-Cu-bZY"/>
+                <outlet property="passengerStackView" destination="xRN-hE-0E7" id="ONX-gJ-HPa"/>
+                <outlet property="paymentStackView" destination="Ydb-rf-BBp" id="KZs-Cc-r6d"/>
+                <outlet property="pickupLabel" destination="hLD-xd-DHx" id="Y1q-iu-1lq"/>
+                <outlet property="pickupSubLabel" destination="qaE-dQ-rnh" id="6v5-H8-ccl"/>
+                <outlet property="priceSubLabel" destination="UZ8-LF-FqL" id="dZr-kb-PGT"/>
+                <outlet property="ratingStackView" destination="4sv-oR-m1z" id="2pY-mf-q2B"/>
+                <outlet property="rideLabel" destination="5oy-9a-SRh" id="MoD-bF-ich"/>
+                <outlet property="tipLabel" destination="tLc-LB-NMD" id="vr3-mj-YFh"/>
+                <outlet property="tipStackView" destination="kus-k8-4if" id="EjV-DG-pJn"/>
+                <outlet property="tipSubLabel" destination="bz9-cz-1YJ" id="Zzk-za-c6L"/>
+            </connections>
+            <point key="canvasLocation" x="-377" y="53"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="round_card_giftcard_black_24pt" width="24" height="24"/>
+        <image name="round_credit_card_black_24pt" width="24" height="24"/>
+        <image name="round_flag_black_24pt" width="24" height="24"/>
+        <image name="round_near_me_black_24pt" width="24" height="24"/>
+    </resources>
+</document>

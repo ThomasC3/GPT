@@ -1,0 +1,9 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp
+
+- tapOn:
+    id: "menuNavigationButton"
+- tapOn: "Edit Profile"
+- assertVisible: Email:.*${USERNAME}.* #regex
+- takeScreenshot: ProfileScreen

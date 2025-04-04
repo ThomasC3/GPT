@@ -1,0 +1,12 @@
+appId: com.thefreeride.rider.stage
+---
+- waitForAnimationToEnd
+# Credit Card Number
+- inputText: "4242424242424242"
+# Month
+- inputText: "01"
+# Year
+- inputText: "29"
+# Secure Code
+- inputText: "123"
+- tapOn: "Add Payment Method"

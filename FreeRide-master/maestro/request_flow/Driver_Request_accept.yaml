@@ -1,0 +1,4 @@
+appId: com.thefreeride.driver.stage
+---
+- assertVisible: "Arrived"
+- tapOn: "Arrived"

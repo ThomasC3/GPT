@@ -1,0 +1,5 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn: "Confirm Route"
+- tapOn:
+    text: "Request"

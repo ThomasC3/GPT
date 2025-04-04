@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Xo6-aw-BOI" customClass="TopView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="488" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="99l-9w-XIO">
+                    <rect key="frame" x="0.0" y="0.0" width="488" height="48"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LPN-JY-vgv">
+                            <rect key="frame" x="16" y="0.0" width="456" height="48"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj7-45-Ivl" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="2" width="38" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="38" id="8KI-fK-Aov"/>
+                                        <constraint firstAttribute="height" constant="44" id="xfD-CC-ypR"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="handleLeftNavigationAction" destination="Xo6-aw-BOI" eventType="touchUpInside" id="u6M-eR-mM2"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="n3k-10-jra" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="44" y="6.5" width="368" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Ybp-co-FWK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygZ-Hp-K8g" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="418" y="2" width="38" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="Iem-3H-olJ"/>
+                                        <constraint firstAttribute="width" constant="38" id="eSb-Yl-Zt5"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="handleRightNavigationAction" destination="Xo6-aw-BOI" eventType="touchUpInside" id="NrU-w9-JGA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="Rve-T3-net"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="LPN-JY-vgv" firstAttribute="leading" secondItem="99l-9w-XIO" secondAttribute="leading" constant="16" id="sxt-IC-c6F"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="99l-9w-XIO" firstAttribute="leading" secondItem="ZqE-4d-1On" secondAttribute="leading" id="2Bv-yp-cqC"/>
+                <constraint firstItem="ZqE-4d-1On" firstAttribute="bottom" secondItem="99l-9w-XIO" secondAttribute="bottom" id="9LR-bA-oVa"/>
+                <constraint firstItem="ZqE-4d-1On" firstAttribute="trailing" secondItem="99l-9w-XIO" secondAttribute="trailing" id="BXp-d7-Q1u"/>
+                <constraint firstItem="99l-9w-XIO" firstAttribute="top" secondItem="ZqE-4d-1On" secondAttribute="top" id="YkI-cu-ZgT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ZqE-4d-1On"/>
+            <connections>
+                <outlet property="horizontalStackView" destination="LPN-JY-vgv" id="1xb-QB-7sS"/>
+                <outlet property="leftNavigationButton" destination="vj7-45-Ivl" id="6AK-ha-mxS"/>
+                <outlet property="rightNavigationButton" destination="ygZ-Hp-K8g" id="Rt2-EB-1PC"/>
+                <outlet property="stackViewHeight" destination="Rve-T3-net" id="zOj-1I-BnQ"/>
+                <outlet property="titleLabel" destination="n3k-10-jra" id="Wwy-3c-t1G"/>
+                <outlet property="verticalStackView" destination="99l-9w-XIO" id="Dbq-8v-oOX"/>
+            </connections>
+            <point key="canvasLocation" x="374.39999999999998" y="-10.344827586206897"/>
+        </view>
+    </objects>
+</document>

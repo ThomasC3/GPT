@@ -1,0 +1,32 @@
+appId: com.thefreeride.rider.stage
+---
+- launchApp
+
+- tapOn:
+    id: "locationsNavigationButton"
+- assertVisible: "Edit Location"
+# Wait for locations list to load
+- assertVisible: "round info black 36pt"
+
+- scrollUntilVisible:
+    element:
+      text: "Lisboa"
+    direction: DOWN
+    timeout: 50000
+
+- assertVisible: "Lisboa"
+- tapOn: "Lisboa"
+
+- tapOn:
+    id: "menuNavigationButton" #menu_button
+- tapOn: "Locations"
+
+- scrollUntilVisible:
+    element:
+      text: "Miami"
+    direction: DOWN
+    timeout: 50000
+
+- assertVisible: "Miami"
+- takeScreenshot: LocationsScreen
+- tapOn: "Miami"

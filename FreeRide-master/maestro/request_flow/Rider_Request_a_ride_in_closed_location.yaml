@@ -1,0 +1,27 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn:
+    id: "button_edit_location"
+- assertVisible: "Edit Location"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "com.thefreeride.rider.stage:id/image_info"
+    index: 0
+
+- scrollUntilVisible:
+    element:
+      text: "Porto"
+    direction: DOWN
+    timeout: 50000
+
+- assertVisible: "Porto"
+- tapOn: "Porto"
+
+- runFlow: Rider_Request_ignore_stop_not_found.yaml
+- waitForAnimationToEnd
+- assertVisible: "Service is closed. Check the service hours in the menu for details."
+
+- assertNotVisible:
+    id: "input_dropoff_edit_text"
+
+- takeScreenshot: ScreenshotLocationClosed

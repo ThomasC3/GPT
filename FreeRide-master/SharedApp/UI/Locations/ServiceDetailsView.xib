@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="flH-iW-rE7" customClass="ServiceDetailsView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="312"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sNC-x4-DH6">
+                    <rect key="frame" x="20" y="0.0" width="335" height="312"/>
+                    <subviews>
+                        <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlA-Ae-vtV" customClass="MapView" customModule="DriverApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="260"/>
+                            <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="260" id="xMl-gQ-DfN"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-8b-8U4">
+                            <rect key="frame" x="0.0" y="280" width="335" height="32"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zn-5x-erJ" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_accessible_black_36pt" translatesAutoresizingMaskIntoConstraints="NO" id="M9F-T5-BXf">
+                                    <rect key="frame" x="308" y="0.5" width="27" height="31"/>
+                                    <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31" id="2jf-qb-fGZ"/>
+                                        <constraint firstAttribute="width" constant="27" id="iom-Xp-Kjl"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="VLl-Tw-rHD"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="9nu-uT-Ovv"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="sNC-x4-DH6" firstAttribute="top" secondItem="9nu-uT-Ovv" secondAttribute="top" id="5HM-K4-RI3"/>
+                <constraint firstItem="9nu-uT-Ovv" firstAttribute="trailing" secondItem="sNC-x4-DH6" secondAttribute="trailing" constant="20" id="HvB-pd-tTp"/>
+                <constraint firstAttribute="bottom" secondItem="sNC-x4-DH6" secondAttribute="bottom" id="aim-0K-Z7J"/>
+                <constraint firstItem="sNC-x4-DH6" firstAttribute="leading" secondItem="9nu-uT-Ovv" secondAttribute="leading" constant="20" id="ndP-Lw-aEJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="adaImageView" destination="M9F-T5-BXf" id="7Ki-15-zRX"/>
+                <outlet property="mapView" destination="NlA-Ae-vtV" id="K3m-jZ-ZX2"/>
+                <outlet property="statusLabel" destination="8Zn-5x-erJ" id="Zep-Hb-TRk"/>
+            </connections>
+            <point key="canvasLocation" x="-130.40000000000001" y="-313.04347826086956"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="round_accessible_black_36pt" width="36" height="36"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

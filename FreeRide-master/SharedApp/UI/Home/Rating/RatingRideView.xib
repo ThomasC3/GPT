@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gcy-E3-d4y" customClass="RatingRideView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="611"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="QfZ-Yq-bOX">
+                    <rect key="frame" x="20" y="20" width="334" height="571"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hJJ-hO-1cI">
+                            <rect key="frame" x="0.0" y="0.0" width="334" height="265.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ride summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-Ya-Lhn" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nsU-e0-je6">
+                                    <rect key="frame" x="0.0" y="40.5" width="334" height="225"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Kl-mK-KfC">
+                                            <rect key="frame" x="0.0" y="0.0" width="334" height="45"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_person_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="KLQ-0N-Fu9">
+                                                    <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                    <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="RUn-BQ-b34"/>
+                                                        <constraint firstAttribute="width" constant="24" id="vJk-tb-Csx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Bq2-Iz-LHg">
+                                                    <rect key="frame" x="40" y="4.5" width="294" height="36"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXv-Fe-33M" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a1-LM-bSX" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="19" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="nmh-7k-ElK"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9KI-Gh-pHe">
+                                            <rect key="frame" x="0.0" y="45" width="334" height="45"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_near_me_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="eY3-5T-c3o">
+                                                    <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                    <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="KIZ-YP-9AG"/>
+                                                        <constraint firstAttribute="width" constant="24" id="Nd3-Lz-3GV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WwO-Fz-79l">
+                                                    <rect key="frame" x="40" y="4.5" width="294" height="36"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiW-sp-5dM" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b68-yL-RKm" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="19" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="KdT-Dm-De1"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IfJ-U4-Ech">
+                                            <rect key="frame" x="0.0" y="90" width="334" height="45"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_flag_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="j35-Zl-gwr">
+                                                    <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                    <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="OC3-KJ-flH"/>
+                                                        <constraint firstAttribute="height" constant="24" id="u0N-HY-HoO"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Im1-vi-GbL">
+                                                    <rect key="frame" x="40" y="4.5" width="294" height="36"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropoff" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1T0-YR-kLP" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-r7-bJI" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="19" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="wRQ-O1-jSn"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GVi-BN-G8U">
+                                            <rect key="frame" x="0.0" y="135" width="334" height="45"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_credit_card_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="tdQ-Ce-ns9">
+                                                    <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                    <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="gue-Cr-XaP"/>
+                                                        <constraint firstAttribute="width" constant="24" id="z7Y-Ok-gmD"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="qth-Mv-jdy">
+                                                    <rect key="frame" x="40" y="4.5" width="294" height="36"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-s7-eol" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mht-rL-zdE" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="19" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="rR4-i5-v7X"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vHz-tV-SGa">
+                                            <rect key="frame" x="0.0" y="180" width="334" height="45"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_card_giftcard_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="fk0-kt-eoa">
+                                                    <rect key="frame" x="0.0" y="10.5" width="24" height="24"/>
+                                                    <color key="tintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="N5T-SY-bVm"/>
+                                                        <constraint firstAttribute="width" constant="24" id="g8j-A8-Qvg"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="tLC-pe-anH">
+                                                    <rect key="frame" x="40" y="4.5" width="294" height="36"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhB-ud-ZTF" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVc-0v-2S7" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="19" width="294" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="QQT-fa-rGA"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vwh-s2-Dt9">
+                            <rect key="frame" x="0.0" y="292" width="334" height="1"/>
+                            <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="0cd-26-uP4"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DzR-9z-oYg">
+                            <rect key="frame" x="0.0" y="319.5" width="334" height="80.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a tip to your driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2r-nb-iOQ" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="CEO-An-9cb">
+                                    <rect key="frame" x="0.0" y="40.5" width="334" height="41"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="oIH-km-MFg"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="No Tip"/>
+                                        <segment title="$3"/>
+                                        <segment title="$5"/>
+                                        <segment title="More"/>
+                                    </segments>
+                                    <color key="selectedSegmentTintColor" red="0.047058823530000002" green="0.6588235294" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="driverTipChanged:" destination="gcy-E3-d4y" eventType="valueChanged" id="CBn-zr-xkN"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyQ-2q-dxF">
+                            <rect key="frame" x="0.0" y="426.5" width="334" height="1"/>
+                            <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="VCD-WL-7vK"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J5V-At-Pzi">
+                            <rect key="frame" x="0.0" y="454" width="334" height="117"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us about your ride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcS-7V-Re7" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report reason:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxM-oi-8Gj" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="40.5" width="334" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3EA-hx-k68">
+                                    <rect key="frame" x="0.0" y="81" width="334" height="36"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ho5-yB-Unn">
+                                            <rect key="frame" x="7" y="0.0" width="320" height="36"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="q6A-Xg-6of"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="RZQ-Yu-zh0"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RZQ-Yu-zh0" firstAttribute="bottom" secondItem="QfZ-Yq-bOX" secondAttribute="bottom" constant="20" id="Iez-9p-o3L"/>
+                <constraint firstItem="QfZ-Yq-bOX" firstAttribute="top" secondItem="RZQ-Yu-zh0" secondAttribute="top" constant="20" id="U2K-JN-wC6"/>
+                <constraint firstItem="QfZ-Yq-bOX" firstAttribute="leading" secondItem="RZQ-Yu-zh0" secondAttribute="leading" constant="20" id="kDR-2h-up3"/>
+                <constraint firstItem="RZQ-Yu-zh0" firstAttribute="trailing" secondItem="QfZ-Yq-bOX" secondAttribute="trailing" constant="20" id="xTo-L5-VoE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="driverTipControl" destination="CEO-An-9cb" id="Nft-rZ-mrR"/>
+                <outlet property="driverTipStackView" destination="DzR-9z-oYg" id="dzU-lH-OxQ"/>
+                <outlet property="driverTipsDividerView" destination="Vwh-s2-Dt9" id="JLQ-Qi-MdS"/>
+                <outlet property="dropoffLabel" destination="lbW-r7-bJI" id="jT4-IO-m0u"/>
+                <outlet property="dropoffTitle" destination="1T0-YR-kLP" id="o5S-MV-9ss"/>
+                <outlet property="feedbackStackTitle" destination="xcS-7V-Re7" id="Wg1-ET-8ns"/>
+                <outlet property="personLabel" destination="2a1-LM-bSX" id="gyO-Ld-8j5"/>
+                <outlet property="personTitle" destination="xXv-Fe-33M" id="HeD-4D-h0M"/>
+                <outlet property="pickupLabel" destination="b68-yL-RKm" id="l6w-Kp-5cJ"/>
+                <outlet property="pickupTitle" destination="aiW-sp-5dM" id="Lej-yw-mQH"/>
+                <outlet property="priceLabel" destination="mht-rL-zdE" id="Tk0-jf-5K3"/>
+                <outlet property="priceStackView" destination="GVi-BN-G8U" id="8RH-pi-hMX"/>
+                <outlet property="priceTitle" destination="aeV-s7-eol" id="Jqf-u0-xhD"/>
+                <outlet property="ratingStackView" destination="ho5-yB-Unn" id="ayS-Bd-IaZ"/>
+                <outlet property="reportReasonLabel" destination="GxM-oi-8Gj" id="PME-og-Pjc"/>
+                <outlet property="rideTipStackView" destination="vHz-tV-SGa" id="fDF-33-4Cd"/>
+                <outlet property="summaryStackTitle" destination="aE0-Ya-Lhn" id="Zhg-Zq-7sX"/>
+                <outlet property="tipLabel" destination="SVc-0v-2S7" id="kgo-KE-iCM"/>
+                <outlet property="tipStackTitle" destination="i2r-nb-iOQ" id="muG-LD-nDk"/>
+                <outlet property="tipTitle" destination="PhB-ud-ZTF" id="lMM-wf-nQd"/>
+                <outletCollection property="stackTitleLabels" destination="aE0-Ya-Lhn" collectionClass="NSMutableArray" id="Vo5-Ob-wA7"/>
+                <outletCollection property="stackTitleLabels" destination="i2r-nb-iOQ" collectionClass="NSMutableArray" id="hRj-XD-Tri"/>
+                <outletCollection property="stackTitleLabels" destination="xcS-7V-Re7" collectionClass="NSMutableArray" id="GUE-mR-wcZ"/>
+                <outletCollection property="detailLabels" destination="2a1-LM-bSX" collectionClass="NSMutableArray" id="Avf-DC-hDg"/>
+                <outletCollection property="titleLabels" destination="xXv-Fe-33M" collectionClass="NSMutableArray" id="Mk4-gB-52O"/>
+                <outletCollection property="detailLabels" destination="b68-yL-RKm" collectionClass="NSMutableArray" id="0gj-uL-SxE"/>
+                <outletCollection property="titleLabels" destination="aiW-sp-5dM" collectionClass="NSMutableArray" id="p6D-9m-zDf"/>
+                <outletCollection property="titleLabels" destination="1T0-YR-kLP" collectionClass="NSMutableArray" id="XxL-Kx-a6N"/>
+                <outletCollection property="detailLabels" destination="lbW-r7-bJI" collectionClass="NSMutableArray" id="QSF-vh-12m"/>
+                <outletCollection property="titleLabels" destination="aeV-s7-eol" collectionClass="NSMutableArray" id="fLR-X9-FWO"/>
+                <outletCollection property="detailLabels" destination="mht-rL-zdE" collectionClass="NSMutableArray" id="zRo-3M-P1u"/>
+                <outletCollection property="titleLabels" destination="PhB-ud-ZTF" collectionClass="NSMutableArray" id="tn0-PL-FdK"/>
+                <outletCollection property="detailLabels" destination="SVc-0v-2S7" collectionClass="NSMutableArray" id="H6W-ON-bJd"/>
+            </connections>
+            <point key="canvasLocation" x="100.8" y="69.715142428785612"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="round_card_giftcard_black_24pt" width="24" height="24"/>
+        <image name="round_credit_card_black_24pt" width="24" height="24"/>
+        <image name="round_flag_black_24pt" width="24" height="24"/>
+        <image name="round_near_me_black_24pt" width="24" height="24"/>
+        <image name="round_person_black_24pt" width="24" height="24"/>
+    </resources>
+</document>

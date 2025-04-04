@@ -1,0 +1,140 @@
+﻿App Messaging (last update _______)[a][b][c][d][e][f]
+
+
+
+
+ADMIN COPY (Suspended, Closed, Alerts/Pop ups)        1
+Closed copy (out of service hours):        1
+Suspended (seasonal)        1
+Suspended (indeterminate)        1
+App Service not available        2
+Coming Soon (no set open date)        2
+Coming Soon (open date set)        2
+Inclement Weather        2
+Traffic/Expect Delays        2
+Holiday (Service Closed)        2
+Brightline Service Only        3
+Age Requirement        3
+BACK END COPY (Talk to Tucker & Whitesmith to change)        3
+
+
+ADMIN COPY (Suspended, Closed, Alerts/Pop ups)
+Closed copy (out of service hours):
+Hi there! We're currently closed, but we'll be cruising soon. To view operational hours please go to "Locations" in the app menu, find your market, and then click on the information icon.
+
+
+[SPANISH]
+[SPANISH]
+
+
+Suspended (seasonal)
+Service is Suspended/Closed for the Season
+Thanks for a great summer! Catch a ride with us all year long in our other markets. See you next year!
+
+
+[SPANISH]
+[SPANISH]
+
+
+Suspended (indeterminate) 
+Service is Suspended
+Thanks for the great ride! To voice your support or learn more about how to advertise/sponsor Circuit in [LOCATION], please reach us at our contact page ridecircuit.com/contact.
+
+
+[SPANISH]
+[SPANISH]
+
+
+App Service not available
+App Request service is not available at this location. Flag down a car to catch a ride! 
+
+
+[SPANISH]
+[SPANISH]
+
+
+Coming Soon (no set open date)
+Service is closed
+Service Coming Soon
+
+
+[SPANISH]
+[SPANISH]
+
+
+Coming Soon (open date set)
+Service Coming Soon
+We’re charging our batteries for launch! Rides will be open to the public starting [OPEN DATE].
+
+
+[SPANISH]
+[SPANISH]
+
+
+Inclement Weather
+Service Alert
+Due to inclement weather, Circuit service is temporarily closed/operating with delays. 
+
+
+[SPANISH]
+[SPANISH]
+Traffic/Expect Delays
+Expect Delays
+Due to [event/holiday], we expect higher traffic and wait times on [DATE]. Please plan accordingly.
+[SPANISH]
+[SPANISH]
+
+
+Holiday (Service Closed)
+Happy [HOLIDAY] or Closed For The Holiday
+We will be closed [DATE] so our team can be home for holiday, but we'll be back on the road [DATE]. See you on the road soon!
+
+
+[SPANISH]
+[SPANISH]
+
+
+Brightline Service Only
+Brightline Service Only
+Service in [LOCATION] is currently for Brightline passengers only. Requests must originate or end at the Brightline station and is for active Brightline customers only.
+
+
+[SPANISH]
+[SPANISH]
+
+
+Age Requirement 
+Age Verified Service
+[LOCATION] service is currently available for users aged [AGE RANGE].
+
+
+[SPANISH]
+[SPANISH]
+
+
+
+
+BACK END COPY (Talk to Tucker & Whitesmith to change)
+Driver is on the way
+Driver not matched
+Connecting to driver
+Ride Cancelation
+
+
+
+
+
+
+[a]@jackie.plein@ridecircuit.com I like this new format, much easier to read and sort through. 
+
+
+Important to remember that we need Spanish versions of all copy too.
+_Assigned to Jacqueline Plein_
+[b]Roger that... do we have any sort of resource for translating copy to spanish... either on the team or others who could assist?
+[c]You probably don't want me doing it lol
+[d]No human resources at the moment, we've had a mix of internal spanish speakers help out over the years but Google Translate has also been heavily involved. 
+
+
+There is some Spanish copy in the original copy spreadsheet but we'll likely need to rebuild with new Spanish language resources.
+[e]_Marked as done_
+[f]_Re-opened_

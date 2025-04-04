@@ -1,0 +1,8 @@
+# We have multiple App Identifiers
+#app_identifier("com.thefreeride.rider") # The bundle identifier of your app
+
+itc_team_id("117763137") # App Store Connect Team ID
+team_id("5J7V7XU3SQ") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

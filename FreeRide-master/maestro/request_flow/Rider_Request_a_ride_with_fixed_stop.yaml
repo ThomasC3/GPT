@@ -1,0 +1,6 @@
+appId: com.thefreeride.rider.stage
+---
+- runFlow: Rider_Request_a_ride.yaml
+
+- assertVisible: "Please be ready when they arrive. Your driver will pick you up at the spot you selected."
+- takeScreenshot: ScreenshotRequestWithFixedStop

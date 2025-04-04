@@ -1,0 +1,30 @@
+appId: com.thefreeride.driver.stage
+---
+- launchApp
+
+- assertVisible: "Queue is clear"
+- tapOn:
+    id: "actionNavigationButton"
+- assertVisible: "Ride Queue"
+- tapOn:
+    id: "rightNavigationButton"
+- assertVisible: "Add Ride"
+- tapOn:
+    id: "hailedRidePlusButton"
+- tapOn:
+    id: "hailedRidePlusButton"
+- assertVisible: "3"
+- tapOn:
+    id: "hailedRideMinusButton"
+- assertVisible: "2"
+- tapOn:
+    text: "Add Ride"
+- assertVisible: "Ride Added"
+- tapOn: "Ok"
+- assertVisible: "2 pax"
+- tapOn:
+    id: "leftNavigationButton"
+- assertVisible: "1 Stop Left in Queue"
+- assertVisible: "2 Hailed Riders"
+- tapOn: "Drop Off"
+- assertVisible: "Queue is clear"

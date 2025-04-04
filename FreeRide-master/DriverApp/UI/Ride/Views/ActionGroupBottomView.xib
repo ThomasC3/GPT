@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="cSR-xQ-U1k" customClass="ActionGroupBottomView" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="312"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="uo6-wU-lMH">
+                    <rect key="frame" x="20" y="68" width="360" height="190"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VKd-jp-qKA">
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-cn-SON">
+                                    <rect key="frame" x="0.0" y="0.0" width="69" height="60"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="FS Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S75-eq-4pG" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="69" height="8"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eac-1x-mdz" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="18" width="69" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ETA" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-nt-IsD" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="44" width="69" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="pax" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsO-FJ-hdA" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="79" y="0.0" width="281" height="60"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeK-pa-xwL">
+                            <rect key="frame" x="0.0" y="77" width="360" height="1"/>
+                            <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="bcR-Iq-NDT"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXc-Si-hCI" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="95" width="360" height="39"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="0Fb-t5-j1W"/>
+                            </constraints>
+                            <state key="normal" title="Pickup"/>
+                            <connections>
+                                <action selector="actionGroupUpdateAction" destination="cSR-xQ-U1k" eventType="touchUpInside" id="ECQ-2R-pCf"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QMX-9b-3Qr">
+                            <rect key="frame" x="0.0" y="151" width="360" height="39"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amd-dW-nJs" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="175" height="39"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="39" id="H59-Er-bgs"/>
+                                    </constraints>
+                                    <state key="normal" title="Cancel"/>
+                                    <connections>
+                                        <action selector="cancelAction" destination="cSR-xQ-U1k" eventType="touchUpInside" id="B15-Tj-bAu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoZ-SS-wVQ" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="185" y="0.0" width="175" height="39"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="39" id="YdO-yc-5ka"/>
+                                    </constraints>
+                                    <state key="normal" title="Contact"/>
+                                    <connections>
+                                        <action selector="contactAction" destination="cSR-xQ-U1k" eventType="touchUpInside" id="rdQ-qF-Xtl"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="qeK-pa-xwL" firstAttribute="leading" secondItem="uo6-wU-lMH" secondAttribute="leading" id="6WE-Og-fxj"/>
+                        <constraint firstAttribute="trailing" secondItem="QMX-9b-3Qr" secondAttribute="trailing" id="Cnd-ft-vi5"/>
+                        <constraint firstAttribute="trailing" secondItem="oXc-Si-hCI" secondAttribute="trailing" id="Uvj-dq-Fum"/>
+                        <constraint firstAttribute="trailing" secondItem="VKd-jp-qKA" secondAttribute="trailing" id="Vlt-43-oXH"/>
+                        <constraint firstItem="QMX-9b-3Qr" firstAttribute="leading" secondItem="uo6-wU-lMH" secondAttribute="leading" id="aqL-mg-pvr"/>
+                        <constraint firstItem="VKd-jp-qKA" firstAttribute="leading" secondItem="uo6-wU-lMH" secondAttribute="leading" id="gYB-RS-U1n"/>
+                        <constraint firstItem="oXc-Si-hCI" firstAttribute="leading" secondItem="uo6-wU-lMH" secondAttribute="leading" id="mwG-bz-ZlP"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="1Tq-5m-Lba"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="uo6-wU-lMH" firstAttribute="top" secondItem="1Tq-5m-Lba" secondAttribute="top" constant="20" id="YeI-ll-bKm"/>
+                <constraint firstItem="1Tq-5m-Lba" firstAttribute="bottom" secondItem="uo6-wU-lMH" secondAttribute="bottom" constant="20" id="acP-uP-8yj"/>
+                <constraint firstItem="1Tq-5m-Lba" firstAttribute="trailing" secondItem="uo6-wU-lMH" secondAttribute="trailing" constant="20" id="ctQ-mt-dyM"/>
+                <constraint firstItem="uo6-wU-lMH" firstAttribute="leading" secondItem="1Tq-5m-Lba" secondAttribute="leading" constant="20" id="sAV-Ma-nP3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="actionCancelButton" destination="Amd-dW-nJs" id="gql-cR-lWF"/>
+                <outlet property="actionContactButton" destination="WoZ-SS-wVQ" id="8To-x9-dSe"/>
+                <outlet property="actionGroupUpdateButton" destination="oXc-Si-hCI" id="rCl-cc-6jz"/>
+                <outlet property="bottomStack" destination="QMX-9b-3Qr" id="uRE-Wu-Z4d"/>
+                <outlet property="etaLabel" destination="bMd-nt-IsD" id="p6z-ke-yhn"/>
+                <outlet property="nameLabel" destination="S75-eq-4pG" id="nEn-JD-72U"/>
+                <outlet property="passengersLabel" destination="eac-1x-mdz" id="UXx-7D-3fE"/>
+                <outlet property="paxLabel" destination="gsO-FJ-hdA" id="Tab-D2-xEG"/>
+            </connections>
+            <point key="canvasLocation" x="-254" y="-505"/>
+        </view>
+    </objects>
+</document>

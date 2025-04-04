@@ -1,0 +1,7 @@
+appId: com.thefreeride.driver.stage
+---
+- runFlow:
+    when:
+      visible: 
+        id: "menuNavigationButton"
+    file: Driver_Request_logout.yaml

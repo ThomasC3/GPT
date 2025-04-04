@@ -1,0 +1,13 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn: "Log In"
+- tapOn:
+    id: "email_button"
+- tapOn:
+    id: "email_edit_text"
+- inputText: ${USERNAME}
+- tapOn:
+    id: "password_edit_text"
+- inputText: ${PASSWORD}
+- tapOn:
+    id: "sign_in_button"

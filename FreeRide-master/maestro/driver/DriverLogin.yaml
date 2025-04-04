@@ -1,0 +1,27 @@
+appId: com.thefreeride.driver.stage
+---
+- tapOn:
+    id: "emailTextField"
+- inputText: ${USERNAME}
+- tapOn:
+    id: "passwordTextField"
+- inputText: ${PASSWORD}
+
+#- hideKeyboard
+- tapOn: "Welcome Back!"
+
+- tapOn:
+    id: "confirmationButton"
+
+- assertVisible: "You need to complete the personal inspection before you login"
+
+- tapOn: "Ok"
+
+- tapOn:
+    id: "intoxicationCheckBox"
+- tapOn:
+    id: "licenceCheckBox"
+- tapOn:
+    id: "rulesCheckBox"
+- tapOn:
+    id: "confirmationButton"

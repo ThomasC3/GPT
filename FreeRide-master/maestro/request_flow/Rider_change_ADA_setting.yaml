@@ -1,0 +1,10 @@
+appId: com.thefreeride.rider.stage
+---
+- tapOn:
+    id: "button_drawer" #menu_button
+- tapOn:
+    text: "Accessibility"
+- assertVisible: "Request wheelchair accessible vehicles"
+- tapOn: ${ADA_STATUS}
+- back
+- tapOn: "Ride"

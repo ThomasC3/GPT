@@ -1,0 +1,6 @@
+appId: com.thefreeride.rider.stage
+---
+- assertVisible: "Age Requirement"
+- assertVisible: "Apologies, you age doesn't comply with the location requirement."
+- assertNotVisible: "Pickup Address"
+- takeScreenshot: ScreenshotLocationAgeRequirement

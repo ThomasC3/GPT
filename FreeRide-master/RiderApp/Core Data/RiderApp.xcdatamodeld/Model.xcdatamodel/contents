@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="22G91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Coordinate" representedClassName=".Coordinate" syncable="YES">
+        <attribute name="index" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="latitude" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="serviceArea" inverseEntity="Location"/>
+    </entity>
+    <entity name="Location" representedClassName=".Location" syncable="YES">
+        <attribute name="adImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="adRedirectUrl" optional="YES" attributeType="String"/>
+        <attribute name="ageRequirementCopy" optional="YES" attributeType="String"/>
+        <attribute name="ageRequirementTitle" optional="YES" attributeType="String"/>
+        <attribute name="alertCopy" optional="YES" attributeType="String"/>
+        <attribute name="alertTitle" optional="YES" attributeType="String"/>
+        <attribute name="closedCopy" attributeType="String"/>
+        <attribute name="fleetEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hasAppService" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="inactiveCopy" attributeType="String"/>
+        <attribute name="isActive" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isADA" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isOpen" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isSuspended" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isUsingServiceTimes" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="meetsAgeRequirement" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="paymentEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="poolingEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="pwywCopy" optional="YES" attributeType="String"/>
+        <attribute name="pwywCurrency" optional="YES" attributeType="String"/>
+        <attribute name="pwywEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="pwywMaxCustomValue" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pwywOptions" optional="YES" attributeType="Transformable"/>
+        <attribute name="riderAgeRequirement" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="riderPickupDirections" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="showAlert" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="suspendedCopy" optional="YES" attributeType="String"/>
+        <attribute name="suspendedTitle" optional="YES" attributeType="String"/>
+        <attribute name="tipCurrency" optional="YES" attributeType="String"/>
+        <attribute name="tipEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="tipMaxCustomValue" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipOptions" optional="YES" attributeType="Transformable"/>
+        <relationship name="serviceArea" toMany="YES" deletionRule="Cascade" destinationEntity="Coordinate" inverseName="location" inverseEntity="Coordinate"/>
+        <relationship name="serviceHours" toMany="YES" deletionRule="Cascade" destinationEntity="ServiceHours" inverseName="location" inverseEntity="ServiceHours"/>
+    </entity>
+    <entity name="Ride" representedClassName=".Ride" syncable="YES">
+        <attribute name="createdTimestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="currency" optional="YES" attributeType="String"/>
+        <attribute name="destinationAddress" attributeType="String"/>
+        <attribute name="destinationFixedStopId" optional="YES" attributeType="String"/>
+        <attribute name="destinationLatitude" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="destinationLongitude" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="discount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="driverArrivedTimestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="driverName" attributeType="String"/>
+        <attribute name="driverPhoto" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="isADA" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isRated" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="licensePlate" optional="YES" attributeType="String"/>
+        <attribute name="originAddress" attributeType="String"/>
+        <attribute name="originFixedStopId" optional="YES" attributeType="String"/>
+        <attribute name="originLatitude" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="originLongitude" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="passengers" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="paymentStatus" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="statusValue" attributeType="Integer 32" defaultValueString="200" usesScalarValueType="YES"/>
+        <attribute name="tipCurrency" optional="YES" attributeType="String"/>
+        <attribute name="tipTotal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalPrice" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalWithoutDiscount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="ServiceHours" representedClassName=".ServiceHours" syncable="YES">
+        <attribute name="closed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="closeTime" attributeType="String"/>
+        <attribute name="day" attributeType="String"/>
+        <attribute name="openTime" attributeType="String"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="serviceHours" inverseEntity="Location"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="apple" optional="YES" attributeType="String"/>
+        <attribute name="dob" optional="YES" attributeType="String"/>
+        <attribute name="email" attributeType="String"/>
+        <attribute name="emailVerificationDeadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="firstName" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="google" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="iosUserIntercomHash" optional="YES" attributeType="String"/>
+        <attribute name="isEmailVerified" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isPastEmailVerificationDeadline" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isPhoneVerified" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastName" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="zip" attributeType="String"/>
+    </entity>
+</model>

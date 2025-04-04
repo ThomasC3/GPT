@@ -1,0 +1,4 @@
+appId: com.thefreeride.rider.stage
+---
+- assertVisible: Please try requesting again in .+? minutes #regex
+- tapOn: "Ok"

@@ -1,0 +1,36 @@
+appId: com.thefreeride.rider.stage
+---
+- runFlow: Rider_set_pickup_with_current_location.yaml
+
+- runFlow:
+    file: Rider_set_dropoff_with_first_search_result.yaml
+    env:
+      DROPOFF: ${DROPOFF}
+
+- tapOn: "Confirm Route"
+
+- scrollUntilVisible:
+    element: "Ride Value"
+
+- tapOn:
+    id: "pwyw_btn1"
+
+- runFlow:
+    when:
+      visible: "Add Payment Method"
+    commands:
+        - tapOn: "Add Payment Method"
+        - runFlow: Rider_Request_add_payment_method.yaml
+
+- runFlow:
+    when:
+      visible: "Request"
+    commands:
+        - tapOn: "Request"
+
+- assertVisible: "Request confirmation"
+- assertVisible: Total ride cost of .+?\.\sYou will only be charged when you are picked up\..* #regex
+
+- takeScreenshot: ScreenshotRequestWithPWYW
+
+- tapOn: "Confirm"

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="q3n-dC-GLy" customClass="CustomInfoWindow" customModule="DriverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="135"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PJy-nl-9CM">
+                    <rect key="frame" x="20" y="10" width="340" height="115"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-0a-aYD">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="79"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zp5-Bh-i6A" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gx-rG-cWc" customClass="Label" customModule="DriverApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="42" width="340" height="37"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dn2-j3-ZXg">
+                            <rect key="frame" x="0.0" y="89" width="340" height="26"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXG-vF-EUi">
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="1"/>
+                                    <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="WYm-WP-XHh"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="daT-Pa-GJr">
+                                    <rect key="frame" x="77" y="11" width="186" height="15"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYN-Id-oFT" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="f52-Fg-YOg"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="Move pin"/>
+                                            <connections>
+                                                <action selector="editAction" destination="q3n-dC-GLy" eventType="touchUpInside" id="1u8-zL-fvO"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grE-JA-rjV" customClass="Button" customModule="DriverApp" customModuleProvider="target">
+                                            <rect key="frame" x="103" y="0.0" width="83" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="j44-zR-kdG"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="Hide info"/>
+                                            <connections>
+                                                <action selector="hideAction" destination="q3n-dC-GLy" eventType="touchUpInside" id="HR3-K7-7tz"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="sXG-vF-EUi" firstAttribute="leading" secondItem="Dn2-j3-ZXg" secondAttribute="leading" id="rLa-ML-gb8"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="WLe-0a-aYD" secondAttribute="trailing" id="5xu-vM-MXV"/>
+                        <constraint firstItem="Dn2-j3-ZXg" firstAttribute="top" secondItem="WLe-0a-aYD" secondAttribute="bottom" constant="10" id="AqF-68-coC"/>
+                        <constraint firstItem="Dn2-j3-ZXg" firstAttribute="leading" secondItem="PJy-nl-9CM" secondAttribute="leading" id="BY8-ef-7Dj"/>
+                        <constraint firstItem="WLe-0a-aYD" firstAttribute="leading" secondItem="PJy-nl-9CM" secondAttribute="leading" id="eKT-eT-CeL"/>
+                        <constraint firstItem="WLe-0a-aYD" firstAttribute="top" secondItem="PJy-nl-9CM" secondAttribute="top" id="kWC-Ft-ddL"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="PJy-nl-9CM" firstAttribute="leading" secondItem="q3n-dC-GLy" secondAttribute="leading" constant="20" id="BhG-WO-mTa"/>
+                <constraint firstAttribute="trailing" secondItem="PJy-nl-9CM" secondAttribute="trailing" constant="20" id="X0I-sX-OiH"/>
+                <constraint firstAttribute="bottom" secondItem="PJy-nl-9CM" secondAttribute="bottom" constant="10" id="gar-KY-Bk7"/>
+                <constraint firstItem="PJy-nl-9CM" firstAttribute="top" secondItem="q3n-dC-GLy" secondAttribute="top" constant="10" id="idD-IL-ajW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="editButton" destination="XYN-Id-oFT" id="f5E-5g-2a2"/>
+                <outlet property="hideButton" destination="grE-JA-rjV" id="Bjb-CJ-OT6"/>
+                <outlet property="infoLabel" destination="1gx-rG-cWc" id="N6I-PC-qcL"/>
+                <outlet property="titleLabel" destination="zp5-Bh-i6A" id="ywD-3Q-faY"/>
+            </connections>
+            <point key="canvasLocation" x="-1675.3623188405797" y="0.33482142857142855"/>
+        </view>
+    </objects>
+</document>

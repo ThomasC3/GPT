@@ -1,0 +1,18 @@
+appId: com.thefreeride.rider.stage
+---
+- runFlow:
+    file: Rider_change_ADA_setting.yaml
+    env:
+      ADA_STATUS: "Yes"
+
+- runFlow: Rider_set_pickup_with_current_location.yaml
+
+- runFlow:
+    file: Rider_set_dropoff_with_first_search_result.yaml
+    env:
+      DROPOFF: ${DROPOFF}
+
+- tapOn: "Confirm Route"
+
+- tapOn:
+    text: "Request"

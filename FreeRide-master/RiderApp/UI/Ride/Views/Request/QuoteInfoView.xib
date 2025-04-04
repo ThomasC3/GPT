@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="LgO-Xt-8dN" customClass="QuoteInfoView" customModule="RiderApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="221"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xJK-zl-aG0">
+                    <rect key="frame" x="20" y="59" width="360" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCv-4P-w3E">
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="1"/>
+                            <color key="backgroundColor" red="0.88235294119999996" green="0.8862745098" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="adQ-QG-J1v"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Ride Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGM-Bz-YCH" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="44.333333333333329" width="360" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="-" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sko-Ez-Qap" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="107.66666666666666" width="360" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="aCv-4P-w3E" firstAttribute="leading" secondItem="xJK-zl-aG0" secondAttribute="leading" id="9Qx-bn-vfg"/>
+                        <constraint firstAttribute="trailing" secondItem="aCv-4P-w3E" secondAttribute="trailing" id="tf6-XD-bbb"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="5LP-tL-TZr"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5LP-tL-TZr" firstAttribute="bottom" secondItem="xJK-zl-aG0" secondAttribute="bottom" id="S0Y-qe-jvb"/>
+                <constraint firstItem="xJK-zl-aG0" firstAttribute="leading" secondItem="5LP-tL-TZr" secondAttribute="leading" constant="20" id="Tx6-U0-ZCt"/>
+                <constraint firstItem="xJK-zl-aG0" firstAttribute="top" secondItem="5LP-tL-TZr" secondAttribute="top" id="nHQ-0i-pyz"/>
+                <constraint firstItem="5LP-tL-TZr" firstAttribute="trailing" secondItem="xJK-zl-aG0" secondAttribute="trailing" constant="20" id="v79-aH-LRB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="quoteLabel" destination="Sko-Ez-Qap" id="B6i-Gk-8cf"/>
+                <outlet property="quoteTitleLabel" destination="dGM-Bz-YCH" id="idt-5K-OSi"/>
+            </connections>
+            <point key="canvasLocation" x="-530.43478260869574" y="-671.98660714285711"/>
+        </view>
+    </objects>
+</document>

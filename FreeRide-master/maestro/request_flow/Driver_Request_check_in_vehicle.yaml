@@ -1,0 +1,26 @@
+appId: com.thefreeride.driver.stage
+---
+- tapOn:
+    id: "menuNavigationButton"
+- assertVisible: "Available"
+- tapOn:
+    id: "driverAvailabilityToggle"
+- assertVisible: "Swapping cars"
+- tapOn:
+    text: "Swapping cars"
+- tapOn:
+    id: "menuNavigationButton"
+- assertVisible: "Check In Vehicle"
+- tapOn:
+    text: "Check In Vehicle"
+- tapOn:
+    id: "battery"
+- inputText: "100"
+- tapOn:
+    id: "mileage"
+- inputText: "10000"
+#- hideKeyboard
+- tapOn: "Vehicle Inspection"
+- tapOn:
+    id: "confirmationButton"
+- assertVisible: "Check Out Vehicle"

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="C1N-GX-YIu" customClass="AddressFieldsView" customModule="RiderApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="bIj-aM-LMx">
+                    <rect key="frame" x="0.0" y="0.0" width="373" height="160"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X65-CI-aDv">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service is not busy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRf-pY-IGb" customClass="Label" customModule="RiderApp" customModuleProvider="target">
+                                    <rect key="frame" x="50" y="0.0" width="273" height="45"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="CRf-pY-IGb" secondAttribute="bottom" id="7yd-nI-WFo"/>
+                                <constraint firstAttribute="trailing" secondItem="CRf-pY-IGb" secondAttribute="trailing" constant="50" id="8kt-ad-d5c"/>
+                                <constraint firstAttribute="height" constant="45" id="As2-VX-TSi"/>
+                                <constraint firstItem="CRf-pY-IGb" firstAttribute="top" secondItem="X65-CI-aDv" secondAttribute="top" id="C4J-Bj-sbY"/>
+                                <constraint firstItem="CRf-pY-IGb" firstAttribute="leading" secondItem="X65-CI-aDv" secondAttribute="leading" constant="50" id="sDD-Ig-Hrm"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABk-FG-IQV">
+                            <rect key="frame" x="0.0" y="46" width="373" height="114"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1V-WA-8aB">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="114"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_route" translatesAutoresizingMaskIntoConstraints="NO" id="rT5-gx-Jd4">
+                                            <rect key="frame" x="0.0" y="20" width="50" height="74"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rT5-gx-Jd4" firstAttribute="top" secondItem="M1V-WA-8aB" secondAttribute="top" constant="20" id="36d-nI-yKC"/>
+                                        <constraint firstAttribute="width" constant="50" id="Dat-Vl-Ks0"/>
+                                        <constraint firstAttribute="trailing" secondItem="rT5-gx-Jd4" secondAttribute="trailing" id="GgY-uz-Efd"/>
+                                        <constraint firstItem="rT5-gx-Jd4" firstAttribute="leading" secondItem="M1V-WA-8aB" secondAttribute="leading" id="Ktv-6A-1wf"/>
+                                        <constraint firstAttribute="bottom" secondItem="rT5-gx-Jd4" secondAttribute="bottom" constant="20" id="wPU-cK-yRM"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Rex-PJ-mub">
+                                    <rect key="frame" x="50" y="0.0" width="323" height="114"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mji-yG-kms">
+                                            <rect key="frame" x="0.0" y="0.0" width="323" height="5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="5" id="hHq-KQ-b1S"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dIH-zn-Vk4">
+                                            <rect key="frame" x="0.0" y="7.5" width="323" height="45"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pickup address" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-JT-jrZ" customClass="AddressTextField" customModule="RiderApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="13" width="223" height="18.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="street-address"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAT-dT-RfA" customClass="Button" customModule="RiderApp" customModuleProvider="target">
+                                                    <rect key="frame" x="233" y="7.5" width="70" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="1IE-1u-xkO"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="editPickupAction:" destination="C1N-GX-YIu" eventType="touchUpInside" id="VY6-fI-PUj"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8Z-HA-Rwq">
+                                                    <rect key="frame" x="313" y="0.0" width="10" height="45"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="10" id="caD-nZ-Qh4"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="ryN-z2-Hhg"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VP-61-oN7">
+                                            <rect key="frame" x="0.0" y="54" width="323" height="6"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BQ-gw-Slq">
+                                                    <rect key="frame" x="0.0" y="2.5" width="323" height="1"/>
+                                                    <color key="backgroundColor" red="0.88235294117647056" green="0.88627450980392153" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="ZEe-qt-015"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="2BQ-gw-Slq" secondAttribute="trailing" id="Nfo-y8-tM3"/>
+                                                <constraint firstItem="2BQ-gw-Slq" firstAttribute="centerY" secondItem="9VP-61-oN7" secondAttribute="centerY" id="SEQ-iU-UmX"/>
+                                                <constraint firstItem="2BQ-gw-Slq" firstAttribute="leading" secondItem="9VP-61-oN7" secondAttribute="leading" id="bB4-sk-2Q1"/>
+                                                <constraint firstAttribute="height" constant="6" id="vJs-QU-MfM"/>
+                                                <constraint firstItem="2BQ-gw-Slq" firstAttribute="leading" secondItem="9VP-61-oN7" secondAttribute="leading" id="yLQ-cM-urX"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fVD-io-8g3">
+                                            <rect key="frame" x="0.0" y="62" width="323" height="45"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dropoff address" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2f8-P3-iKH" customClass="AddressTextField" customModule="RiderApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="13" width="223" height="18.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="street-address"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIg-FC-x2Y" customClass="Button" customModule="RiderApp" customModuleProvider="target">
+                                                    <rect key="frame" x="233" y="7.5" width="70" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="xUr-4E-L5e"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="editDropoffAction:" destination="C1N-GX-YIu" eventType="touchUpInside" id="nnj-x2-1nA"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1T8-x0-fMZ">
+                                                    <rect key="frame" x="313" y="17.5" width="10" height="10"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="10" id="KXG-vT-g4M"/>
+                                                        <constraint firstAttribute="height" constant="10" id="s1t-ot-dZH"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="7F1-ZV-1ht"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFV-W9-nAU">
+                                            <rect key="frame" x="0.0" y="109" width="323" height="5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="5" id="Hw0-ZX-oo5"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="FOX-Jr-ZDV"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bIj-aM-LMx" firstAttribute="leading" secondItem="FOX-Jr-ZDV" secondAttribute="leading" id="6dJ-Ti-xFh"/>
+                <constraint firstAttribute="trailing" secondItem="bIj-aM-LMx" secondAttribute="trailing" id="7zZ-yi-MTx"/>
+                <constraint firstItem="bIj-aM-LMx" firstAttribute="top" secondItem="C1N-GX-YIu" secondAttribute="top" id="C0D-HL-Qlk"/>
+                <constraint firstItem="bIj-aM-LMx" firstAttribute="leading" secondItem="FOX-Jr-ZDV" secondAttribute="leading" id="M95-MD-umD"/>
+                <constraint firstAttribute="bottom" secondItem="bIj-aM-LMx" secondAttribute="bottom" id="UHZ-Ze-lx8"/>
+                <constraint firstItem="bIj-aM-LMx" firstAttribute="top" secondItem="C1N-GX-YIu" secondAttribute="top" id="awt-Fq-vnz"/>
+                <constraint firstItem="bIj-aM-LMx" firstAttribute="bottom" secondItem="FOX-Jr-ZDV" secondAttribute="bottom" id="hfE-ra-iNf"/>
+                <constraint firstItem="bIj-aM-LMx" firstAttribute="trailing" secondItem="FOX-Jr-ZDV" secondAttribute="trailing" id="r86-Ys-Aj4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addressFieldsStack" destination="ABk-FG-IQV" id="QX0-Ha-Rpz"/>
+                <outlet property="dropoffAddressField" destination="2f8-P3-iKH" id="FHq-GG-wh7"/>
+                <outlet property="dropoffAddressStack" destination="fVD-io-8g3" id="AoD-4P-OLb"/>
+                <outlet property="editDropoffButton" destination="cIg-FC-x2Y" id="kqT-Db-LbR"/>
+                <outlet property="editPickupButton" destination="iAT-dT-RfA" id="g6n-56-GkV"/>
+                <outlet property="pickupAddressField" destination="aM3-JT-jrZ" id="GMR-xR-icc"/>
+                <outlet property="pickupAddressStack" destination="dIH-zn-Vk4" id="pa7-rG-Ez3"/>
+                <outlet property="statusLabel" destination="CRf-pY-IGb" id="7jZ-Sd-fvF"/>
+                <outlet property="statusLabelView" destination="X65-CI-aDv" id="Qkf-Kt-h2d"/>
+            </connections>
+            <point key="canvasLocation" x="-391.19999999999999" y="59.370314842578715"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_route" width="16" height="65"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
