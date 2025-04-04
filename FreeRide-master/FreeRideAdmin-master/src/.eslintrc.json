@@ -1,0 +1,8 @@
+{
+  "extends": ["react-app", "airbnb"],
+  "rules": {
+    "react/prop-types": "warn",
+    "react/no-string-refs": "warn",
+    "comma-dangle": ["warn", "never"]
+  }
+}
