@@ -1,0 +1,4 @@
+#!/usr/bin/env ansible-playbook
+
+- import_playbook: user_provision_playbook.yml
+- import_playbook: cron_provision_playbook.yml

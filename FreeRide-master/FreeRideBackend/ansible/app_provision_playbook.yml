@@ -1,0 +1,29 @@
+---
+
+- import_playbook: "includes/setup.yml"
+
+- hosts:
+    - web
+    - admin
+  remote_user: "{{ provisioner_user }}"
+  become: true
+  roles:
+    - geerlingguy.nodejs
+    - weareinteractive.pm2
+    - yarn
+    - jnv.unattended-upgrades
+    - datadog.datadog
+  tasks:
+    - name: Creates deploy directory
+      file:
+        path: "/var/www/{{ app_name }}"
+        state: directory
+        owner: "{{ provisioner_user }}"
+        group: admin
+        mode: 0775
+    - name: Install pm2 log rotate
+      shell: pm2 install pm2-logrotate
+      args:
+        chdir: "/var/www/{{ app_name }}"
+    - name: Set pm2 max_size
+      shell: pm2 set pm2-logrotate:max_size {{ pm2_max_size }}

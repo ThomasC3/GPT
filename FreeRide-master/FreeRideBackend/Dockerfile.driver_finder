@@ -1,0 +1,17 @@
+FROM python:3.11.4
+LABEL maintainer="pjaneiro@whitesmith.co"
+
+WORKDIR /var/task
+
+COPY lambda/searchDriverForRequests/requirements.txt ./
+RUN pip install -r requirements.txt
+
+COPY lambda/searchDriverForRequests /var/task
+
+RUN mkdir -p /var/log/uwsgi
+
+VOLUME /var/task
+
+EXPOSE 80
+
+CMD ["uwsgi", "--ini", "uwsgi.ini", "--http-socket", ":80"]

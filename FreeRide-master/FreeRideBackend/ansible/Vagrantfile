@@ -1,0 +1,54 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure('2') do |config|
+  config.vm.define 'web' do |node|
+    node.vm.network "private_network", ip: "192.168.111.221"
+
+    node.vm.box = 'generic/ubuntu1804'
+    node.vm.provision :ansible do |ansible|
+      ansible.playbook = 'backend.yml'
+      ansible.verbose = true
+      ansible.inventory_path = './vagrant'
+      ansible.vault_password_file = './vault.key'
+    end
+  end
+
+  config.vm.define 'cron' do |node|
+    node.vm.network "private_network", ip: "192.168.111.222"
+
+    node.vm.box = 'generic/ubuntu1804'
+    node.vm.provision :ansible do |ansible|
+      ansible.playbook = 'cron.yml'
+      ansible.verbose = true
+      ansible.inventory_path = './vagrant'
+      ansible.vault_password_file = './vault.key'
+    end
+  end
+
+  config.vm.define 'nginx' do |node|
+    node.vm.network "private_network", ip: "192.168.111.223"
+    node.vm.network "forwarded_port", guest: 443, host: 4430
+
+    node.vm.box = 'generic/ubuntu1804'
+    node.vm.provision :ansible do |ansible|
+      ansible.playbook = 'nginx_provision_playbook.yml'
+      ansible.verbose = true
+      ansible.inventory_path = './vagrant'
+      ansible.vault_password_file = './vault.key'
+    end
+  end
+
+  config.vm.define 'driver_finder' do |node|
+    node.vm.network "private_network", ip: "192.168.111.225"
+    node.vm.network "forwarded_port", guest: 80, host: 8080
+
+    node.vm.box = 'generic/ubuntu1804'
+    node.vm.provision :ansible do |ansible|
+      ansible.playbook = 'driver_finder_provision_playbook.yml'
+      ansible.verbose = true
+      ansible.inventory_path = './vagrant'
+      ansible.vault_password_file = './vault.key'
+    end
+  end
+end

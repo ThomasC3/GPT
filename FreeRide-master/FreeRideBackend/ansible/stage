@@ -1,0 +1,22 @@
+[web]
+ec2-174-129-117-205.compute-1.amazonaws.com region=east
+ec2-13-57-227-225.us-west-1.compute.amazonaws.com region=west
+
+[cron]
+ec2-100-27-30-113.compute-1.amazonaws.com
+
+[nginx]
+ec2-54-90-150-131.compute-1.amazonaws.com region=east
+ec2-13-52-242-27.us-west-1.compute.amazonaws.com region=west
+
+[driver_finder]
+ec2-54-235-29-249.compute-1.amazonaws.com
+
+[stage:children]
+web
+cron
+nginx
+driver_finder
+
+[all:vars]
+stage=stage

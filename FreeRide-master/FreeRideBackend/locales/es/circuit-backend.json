@@ -1,0 +1,247 @@
+{
+  "InvalidPhoneNumberFormatError": {
+    "default": "Número de teléfono no es válido",
+    "phoneParseFail": "Formato de teléfono no es válido"
+  },
+  "InvalidPinCodeNumber": {
+    "default": "Código PIN Incorrecto"
+  },
+  "LocationNotFoundError": {
+    "default": "Ubicación No Encontrada.",
+    "address": "No se pudo encontrar una dirección disponible para tu ubicación.",
+    "fixedStopSearch": "No se pudo recuperar la información de esta ubicación."
+  },
+  "UnprocessableError": {
+    "default": "Error no procesable"
+  },
+  "RiderNotFoundError": {
+    "default": "Pasajero no encontrado"
+  },
+  "EmailNotSentError": {
+    "default": "Correo Electrónico No Enviado"
+  },
+  "registration": {
+    "facebook": "Ya existe una cuenta con este correo electrónico, teléfono o ID de Facebook.",
+    "google": "Ya existe una cuenta con este correo electrónico, teléfono o ID de Google.",
+    "email": "Ya existe una cuenta con este correo electrónico o teléfono.",
+    "other": "Ya existe una cuenta con este correo electrónico."
+  },
+  "login": {
+    "suspendedAccount": "Tu cuenta ha sido suspendida.",
+    "inactiveAccount": "Esta cuenta ya no está activa.",
+    "userNotFound": "Usuario no encontrado.",
+    "unknownUserType": "Tipo de usuario desconocido\"{{userType}}\"",
+    "genericFailure": "Error de autenticación",
+    "authenticationFailed": "El correo electrónico o contraseña que ingresaste es incorrecta.",
+    "requestFail": "No podemos procesar tu solicitud en este momento.",
+    "success": "Sesión iniciado"
+  },
+  "emailLogin": {
+    "emptyPassword": "¡Hola, bienvenido de nuevo! Antes que podamos iniciar sesión, necesitamos que actualices tu contraseña. Un código PIN fue enviado a tu correo. Por favor, ingresar aquí para que podamos verificar tu cuenta."
+  },
+  "InvalidAccessTokenError": {
+    "default": "Token de acceso no es válido"
+  },
+  "FacebookError": {
+    "default": "Error de solicitud de Facebook"
+  },
+  "facebookLogin": {
+    "accessTokenMissing": "Se requiere token de acceso",
+    "success": "Sesión iniciado",
+    "userNotFound": "Ningún usuario de FB"
+  },
+  "googleLogin": {
+    "accessTokenMissing": "Se requiere token de acceso",
+    "success": "Sesión iniciado",
+    "userNotFound": "No se puede recuperar la información del usuario de Google. Por favor, inténtelo de nuevo más tarde."
+  },
+  "appleLogin": {
+    "identityTokenMissing": "Se requiere token de identidad",
+    "success": "Sesión iniciada exitosamente",
+    "userNotFound": "No se puede recuperar la información del usuario de Apple. Por favor, inténtelo de nuevo más tarde."
+  },
+  "logout": {
+    "deviceTokenMissing": "Se requiere token de dispositivo",
+    "successful": "Has cerrado sesión con éxito",
+    "fail": "No se puede cerrar sesión en este momento."
+  },
+  "riderPassword": {
+    "updateSuccess": "Tu contraseña ha sido actualizada exitosamente.",
+    "updateFail": "No se pudo recuperar esta configuración en este momento. "
+  },
+  "riderForgotPasswordRequest": {
+    "emailSendSuccess": "Por favor revisa el buzón de tu correo electrónico para obtener el código PIN para verificar tu cuenta.",
+    "emailSendUnexpectedFail": "No pudimos enviar un código PIN al correo electrónico proporcionado."
+  },
+  "riderAccount": {
+    "infoFetchFail": "No pudimos recuperar información de esta cuenta en este momento.",
+    "updateFail": "No pudimos actualizar la información de esta cuenta.",
+    "deleteFail": "No pudimos borrar tu cuenta.",
+    "deleteSuccess": "Hemos eliminado su cuenta correctamente."
+  },
+  "riderPhonePinCodeRequest": {
+    "sms": "Código PIN de verificación del teléfono de Circuit: {{pincode}}",
+    "smsSendSuccess": "Favor de revisar tus mensajes de texto para obtener el código PIN necesario para verificar este número telefónico.",
+    "smsSendFail": "No pudimos enviar un código PIN a este número.",
+    "smsSendUnexpectedFail": "Sucede un error",
+    "smsDisabled": "Esta función no está disponible en este momento."
+  },
+  "riderEmailPinCodeRequest": {
+    "email": "Código PIN de verificación del teléfono de Circuit: {{pincode}}",
+    "emailSendSuccess": "Favor de revisar tus mensajes de texto para obtener el código PIN necesario para verificar este número telefónico.",
+    "emailSendFail": "No pudimos enviar un código PIN a este número.",
+    "emailSendUnexpectedFail": "Sucede un error",
+    "emailAlreadyVerified": "La dirección de correo electrónico de esta cuenta ya está verificada",
+    "emailExists": " La dirección de correo electrónico que proporcionó ya existe para otro usuario. Ingrese una dirección de correo electrónico diferente para continuar con el proceso de verificación",
+    "wrongPassword": "Contraseña incorrecta"
+  },
+  "riderPhoneVerification": {
+    "wrongPinCodeEntered": "El código PIN ingresado no es válido.",
+    "pinCodeVerifySuccess": "Tu número de teléfono ha sido verificado con éxito.",
+    "pinCodeVerifyUnexpectedFail": "¡Sucede un error!"
+  },
+  "riderEmailVerification": {
+    "riderNotFound": "No hay cuenta con ese correo electrónico",
+    "wrongPinCodeEntered": "El código PIN ingresado no es válido.",
+    "invalidEmail": "La dirección de correo electrónico que ingresó no es válida. Vuelva a introducir una dirección de correo electrónico válida.",
+    "emailVerificationSuccess": "Su correo electrónico ha sido verificado con éxito: disfrute de su próximo viaje con Circuit.",
+    "emailAlreadyVerified": "La dirección de correo electrónico de esta cuenta ya está verificada"
+  },
+  "location": {
+    "fetchLocationInfoLocationIdNotFound": "No hemos podido obtener esta información de ubicación.",
+    "notFound": "Ubicación con identificación de {{locationId}} no encontrado",
+    "error": "Error de ubicación",
+    "closed": "La ubicación está actualmente cerrada"
+  },
+  "rider": {
+    "notFound": "Pasajero con identificación de {{riderId}} no encontrado",
+    "unableToCreate": "No se puede crear pasajero"
+  },
+  "googleMapsClient": {
+    "default": "La solicitud de Google Maps no se realizó correctamente.",
+    "locationFromZipFail": "No se pudo recuperar la latitud y la longitud del zip del usuario"
+  },
+  "notifications": {
+    "successfullySubscribed": "Suscrito exitosamente"
+  },
+  "stripe": {
+    "createCustomerFail": "No se pudo crear un cliente de Stripe",
+    "setupIntentFail": "No se pudo crear la intención de configuración para {{stripeCustomerId}}",
+    "removePaymentMethodFail": "No se pudo eliminar el método de pago",
+    "paymentConfirmSuccess": "Hemos confirmado el pago con éxito.",
+    "paymentIntentFail": "No se pudo crear la intención de pago para {{stripeCustomerId}}"
+  },
+  "quote": {
+    "locationNotFound": "No se pudo recuperar el presupuesto para la ubicación {{locationName}}",
+    "invalidRidePrice": "¡Ups! Estamos teniendo algunos problemas con el precio del viaje. Por favor inténtalo de nuevo.",
+    "invalidPassengers": "¡Ups! Detectamos un error en la cantidad de pasajeros. ¡Por favor inténtalo de nuevo!",
+    "invalidMaxPwywValue": "¡Guau! Eso es muy generoso. Por favor, compruebe y vuelva a introducir la cantidad de su pago.",
+    "invalidPwywOptions": "¡Uh oh! Parece que hubo un error con tu opción de pago. Por favor inténtalo de nuevo.",
+    "invalidPwywValue": "¡Ups! Parece que hubo un error con el valor de pago elegido. Por favor inténtalo de nuevo.",
+    "lowPwywValue": "¡Ya casi estamos! Debido a las tarifas de procesamiento de tarjetas de crédito, solicitamos un mínimo de $1 al contribuir y respaldar el servicio. Apreciamos mucho el apoyo. ¡Personas como tú ayudan a mantener la comunidad en movimiento!",
+    "highPwywValue": "¡Ya casi estamos! No se pudo procesar la opción de precio elegida. Inténtalo de nuevo."
+  },
+  "poweredBy": {
+    "copy":  "Este viaje fue impulsado por {{- poweredBy}}."
+  },
+  "ride": {
+    "notFound": "No se encontró el viaje con la identificación especificada de {{rideId}}",
+    "notFoundSimple": "Viaje no encontrado",
+    "noRider": "Este viaje no tiene pasajero",
+    "wrongId": "Identificación de viaje incorrecta",
+    "noActiveRidesForRider": "No hay viajes activos para el pasajero {{riderId}}"
+  },
+  "reportByRider": {
+    "driver": "No podemos reportar este conductor en este momento."
+  },
+  "request": {
+    "fail": "No se pudo procesar esta solicitud de viaje en este momento.",
+    "cancel": "Haz elegido cancelar esta solicitud.",
+    "cancelSuccess": "Hemos cancelado tu solicitud con éxito.",
+    "notFound": "Solicitud no encontrada",
+    "cancelCooldown": "Por favor intenta solicitar nuevamente {{timeString}}",
+    "cancelCooldownDefault": "Por favor espera unos momentos e intente nuevamente",
+    "passengerLimit": "Para mantener seguros a nuestros conductores y pasajeros, la cantidad máxima de pasajeros permitidos por auto se ha reducido a {{passengerLimit}}. Favor de revisar esta solicitud. Gracias por la ayuda, y procura guardar seguridad durante el distanciamiento social.",
+    "stopOutsideArea": "Parada no encontrada dentro de la ubicación del servicio {{locationName}}",
+    "pickupOutsideArea": "La recogida está fuera del área de servicio de {{locationName}}",
+    "dropoffOutsideArea": "El destino está fuera del área de servicio de {{locationName}}",
+    "riderAgeRequirement": "La ubicación tiene un requisito de edad que no se cumple",
+    "unVerifiedEmail": "El correo electrónico asociado con su cuenta no ha sido verificado. Verifica tu dirección de correo electrónico para viajar.",
+    "paymentMethodMissing": "Por favor asegúrese de que tenga una tarjeta de crédito válida en su cuenta"
+  },
+  "feedbackByRider": {
+    "success": "¡Gracias por tus comentarios!",
+    "fail": "No pudimos calificar este viaje en este momento."
+  },
+  "globalSettings": {
+    "fetchFail": "Error al recuperar la configuración global",
+    "fetchUnexpectedFail": "No pudimos obtener esta configuración en este momento."
+  },
+  "genericFailure": "Sucede un error. Por favor intenta de nuevo.",
+  "promocode": {
+    "invalid": "Código de promoción no es válido",
+    "invalidMessage": "El código de promoción no es válido",
+    "wrongLocationMessage": "El código de promoción no se puede usar en la ubicación actual",
+    "expiredMessage": "El código de promoción ha expirado",
+    "usageLimitMessage": "Se ha alcanzado el límite de uso para este código promocional"
+  },
+  "rideUpdates": {
+    "driverCancel": "Lo sentimos, el conductor no te pudo recoger, por favor solicita otro viaje."
+  },
+  "driverArrivedNotification": {
+    "title": "El Conductor Ha Llegado",
+    "body": "¡Vámonos! Favor de encontrarte con el conductor. Sólo esperará 3 minutos.",
+    "bodyTimeEnd": "¡Vámonos! Favor de encontrarte con el conductor.",
+    "bodyWithTime": "¡Vámonos! Favor de encontrarte con el conductor. Sólo esperará {{timeString}}."
+  },
+  "driverArrivingNotification": {
+    "title": "Casi Llegamos",
+    "body": "¡Alístate! Conductor {{driverDisplayName}} llegará pronto."
+  },
+  "rideConfirmedNotification": {
+    "title": "Viaje Confirmado",
+    "body": "Generando tu ruta y conectándote con un conductor."
+  },
+  "driverPassesOnRequestNotification": {
+    "title": "Viaje Cancelado",
+    "body": "Lo sentimos, el conductor no pudo realizar esta recogida. Favor de solicitar otro viaje."
+  },
+  "noDriversAvailableNotification": {
+    "title": "Todos los conductores están ocupados",
+    "body": "Todos nuestros conductores están ocupados, actualmente hay una gran demanda de paseos."
+  },
+  "noDriversAvailable": "No hay conductores disponibles en este momento.",
+  "ForbiddenError": {
+    "default": "Prohibido"
+  },
+  "PromocodeStatus": {
+    "1": "El código de promoción no es válido",
+    "2": "El código de promoción no se puede usar en la ubicación actual",
+    "3": "El código de promoción ha expirado",
+    "4": "Se ha alcanzado el límite de uso para este código promocional"
+  },
+  "outdatedApp": "Debes actualizar la aplicación Circuit a la última versión para solicitar viajes",
+  "pincodeLimit": "Demasiadas solicitudes, por favor espera unos minutos antes de volver a intentarlo.",
+  "signupLimitExceeded": "Demasiadas solicitudes, por favor espera unos minutos antes de volver a intentarlo.",
+  "tip": {
+    "invalid": "¡Ups! Parece haber algún problema al procesar tu propina para el conductor. Por favor inténtalo de nuevo.",
+    "fail": "¡Ya casi estamos! No se pudo procesar tu solicitud de propina. Por favor inténtalo de nuevo.",
+    "success": "¡Todo listo! Hemos confirmado y capturado tu propina para el conductor con éxito.",
+    "cancelSuccess": "Hemos cancelado tu propina con éxito.",
+    "alreadySuccess": "Una propina ya ha sido procesada para este viaje. ¡Gracias de nuevo por ayudar a apoyar a tus conductores locales!"
+  },
+  "OngoingRideError": {
+    "default": "Hay viajes en curso."
+  },
+  "OngoingRequestError": {
+    "default": "Hay solicitudes en curso."
+  },
+  "flux": {
+    "notBusy": "no está lleno",
+    "lessBusy": "está menos lleno",
+    "normal": "está normal",
+    "busy": "está lleno",
+    "veryBusy": "está muy lleno"
+  },
+  "testOnlySpanish": "Spanish"
+}

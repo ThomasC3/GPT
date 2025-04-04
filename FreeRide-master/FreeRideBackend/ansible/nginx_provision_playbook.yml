@@ -1,0 +1,11 @@
+---
+
+- import_playbook: "includes/setup.yml"
+
+- hosts: nginx
+  remote_user: "{{ first_root_user }}"
+  become: true
+  roles:
+    - nginx
+    - geerlingguy.nodejs
+    - yarn

@@ -1,0 +1,99 @@
+html {
+  height: 100%;
+}
+
+body {
+  /* Remember to use the other versions for IE 10 and older browsers! */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-family: 'lato', sans-serif;
+}
+
+.container {
+  border-radius: 5px;
+  /* box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1); */
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-family: "museo-slab";
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 20px 0;
+  margin: 0;
+}
+
+.login-item {
+  color: #ffff;
+  padding: 25px 25px 0;
+  margin: 20px 20px 0;
+  border-radius: 3px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+input {
+  border: 2px solid #00CC99;
+  width: 100%;
+  font-size: 12px;
+  color: #3366FF;
+  letter-spacing: 1.71px;
+  margin: 0;
+  outline: 0;
+  padding: 10px 0px 10px 5px;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+button[type=submit] {
+  display: block;
+  width: 100px;
+  padding: 15px 0px;
+  margin: 0 auto;
+  /* Rectangle: */
+  background: #3366FF;
+  /* Login: */
+  font-family: .AppleSystemUIFont;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.label{
+  margin-bottom: 5px;
+}
+label {
+  font-size: 12px;
+  letter-spacing: 1.71px;
+  color: #00CC99;
+}
+
+.form-field {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.text--center {
+  text-align: center;
+}

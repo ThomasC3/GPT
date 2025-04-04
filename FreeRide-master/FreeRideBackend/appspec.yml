@@ -1,0 +1,25 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/apps
+permissions:
+  - object: deploy
+    owner: root
+    mode: 777
+    type:
+      - file
+hooks:
+  BeforeInstall:
+    - location: deploy/clean-up.sh
+      timeout: 3600
+      runas: root
+  AfterInstall:
+    - location: deploy/install.sh
+      timeout: 3600
+      runas: root
+  ApplicationStart:
+    - location: deploy/start.sh
+      timeout: 3600
+      runas: root
+#  ValidateService:

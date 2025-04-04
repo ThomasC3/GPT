@@ -1,0 +1,11 @@
+{
+  "name": "circuit-locations-api",
+  "version": "1.0.0",
+  "description": "Locations API",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@sentry/aws-serverless": "^8.28.0",
+    "mongoose": "^7.0.0"
+  }
+}

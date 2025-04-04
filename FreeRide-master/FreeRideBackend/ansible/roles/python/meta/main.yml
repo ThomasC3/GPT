@@ -1,0 +1,17 @@
+galaxy_info:
+  author: pjaneiro
+  description: Role to install Python
+  company: Whitesmith
+  license: MIT
+  min_ansible_version: '2.4'
+  # Update validated platforms when possible
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - bionic
+  galaxy_tags:
+    - python
+
+dependencies: []

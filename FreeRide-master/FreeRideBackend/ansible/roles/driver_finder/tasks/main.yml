@@ -1,0 +1,76 @@
+---
+- name: Ensure code path exists
+  ansible.builtin.file:
+    name: /var/task
+    state: directory
+    mode: "0755"
+    owner: "{{ provisioner_user }}"
+    group: "{{ provisioner_user }}"
+
+- name: Ensure code is present on server
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../lambda/searchDriverForRequests/{{ item }}"
+    dest: /var/task/
+    mode: "0644"
+  become: true
+  become_user: "{{ provisioner_user }}"
+  loop:
+    - src/
+    - .babelrc
+    - requirements.txt
+
+- name: Ensure project dependencies are met
+  ansible.builtin.pip:
+    chdir: /var/task
+    requirements: requirements.txt
+
+- name: Ensure environment variables file exists
+  ansible.builtin.file:
+    path: /var/task/.env
+    owner: "{{ provisioner_user }}"
+    group: "{{ provisioner_user }}"
+    mode: "0644"
+    state: touch
+
+- name: Ensure environment variables are set
+  ansible.builtin.lineinfile:
+    path: /var/task/.env
+    regexp: ^{{ item.key }}=
+    line: "{{ item.key }}={{ item.value }}"
+  loop: "{{ driver_finder_env_vars | dict2items }}"
+
+- name: Ensure uWSGI systemd file is present
+  ansible.builtin.template:
+    src: driver_finder.service.j2
+    dest: /lib/systemd/system/driver_finder.service
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Ensure needed directories for uWSGI logs exist
+  ansible.builtin.file:
+    name: /var/log/uwsgi
+    state: directory
+    mode: "0755"
+    owner: "{{ provisioner_user }}"
+    group: www-data
+
+- name: Ensure uWSGI service is enabled
+  ansible.builtin.systemd:
+    name: driver_finder.service
+    enabled: true
+    state: restarted
+  become: true
+
+- name: Install and configure Nginx
+  ansible.builtin.include_tasks:
+    file: nginx.yml
+  when: driver_finder_install_nginx
+
+- name: Ensure UWSGI logs are deleted after a week
+  ansible.builtin.cron:
+    name: "Rotate UWSGI logs"
+    special_time: "daily"
+    job: "find /var/log/uwsgi/* -mtime +7 -exec rm {} \\;"
+    state: present
+  become: true

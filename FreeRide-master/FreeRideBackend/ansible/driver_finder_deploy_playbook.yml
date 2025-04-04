@@ -1,0 +1,49 @@
+---
+- name: Run deploy roles
+  hosts: driver_finder
+  remote_user: "{{ provisioner_user }}"
+  become: false
+  pre_tasks:
+    - name: Determine current local branch
+      ansible.builtin.command: git rev-parse --abbrev-ref HEAD
+      delegate_to: localhost
+      register: local_branch
+      changed_when: false
+    - name: Determine last commit hash
+      ansible.builtin.command: git log --no-decorate -1 --format=%H
+      environment:
+        GIT_PAGER: none
+      delegate_to: localhost
+      register: commit_hash
+      changed_when: false
+    - name: Determine last commit subject
+      ansible.builtin.command: git log --no-decorate -1 --format=%s
+      environment:
+        GIT_PAGER: none
+      delegate_to: localhost
+      register: commit_subject
+      changed_when: false
+    - name: Just print current branch
+      ansible.builtin.pause:
+        prompt: "Deploying branch {{ local_branch.stdout }}.\nLast commit was {{ commit_hash.stdout }}, {{ commit_subject.stdout }}"
+        seconds: 3
+      when: not driver_finder_deploy_requires_confirmation
+    - name: Confirm current branch
+      ansible.builtin.pause:
+        prompt: "Deploying branch {{ local_branch.stdout }}.\nLast commit was {{ commit_hash.stdout }}, {{ commit_subject.stdout }}.\nType \"Y\" to deploy"
+        echo: true
+      register: confirm_branch_name
+      when: driver_finder_deploy_requires_confirmation
+    - name: Abort if wrong branch
+      ansible.builtin.meta: end_play
+      when: driver_finder_deploy_requires_confirmation and confirm_branch_name.user_input != "Y"
+  roles:
+    - driver_finder
+  post_tasks:
+    - name: Save REVISION file
+      ansible.builtin.template:
+        src: REVISION.j2
+        dest: /var/task/REVISION
+        owner: "{{ provisioner_user }}"
+        group: "{{ provisioner_user }}"
+        mode: "0644"

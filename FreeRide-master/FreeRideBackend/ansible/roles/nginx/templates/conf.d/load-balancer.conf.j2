@@ -1,0 +1,14 @@
+upstream {{ nginx_stage }} {
+{% if web_upstream_ip_hash %}
+  ip_hash;
+{% endif %}
+{% for server in web_upstream_servers[region] %}
+  server {{ server }};
+{% endfor %}
+}
+
+upstream {{ nginx_stage }}admin {
+{% for server in admin_upstream_servers[region] %}
+  server {{ server }};
+{% endfor %}
+}

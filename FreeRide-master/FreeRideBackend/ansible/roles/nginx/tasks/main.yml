@@ -1,0 +1,103 @@
+---
+- name: Ensure package "nginx" is installed
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+
+- name: Ensure needed directories exist
+  ansible.builtin.file:
+    name: '/etc/nginx/{{ item }}'
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+  loop:
+    - 'conf.d'
+    - 'includes'
+    - 'sites-available'
+    - 'sites-enabled'
+
+- name: Copy "conf.d" files
+  ansible.builtin.copy:
+    src: 'conf.d/{{ item }}'
+    dest: '/etc/nginx/conf.d/{{ item }}'
+    mode: '0644'
+    owner: root
+    group: root
+  loop:
+    - 'cache.conf'
+  notify:
+    - Restart Nginx
+
+- name: Copy "includes" files
+  ansible.builtin.copy:
+    src: 'includes/{{ item }}'
+    dest: '/etc/nginx/includes/{{ item }}'
+    mode: '0644'
+    owner: root
+    group: root
+  loop:
+    - 'http-reverse-proxy.conf'
+    - 'ssl.conf'
+    - 'ws-reverse-proxy.conf'
+  notify:
+    - Restart Nginx
+
+- name: Copy base file
+  ansible.builtin.copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    mode: '0644'
+    owner: root
+    group: root
+  notify:
+    - Restart Nginx
+
+- name: Copy default config file
+  ansible.builtin.copy:
+    src: sites-available/default
+    dest: /etc/nginx/sites-available/default
+    mode: '0644'
+    owner: root
+    group: root
+  notify:
+    - Restart Nginx
+
+- name: Copy load balancer upstreams file
+  ansible.builtin.template:
+    src: conf.d/load-balancer.conf.j2
+    dest: /etc/nginx/conf.d/load-balancer.conf
+    mode: '0644'
+    owner: root
+    group: root
+  notify:
+    - Restart Nginx
+
+- name: Copy available site configs
+  ansible.builtin.template:
+    src: 'sites-available/{{ item }}.conf.j2'
+    dest: /etc/nginx/sites-available/{{ item }}.conf
+    mode: '0644'
+    owner: root
+    group: root
+  loop:
+    - admin
+    - driver
+    - rider
+  notify:
+    - Restart Nginx
+
+- name: Create symbolic links for config files
+  ansible.builtin.file:
+    src: '/etc/nginx/sites-available/{{ item }}'
+    dest: '/etc/nginx/sites-enabled/{{ item }}'
+    owner: root
+    group: root
+    state: link
+  loop:
+    - admin.conf
+    - driver.conf
+    - rider.conf
+  notify:
+    - Restart Nginx

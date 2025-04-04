@@ -1,0 +1,21 @@
+---
+- name: Ensure the AWS Cloudwatch Agent is installed
+  ansible.builtin.apt:
+    deb: https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
+
+- ansible.builtin.debug:
+    msg: "{{ lookup('template', 'config.json.j2') | trim | split('\n') }}"
+
+- name: Ensure log configurations are present
+  ansible.builtin.template:
+    src: config.json.j2
+    dest: '{{ agent_configuration_file_path }}'
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Ensure AWS Cloudwatch Agent is enabled
+  ansible.builtin.command:
+    cmd: /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:{{ agent_configuration_file_path }}
+  changed_when: true
+  when: agent_skip_enabling != true

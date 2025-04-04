@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <title>Recibo de Viaje</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900&display=swap');
+    </style>
+
+    <!--[if mso]>
+    <style type=”text/css”>
+    .fallback-font {
+    font-family: Arial, sans-serif;
+    }
+    </style>
+    <![endif]-->
+</head>
+<!--[if mso]>
+<center>
+<table width="580"><tr><td>
+<![endif]-->
+
+<body class="fallback-font" style="font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;font-size:16px;color:#0D503E;width:580px;margin:0 auto;padding:10px;">
+    <!--[if mso]>
+<style type="text/css">
+body, table, td {font-family: Arial, Helvetica, sans-serif !important; border: none;}
+</style>
+<![endif]-->
+    <a style="display:block;width:58px;margin:10px 0;border:none;outline:none;text-decoration:none;" href="http://thefreeride.com"><img style="display:block;width:58px;height:auto;border:none;outline:none;" src="https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/1491422764_logo.png" /></a>
+    <div style="margin: 30px 0 30px 0">
+        <span style="font-weight:700;color:#1A9070;">Hola {{ riderFirstName }},</span><br><br>
+        <span class="fallback-font" style="font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;font-size:16px;color:#0D503E;">Gracias por viajar con nosotros en {{ locationName }}</span><br><br>
+        <span class="fallback-font" style="font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;font-size:16px;color:#0D503E;"> Aquí está tu recibo de viaje:</span>
+    </div>
+
+    <div style="background: #1CA783 url(https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/1162353682_bg.png) no-repeat 0 50px;background-size:cover;padding:40px 25px;margin-bottom: 30px;color:#FFF;font-size:18px;border-radius:3px;box-shadow:0px 1px 3px rgba(0,0,0,.15);">
+
+        <!--[if mso]>
+<table cellspacing="0" cellpadding="25" width="100%"><tr><td style="background: #1CA783; color:#FFF;"><br>
+<![endif]-->
+
+        <strong style="color:#FFF;">Información de Viaje:</strong> <small style="color:#FFF;">{{ requestTime }} | {{ passengerNumber }}</small><br><br>
+        <strong style="color:#FFF;">Punto De Partida:</strong> <br><small style="color:#FFF;">{{ pickupTime }} | {{ pickupInfo }}</small><br><br>
+        <strong style="color:#FFF;">Destino Final:</strong> <br><small style="color:#FFF;">{{ dropoffTime }} | {{ dropoffInfo }}</small><br><br>
+        {{#paymentEnabled}}
+            {{#hasDiscount}}
+                <strong style="color:#FFF;">Precio Del Viaje:</strong> <br><small style="color:#FFF;">{{ rideWithoutDiscount }}</small><br><br>
+                <strong style="color:#FFF;">
+                    Descuento{{#hasPromocode}}
+                    - {{ promocodeName }}
+                    {{/hasPromocode}}:</strong> <br>
+                <small style="color:#FFF;">{{ rideDiscount }}</small><br><br>
+            {{/hasDiscount}}
+            <strong style="color:#FFF;"> Pago Final:</strong> <br><small style="color:#FFF;">{{ ridePrice }}</small><br>
+        {{/paymentEnabled}}
+        <!--[if !mso]>--><br><br><br><br>
+        <!--<![endif]-->
+
+        <!--[if mso]>
+<br></td></tr><tr><td style="background: #079170; color:#FFF;">
+<![endif]-->
+
+        <span style="color:#FFF;">Tu conductor fue <strong>{{ driverDisplayName }}</strong>.</span> <br><br>
+
+        <table cellspacing="0" width="100%" style="color:#FFF;">
+            <tr>
+                <td width="25">
+                    <img src="https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/1069115247_check.png" width="25" style="vertical-align:middle;width:25px;height:auto;display:inline-block;" />
+                </td>
+                <td width="6"></td>
+                <td style="color:#FFF;"><em> ¡Cuéntanos de tu experiencia, deja comentarios y califica a tu conductor en la aplicación! </em></td>
+            </tr>
+        </table>
+
+        <!--[if mso]>
+</td></tr></table>
+<![endif]-->
+    </div>
+
+
+    <div style="font-weight:600;color:#0D503E; margin-bottom: 30px;"> Circuit está disponible gracias a nuestros socios y patrocinadores innovadores.</div>
+
+    {{#showAd}}
+    <a style="display:inline-block;width:100%;border:none;outline:none;text-decoration:none;vertical-align:top;text-align:center;"
+        href="{{ adUrl }}">
+        <img width="580"
+              style="display:inline-block;width:100%;border:none;outline:none;text-decoration:none;vertical-align:top;text-align:center;"
+              src="{{ adImg }}"
+        />
+    </a>
+    {{/showAd}}
+
+    <table cellspacing="0" width="100%">
+        <tr>
+            <td align="center">
+                <!--[if mso]><br><br><![endif]-->
+                <img width="112" src="https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/2125260097_swirl.png" style="display:block;width:112px;height:auto;margin:45px auto 35px;">
+                <!--[if mso]><br><br><br><![endif]-->
+            </td>
+        </tr>
+    </table>
+
+    <a style="display:inline-block;width:100%;border:none;outline:none;text-decoration:none;height:auto;background: #EEE;vertical-align:top;line-height:160px;text-align:center;color: #999;" href="https://www.youtube.com/watch?v=RGZvtW09GdI" target="_blank">
+        <img height="315px" style="display:block;width:100%;" src="https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/static-thumbnail.png" alt="Circuit 2020: We Connect Youtube Video Thumbnail" />
+    </a>
+
+    <table cellspacing="0" width="100%">
+        <tr>
+            <td align="center">
+                <!--[if mso]><br><br><![endif]-->
+                <img width="112" src="https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/2125260097_swirl.png"
+                style="display:block;width:112px;height:auto;margin:45px auto 35px;" alt="Wavy Content Separator" />
+                <!--[if mso]><br><br><br><![endif]-->
+            </td>
+        </tr>
+    </table>
+
+    <table cellspacing="0" width="100%">
+        <tr>
+            <td>
+                <span style="color:#1A9070;font-weight:600;display:inline-block;vertical-align:middle;line-height:22px;"> ¿Tienes alguna pregunta o estás interesado en convertirte en patrocinador?</span>
+            </td>
+            <td align="right" width="120">
+                <a style="color:#0D503E;border: 2px solid #0D503E;padding:5px 10px;border-radius: 3px;text-decoration:none;display:inline-block;vertical-align:middle;line-height:20px; font-weight: 500;" href="http://thefreeride.com/contact.php"> Contáctanos </a>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <center>
+        <table cellspacing="15" width="165" style="text-align:center;">
+            <tr>
+                <td>
+                    <a style="width:40px;" target="_blank" href="https://www.facebook.com/ridecircuit/"><img src="https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/3635105417_social_gray_facebook.png" width="40" style="width:40px;height:auto;display:block;"></a>
+                </td>
+                <td>
+                    <a style="width:40px;" href="https://twitter.com/ride_circuit/" target="_blank"><img src="https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/1577716897_social_gray_twitter.png" width="40" style="width:40px;height:auto;display:block;"></a>
+                </td>
+                <td>
+                    <a style="width:40px;" href="https://www.instagram.com/ride_circuit/" target="_blank"><img src="https://s3.amazonaws.com/images.tfrholdingscorp.com/email_assets/2367029119_social_gray_instagram.png" width="40" style="width:40px;height:auto;display:block;"></a>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <p style="font-size:10px;margin: 20px 0;display:block; color:#999;">
+Este correo electrónico se envió automáticamente desde la aplicación Circuit.
+         Tu puedes <a href="{{ unsubscribeUrl }}" target="_blank" style="color:#1A9070;">cancelar tu suscripción </a>
+    </p>
+
+</body>
+<!--[if mso]>
+</td></tr></table>
+</center>
+<![endif]-->
+
+</html>

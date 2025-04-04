@@ -1,0 +1,19 @@
+---
+- name: Import YARN APT key
+  ansible.builtin.apt_key:
+    url: "{{ yarn_gpg_key_url }}"
+    state: present
+  tags: utility
+
+- name: Install YARN APT repo
+  ansible.builtin.apt_repository:
+    repo: "deb {{ yarn_repo_url }}"
+    filename: yarn
+    state: present
+    update_cache: true
+
+- name: Install YARN package manager
+  ansible.builtin.apt:
+    name: "yarn={{ yarn_version }}"
+    state: present
+    update_cache: true

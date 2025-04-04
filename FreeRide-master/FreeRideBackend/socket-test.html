@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Socket Test free ride</title>
+  <meta name="description" content="Socket test client for Free ride app">
+
+</head>
+
+<body>
+  <input type="text" id="accessToken">
+  <input type="button" value="Connect" id="connectButton">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script>
+    let socket;
+
+    document.addEventListener("DOMContentLoaded", event => {
+      const options = {
+        transports: ['websocket'],
+        forceNew: true,
+        reconnection: false
+      };
+
+      const conf = {
+        host: `http://127.0.0.1`,
+        port: 3000,
+      };
+
+      const connectButton = document.getElementById(`connectButton`);
+      const accessTokenInput = document.getElementById(`accessToken`);
+      connectButton.addEventListener(`click`, (event) => {
+        event.preventDefault();
+
+        const accessToken = accessTokenInput.value;
+        if (!accessToken) {
+          alert(`You must insert accessToken!`);
+          return false;
+        }
+        socket = io.connect(`${conf.host}:${conf.port}`, options);
+
+        socket.on('connect', () => {
+
+          socket.emit('authenticate', {
+            token: accessToken
+          })
+            .on('authenticated', () => {
+              console.log('authenticated');
+            })
+            .on('unauthorized', (msg) => {
+              console.log(`Unauthorized`);
+              console.log(msg);
+            });
+        });
+
+        socket.on(`ride-request-received`, (data) => {
+          console.log(`ride-request-received`, data);
+        });
+
+        socket.on(`request-completed`, (data) => {
+          console.log(`request-completed`, data);
+        });
+
+        socket.on(`ride-driver-moved`, (data) => {
+          console.log(`ride-driver-moved`, data);
+        });
+
+        socket.on(`ride-updates`, function (data) {
+          console.log(`ride-updates`, data);
+        });
+
+        socket.on(`wserror`, (data) => {
+          console.log(`wserror`, data);
+        });
+
+        socket.on('disconnect', function () {
+          console.log('disconnected');
+        });
+
+        socket.on(`ride-message-received`, function(data) {
+          console.log(`ride-message-received`, data);
+        });
+
+        socket.on(`ride-cancel`, function(data) {
+          console.log(`ride-cancel`, data);
+        });
+      }, false);
+    });
+
+    function emitDriverMoved(latitude, longitude) {
+      socket.emit('ride-driver-moved', { latitude, longitude });
+    }
+
+    function emitRideMessage(rideId, message) {
+      socket.emit(`ride-message`, { ride: rideId, message });
+    }
+
+    function emitRideComplete(rideId) {
+      socket.emit('ride-complete', { ride: rideId });
+    }
+
+    function emitRidePickUp(rideId) {
+      socket.emit('ride-pick-up', { ride: rideId });
+    }
+
+    function emitRideCancel(rideId) {
+      socket.emit('ride-cancel', { ride: rideId });
+    }
+
+  </script>
+</body>
+
+</html>

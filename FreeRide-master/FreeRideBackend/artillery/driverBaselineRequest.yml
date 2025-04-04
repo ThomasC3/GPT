@@ -1,0 +1,102 @@
+config:
+  phases:
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 5
+      name: Warm up
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 10
+      name: Ramp up load
+    - duration: 600
+      arrivalRate: 10
+      rampTo: 25
+      name: Sustained load
+  environments:
+    development:
+      target: "https://devdriver.tfrholdingscorp.com"
+    staging:
+      target: "https://stagedriver.tfrholdingscorp.com"
+    production:
+      target: "https://driver.tfrholdingscorp.com"
+  payload:
+    path: ".auth/{{ $environment }}.csv"
+    skipHeader: true
+    fields:
+      - "rider_email"
+      - "rider_password"
+      - "driver_email"
+      - "driver_password"
+  plugins:
+    apdex: {}
+    metrics-by-endpoint: {}
+    expect: {}
+    publish-metrics:
+      - type: cloudwatch
+        region: us-east-1
+        dimensions:
+          - name: "Environment"
+            value: "{{ $environment }}"
+  http:
+    timeout: 600
+  socketio:
+    path: "/socket.io"
+    transports: ["websocket"]
+    query: "EIO=3&transport=websocket"
+before:
+  flow:
+    - post:
+        url: "/v1/login"
+        json:
+          email: "{{ driver_email }}"
+          password: "{{ driver_password }}"
+        capture:
+          - json: "$.accessToken"
+            as: token
+scenarios:
+  - engine: "http"
+    flow:
+      - get:
+          url: "/v1/global-settings"
+          headers:
+            Content-Type: "application/json"
+            X-App-Version: '14.4.0'
+            X-Mobile-Os: 'Android'
+            Authorization: "Bearer {{ token }}"
+      - post:
+          url: "/v1/notifications"
+          headers:
+            Content-Type: "application/json"
+            X-App-Version: '14.4.0'
+            X-Mobile-Os: 'Android'
+            Authorization: "Bearer {{ token }}"
+          json:
+            {
+              deviceToken: "{{ token }}",
+              platform: "android",
+              environment: "debug"
+            }
+      - get:
+          url: "/v1/driver"
+          headers:
+            Content-Type: "application/json"
+            X-App-Version: '14.4.0'
+            X-Mobile-Os: 'Android'
+            Authorization: "Bearer {{ token }}"
+  - engine: "socketio"
+    flow:
+      - emit:
+          channel: "authenticate"
+          data:
+            {
+              "token": "{{ token }}"
+            }
+      - emit:
+          channel: "ride-driver-moved"
+          data:
+            {
+              "latitude": 0,
+              "longitude": 0
+            }
+        response:
+          channel: "wserror"
